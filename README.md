@@ -14,4 +14,4 @@ Static site for Cloudflare Pages.
 9. Add forgedtoserve.org as a custom domain.
 
 The Zeffy donation URL is already connected to every Donate button.
-The header currently uses text branding until the approved logo image is added.
+Approved Forged to Serve Foundation logo and wordmark are included in the site assets and used in the header, homepage, and footer.

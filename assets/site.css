@@ -18,3 +18,20 @@ h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;margin:.2em 0}h2{font-size:
 .footer{background:#081624;color:#ccd6df;padding:42px 0 28px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}.footer a{color:white;text-decoration:none}.footer small{display:block;margin-top:26px;color:#8998a7}
 @media(max-width:900px){.hero-grid,.split,.footer-grid,.cards{grid-template-columns:1fr}.nav{align-items:flex-start;padding:16px 0}}
 @media(max-width:640px){.nav{display:block}.nav-links{margin-top:14px}.container{width:calc(100% - 28px)}.hero{padding:64px 0}.section{padding:54px 0}}
+
+
+.logo-wrap{display:flex;align-items:center;gap:14px;text-decoration:none}
+.header-logo{width:58px;height:58px;object-fit:contain;border-radius:8px;background:white;padding:3px}
+.brand-copy{display:flex;flex-direction:column;color:white;font-weight:800;letter-spacing:.04em;line-height:1.05}
+.brand-copy small{display:block;color:var(--gold);font-size:.7rem;margin-top:5px}
+.hero-logo-card{background:white;border-radius:18px;padding:22px;box-shadow:0 18px 40px #0000002b}
+.hero-logo-card img{width:100%;height:auto}
+.footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.footer-logo{width:78px;height:78px;object-fit:contain;border-radius:10px;background:white;padding:4px}
+.wordmark-strip{margin-top:24px;max-width:680px}
+.wordmark-strip img{width:100%;border-radius:10px;background:white;padding:8px}
+@media(max-width:640px){
+  .header-logo{width:48px;height:48px}
+  .brand-copy{font-size:.88rem}
+  .brand-copy small{font-size:.58rem}
+}
