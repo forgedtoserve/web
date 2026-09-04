@@ -482,3 +482,10 @@ li{margin:.3rem 0}
   .program-cta-card{padding:28px 24px}
   .program-feature-card{padding:26px 22px}
 }
+
+
+/* About page finishing touches */
+.about-values-grid .support-card{min-height:220px}
+.about-closing{text-align:center}
+.about-closing h2{max-width:900px;margin:.35rem auto .8rem;color:#fff}
+.about-closing p{color:#e7edf3;font-size:1.15rem;margin:0}
