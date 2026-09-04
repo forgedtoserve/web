@@ -68,3 +68,19 @@ h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;margin:.2em 0}h2{font-size:
 @media (max-width:700px){
   .form-row{grid-template-columns:1fr;gap:0}
 }
+
+
+/* Thank-you page */
+.thank-you-card{max-width:760px;margin:0 auto;text-align:center;border:1px solid var(--border);border-radius:16px;padding:42px 34px;background:white;box-shadow:0 12px 30px #0000000d}
+.thank-you-mark{width:68px;height:68px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--navy);font-size:2rem;font-weight:900}
+.thank-you-card h2{margin-bottom:.5rem}
+.thank-you-card p{max-width:650px;margin-left:auto;margin-right:auto;color:var(--muted)}
+.thank-you-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:28px 0 22px}
+.btn-navy{background:var(--navy);color:white}
+.thank-you-tagline{margin-top:24px!important;color:var(--navy)!important}
+
+
+.form-status{margin-top:.9rem;font-weight:700}
+.form-status.is-success{color:#1f6f3d}
+.form-status.is-error{color:#a12622}
+.contact-form button[disabled]{opacity:.7;cursor:not-allowed}
