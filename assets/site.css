@@ -140,3 +140,36 @@ h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;margin:.2em 0}h2{font-size:
 .termly-policy section[data-custom-class="body_text"]{overflow-x:auto}
 .termly-policy table{max-width:100%;border-collapse:collapse}
 .termly-policy td,.termly-policy th{vertical-align:top}
+
+
+/* Expanded program and sponsorship pages */
+.feature-list{padding-left:1.25rem;margin:1rem 0 1.75rem}
+.feature-list li{margin:.45rem 0}
+.program-detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin:2rem 0}
+.program-detail{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:1.4rem}
+.program-detail h2{font-size:1.25rem;margin-top:0}
+.sponsor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin-top:2rem}
+.sponsor-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:1.5rem;box-shadow:0 8px 24px rgba(0,0,0,.05)}
+.sponsor-card h3{margin:.25rem 0 .65rem}
+.sponsor-card ul{padding-left:1.15rem;margin-bottom:0}
+.sponsor-card li{margin:.35rem 0}
+.sponsor-amount{font-weight:800;font-size:1.35rem;color:var(--gold)}
+.sponsor-card-featured{border:2px solid var(--gold)}
+@media (max-width:800px){
+  .program-detail-grid,.sponsor-grid{grid-template-columns:1fr}
+}
+
+
+/* Leadership page */
+.board-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.board-card{display:flex;gap:1.1rem;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:1.4rem;box-shadow:0 8px 24px rgba(0,0,0,.05)}
+.board-initials{flex:0 0 68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--navy);color:#fff;font-weight:800;font-size:1.15rem;letter-spacing:.04em}
+.board-copy h2{margin:.05rem 0 .2rem;font-size:1.35rem}
+.board-role{color:var(--gold);font-weight:800;margin-bottom:.75rem}
+.board-copy p{margin:.55rem 0}
+.leadership-note{margin-top:2rem;padding:1.5rem;border-radius:14px;background:#f7f5ef;border-left:4px solid var(--gold)}
+.leadership-note h2{margin-top:0}
+@media (max-width:800px){
+  .board-grid{grid-template-columns:1fr}
+  .board-card{align-items:flex-start}
+}
