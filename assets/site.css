@@ -134,3 +134,9 @@ h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;margin:.2em 0}h2{font-size:
 .legal-copy p{margin:.65rem 0}
 .legal-copy a{color:var(--navy);font-weight:700}
 .legal-copy .legal-note{margin-top:2rem;padding:1rem 1.1rem;border-left:4px solid var(--gold);background:#f7f5ef;border-radius:6px}
+
+
+/* Cookie policy */
+.termly-policy section[data-custom-class="body_text"]{overflow-x:auto}
+.termly-policy table{max-width:100%;border-collapse:collapse}
+.termly-policy td,.termly-policy th{vertical-align:top}
