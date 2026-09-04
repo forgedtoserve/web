@@ -35,3 +35,36 @@ h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;margin:.2em 0}h2{font-size:
   .brand-copy{font-size:.88rem}
   .brand-copy small{font-size:.58rem}
 }
+
+/* Contact form */
+.contact-layout{align-items:start}
+.contact-form{margin-top:1.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-field{display:flex;flex-direction:column;margin-bottom:1rem}
+.form-field label{font-weight:700;margin-bottom:.4rem;color:var(--navy)}
+.form-field .optional{font-weight:400;color:#68727d;font-size:.9em}
+.form-field input,
+.form-field select,
+.form-field textarea{
+  width:100%;
+  box-sizing:border-box;
+  border:1px solid #c8cdd2;
+  border-radius:8px;
+  padding:.8rem .9rem;
+  font:inherit;
+  color:#17212b;
+  background:#fff;
+}
+.form-field textarea{resize:vertical;min-height:150px}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus{
+  outline:3px solid rgba(202,162,77,.22);
+  border-color:var(--gold);
+}
+.contact-form .btn{border:0;cursor:pointer}
+.form-note{font-size:.9rem;color:#68727d;margin:.75rem 0 0}
+.contact-email-fallback{margin-top:1.25rem}
+@media (max-width:700px){
+  .form-row{grid-template-columns:1fr;gap:0}
+}
