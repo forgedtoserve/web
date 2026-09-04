@@ -108,3 +108,21 @@ h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;margin:.2em 0}h2{font-size:
   font-size:.95rem;
 }
 .section-alt{background:#f7f5ef}
+
+
+/* Legal / Termly policy pages */
+.legal-hero{padding-bottom:2rem}
+.legal-policy-shell{
+  max-width:1050px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:clamp(1.25rem,3vw,2.5rem);
+  box-shadow:0 12px 30px #0000000d;
+}
+.termly-policy{overflow-wrap:anywhere}
+.termly-policy > style + span{margin-top:0!important}
+.termly-policy [data-custom-class="body"]{max-width:100%}
+.termly-policy h1,.termly-policy h2,.termly-policy h3{line-height:1.25}
+.termly-policy a{word-break:break-word}
+.footer-legal{margin-top:1rem}
