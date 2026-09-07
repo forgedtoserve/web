@@ -489,3 +489,112 @@ li{margin:.3rem 0}
 .about-closing{text-align:center}
 .about-closing h2{max-width:900px;margin:.35rem auto .8rem;color:#fff}
 .about-closing p{color:#e7edf3;font-size:1.15rem;margin:0}
+
+
+/* Uniform leadership profiles */
+.board-grid-uniform{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:28px;
+  align-items:stretch;
+}
+.board-card-uniform{
+  display:flex;
+  flex-direction:column;
+  padding:0;
+  overflow:hidden;
+  height:100%;
+  min-height:830px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow:0 10px 28px rgba(8,22,36,.08);
+}
+.board-media{
+  width:100%;
+  height:330px;
+  flex:0 0 330px;
+  overflow:hidden;
+  background:var(--navy);
+}
+.board-media .board-photo{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center 24%;
+}
+.board-media-placeholder{
+  display:grid;
+  place-items:center;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(207,163,62,.16),transparent 34%),
+    linear-gradient(145deg,#1a344d,var(--navy));
+}
+.board-initials-large{
+  width:124px;
+  height:124px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  border:3px solid var(--gold);
+  color:#fff;
+  font-size:2.2rem;
+  font-weight:800;
+  letter-spacing:.06em;
+  background:rgba(255,255,255,.035);
+}
+.board-copy-uniform{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:28px 30px 30px;
+}
+.board-copy-uniform .kicker{
+  margin-bottom:.25rem;
+}
+.board-copy-uniform h2{
+  margin:.2rem 0 .25rem;
+  font-size:clamp(1.8rem,3vw,2.45rem);
+}
+.board-copy-uniform .board-role{
+  margin-bottom:1rem;
+  font-size:1.04rem;
+}
+.board-copy-uniform > p{
+  line-height:1.7;
+  margin:.35rem 0 .85rem;
+}
+.board-copy-uniform .leader-why{
+  margin-top:auto;
+  padding:1.05rem 1.15rem;
+  background:#f7f5ef;
+  border-left:4px solid var(--gold);
+  border-radius:10px;
+}
+.board-copy-uniform .leader-why h3{
+  margin:0 0 .4rem;
+  color:var(--navy);
+  font-size:1.05rem;
+}
+.board-copy-uniform .leader-why p{
+  margin:0;
+  line-height:1.62;
+}
+@media(max-width:900px){
+  .board-grid-uniform{
+    grid-template-columns:1fr;
+  }
+  .board-card-uniform{
+    min-height:0;
+  }
+}
+@media(max-width:600px){
+  .board-media{
+    height:310px;
+    flex-basis:310px;
+  }
+  .board-copy-uniform{
+    padding:24px 22px 26px;
+  }
+}
