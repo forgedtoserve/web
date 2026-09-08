@@ -752,3 +752,68 @@ textarea{
   body{font-size:1rem}
   .nav-links a{letter-spacing:0}
 }
+
+
+/* Layout cleanup: header, home section, leadership photos */
+
+/* Keep the full desktop navigation on one clean row. */
+@media(min-width:1101px){
+  .site-header .container{
+    width:min(1500px,calc(100% - 34px));
+    max-width:none;
+  }
+  .nav{
+    flex-wrap:nowrap;
+    gap:22px;
+  }
+  .logo-wrap{
+    flex:0 0 auto;
+  }
+  .brand-copy{
+    font-size:.96rem;
+    max-width:330px;
+  }
+  .brand-copy small{
+    font-size:.64rem;
+    line-height:1.2;
+  }
+  .nav-links{
+    margin-left:auto;
+    flex-wrap:nowrap;
+    white-space:nowrap;
+    gap:13px;
+  }
+  .nav-links a{
+    font-size:.84rem;
+  }
+  .nav-links .btn{
+    padding:9px 14px;
+  }
+}
+
+/* Give the home "Who We Are" section a cleaner, less repetitive layout. */
+.section .split{
+  align-items:start;
+}
+.wordmark-strip{
+  display:none;
+}
+
+/* Keep leadership image areas identical while positioning each portrait correctly. */
+.board-media .board-photo[src*="richard-hacker"]{
+  object-position:center top;
+}
+.board-media .board-photo[src*="scott-lowry"]{
+  object-position:center 70%;
+}
+
+/* Slightly soften the transition between portrait and copy. */
+.board-media{
+  border-bottom:1px solid rgba(11,31,51,.08);
+}
+
+@media(max-width:1100px){
+  .nav-links{
+    gap:10px;
+  }
+}
