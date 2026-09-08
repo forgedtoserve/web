@@ -848,3 +848,17 @@ textarea{
     flex-basis:330px;
   }
 }
+
+
+/* Home hero top alignment */
+@media(min-width:901px){
+  .hero{
+    padding:64px 0 72px;
+  }
+  .hero-grid{
+    align-items:start;
+  }
+  .hero-grid > div:first-child{
+    padding-top:18px;
+  }
+}
