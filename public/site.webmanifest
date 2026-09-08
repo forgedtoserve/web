@@ -15,5 +15,9 @@
   ],
   "theme_color": "#12273d",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "description": "Forged to Serve Foundation supports veterans and the families of fallen service members."
 }
