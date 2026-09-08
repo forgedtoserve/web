@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 
 :root{--navy:#0b1f33;--gold:#caa24d;--cream:#f7f2e7;--text:#1d2733;--muted:#5f6b76;--border:#d8d2c5;--max:1180px}
 *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6}a{color:inherit}
@@ -597,4 +598,157 @@ li{margin:.3rem 0}
   .board-copy-uniform{
     padding:24px 22px 26px;
   }
+}
+
+
+/* Forged to Serve typography refresh */
+:root{
+  --font-display:"Libre Baskerville", Georgia, "Times New Roman", serif;
+  --font-body:"Source Sans 3", "Segoe UI", Arial, sans-serif;
+  --font-ui:"Montserrat", "Segoe UI", Arial, sans-serif;
+}
+
+html{
+  font-synthesis:none;
+  text-rendering:optimizeLegibility;
+}
+
+body{
+  font-family:var(--font-body);
+  font-size:1.03rem;
+  line-height:1.66;
+  letter-spacing:.002em;
+}
+
+h1,
+h2,
+.board-copy h2,
+.board-copy-uniform h2,
+.thank-you-card h2{
+  font-family:var(--font-display);
+  font-weight:700;
+  letter-spacing:-.025em;
+}
+
+h1{
+  line-height:1.04;
+}
+
+h2{
+  line-height:1.14;
+}
+
+h3,
+.card h3,
+.support-card h3,
+.program-cta-card h3,
+.sponsor-card h3,
+.leader-why h3{
+  font-family:var(--font-body);
+  font-weight:700;
+  letter-spacing:-.008em;
+}
+
+p,
+li,
+input,
+select,
+textarea{
+  font-family:var(--font-body);
+}
+
+.brand,
+.brand-copy,
+.brand-copy small,
+.nav-links,
+.btn,
+.kicker,
+.board-role,
+.sponsor-amount,
+.text-link,
+.mini-points span,
+.form-field label,
+.thank-you-tagline,
+.footer strong{
+  font-family:var(--font-ui);
+}
+
+.brand,
+.brand-copy{
+  font-weight:800;
+  letter-spacing:.045em;
+}
+
+.brand-copy small,
+.kicker{
+  font-weight:700;
+  letter-spacing:.145em;
+}
+
+.nav-links a{
+  font-family:var(--font-ui);
+  font-weight:600;
+  letter-spacing:-.01em;
+}
+
+.nav-links .btn,
+.btn{
+  font-family:var(--font-ui);
+  font-weight:700;
+  letter-spacing:.01em;
+}
+
+.board-role{
+  font-weight:700;
+  letter-spacing:.015em;
+}
+
+.page-hero h1,
+.hero h1{
+  text-wrap:balance;
+}
+
+.page-hero p,
+.hero p,
+.lede{
+  font-family:var(--font-body);
+  font-weight:400;
+}
+
+.section-heading h2,
+.program-intro h2,
+.program-callout h2,
+.centered-heading h2,
+.about-closing h2{
+  text-wrap:balance;
+}
+
+.board-copy-uniform h2{
+  letter-spacing:-.03em;
+}
+
+.board-copy-uniform > p,
+.board-copy p{
+  font-size:1.02rem;
+}
+
+.support-card p,
+.program-feature-card > p,
+.program-cta-card p,
+.card p,
+.notice{
+  font-size:1rem;
+}
+
+.footer{
+  font-family:var(--font-body);
+}
+
+.footer a{
+  font-family:var(--font-body);
+}
+
+@media(max-width:640px){
+  body{font-size:1rem}
+  .nav-links a{letter-spacing:0}
 }
