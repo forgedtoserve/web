@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v15**
+- Current production version: **v16**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -41,7 +41,7 @@ Public-facing program pages describe planned assistance while eligibility rules,
 - Preserve the approved Forged to Serve shield logo and established navy / gold / cream visual identity.
 - Preserve the official tagline: **“Forged by Service. Driven to Serve.”**
 - Preserve the public commitment wording: **“No Hero or Family Left Behind.”**
-- Use **Libre Baskerville** for major headings and leadership names, **Source Sans 3** for body copy, and **Montserrat** for navigation, buttons, kickers, labels, and roles.
+- Use **Libre Baskerville** for major headings and leadership names, **Source Sans 3** for body copy, and **Montserrat** for most buttons, kickers, labels, and roles. The main header navigation intentionally uses the local system UI font stack to prevent refresh-time font swapping and position shifts.
 - Keep desktop navigation visually centered independently of the brand block.
 - Preserve natural image aspect ratios and avoid stretched portraits/logos.
 - Keep Leadership cards uniform in size and structure as additional bios/photos are added.
@@ -73,6 +73,20 @@ No DNS, Microsoft 365, Zeffy, Formspree, Termly, SSL, or custom-domain changes a
 For each meaningful production change, add a new sequential version section using this format:
 
 ```text
+## v16 — Header Position Lock + Flicker Fix
+
+Locked the desktop header geometry after identifying why the menu appeared to move between pages and during refresh.
+
+Key changes:
+
+- Replaced the auto-width desktop menu with a fixed 520px centered navigation rail
+- Kept the navigation rail mathematically centered regardless of individual font metrics
+- Switched the header navigation and Donate text to the local system UI font stack so Google Font loading cannot make the menu jump on refresh
+- Removed older experimental desktop header-positioning rules that were still present in the stylesheet
+- Kept the brand anchored left and Donate anchored right
+- Preserved the existing tablet and mobile behavior
+- Updated shared CSS/JavaScript references to `?v=16` for cache refresh
+
 ## v15 — Short Change Name
 
 Brief summary of the work.
