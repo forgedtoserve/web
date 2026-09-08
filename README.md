@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v16**
+- Current production version: **v17**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -73,6 +73,22 @@ No DNS, Microsoft 365, Zeffy, Formspree, Termly, SSL, or custom-domain changes a
 For each meaningful production change, add a new sequential version section using this format:
 
 ```text
+## v17 — Deterministic Typography + Header Rendering
+
+Removed the final source of page-to-page and refresh-time layout changes.
+
+The inconsistent rendering was caused by the externally loaded Google Fonts combined with `display=optional`: a page could initially render with fallback fonts, while a later navigation loaded the cached web fonts. Because those fonts have different character widths, headings wrapped differently and the navigation appeared to shift.
+
+Key changes:
+
+- Removed all Google Fonts requests from every public HTML page
+- Switched to stable local font stacks: Georgia/Cambria for display headings and Segoe UI/Arial for body and interface text
+- Explicitly locked all header links and the Donate button to the same local UI font
+- Widened the centered desktop navigation rail from 520px to 580px for more natural spacing
+- Kept the navigation rail mathematically centered between the independent brand and Donate zones
+- Added a stable maximum width for page-hero headings
+- Updated shared CSS/JavaScript references to `?v=17` to force a clean asset refresh
+
 ## v16 — Header Position Lock + Flicker Fix
 
 Locked the desktop header geometry after identifying why the menu appeared to move between pages and during refresh.

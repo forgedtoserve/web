@@ -934,3 +934,69 @@ textarea{
     margin-left:auto;
   }
 }
+
+
+/* v17 deterministic rendering */
+/* Eliminate external web-font timing as a source of layout changes. */
+:root{
+  --font-display:Georgia, Cambria, "Times New Roman", serif;
+  --font-body:"Segoe UI", Arial, Helvetica, sans-serif;
+  --font-ui:"Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+body{
+  font-family:var(--font-body);
+}
+
+h1,
+h2,
+.board-copy h2,
+.board-copy-uniform h2,
+.thank-you-card h2{
+  font-family:var(--font-display);
+}
+
+.brand,
+.brand-copy,
+.brand-copy small,
+.nav-links,
+.btn,
+.kicker,
+.board-role,
+.sponsor-amount,
+.text-link,
+.mini-points span,
+.form-field label,
+.thank-you-tagline,
+.footer strong{
+  font-family:var(--font-ui);
+}
+
+/* Lock the header to one stable local font and a fixed centered rail. */
+.site-header .nav-links,
+.site-header .nav-links a,
+.site-header .nav-donate,
+.site-header .nav-donate.btn{
+  font-family:"Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+@media(min-width:1360px){
+  .site-header .nav{
+    grid-template-columns:minmax(0,1fr) 580px minmax(0,1fr);
+  }
+
+  .site-header .nav-links{
+    width:580px;
+  }
+}
+
+/* Keep page-title line breaks stable and intentional. */
+.page-hero h1{
+  max-width:900px;
+  text-wrap:balance;
+}
+
+/* The homepage display title may use its full design width. */
+.hero h1{
+  text-wrap:balance;
+}
