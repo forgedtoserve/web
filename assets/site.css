@@ -831,3 +831,20 @@ textarea{
     margin-left:0;
   }
 }
+
+
+/* Leadership photo framing refinement */
+.board-media{
+  height:360px;
+  flex-basis:360px;
+}
+.board-media .board-photo{
+  object-fit:cover;
+  object-position:center center !important;
+}
+@media(max-width:600px){
+  .board-media{
+    height:330px;
+    flex-basis:330px;
+  }
+}
