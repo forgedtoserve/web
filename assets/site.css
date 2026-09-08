@@ -817,3 +817,17 @@ textarea{
     gap:10px;
   }
 }
+
+
+/* Tighten brand-to-navigation gap */
+@media(min-width:1101px){
+  .nav{
+    justify-content:flex-start;
+  }
+  .logo-wrap{
+    margin-right:58px;
+  }
+  .nav-links{
+    margin-left:0;
+  }
+}
