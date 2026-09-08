@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
-
 :root{--navy:#0b1f33;--gold:#caa24d;--cream:#f7f2e7;--text:#1d2733;--muted:#5f6b76;--border:#d8d2c5;--max:1180px}
 *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6}a{color:inherit}
 .container{width:min(var(--max),calc(100% - 40px));margin:auto}
@@ -890,5 +888,43 @@ textarea{
 @media(max-width:1199px){
   .site-header .nav{
     display:flex;
+  }
+}
+
+
+/* v14 stable desktop header */
+/* At wide desktop sizes, pin the navigation to the true viewport center.
+   This makes its position independent of the brand block width. */
+@media(min-width:1360px){
+  .site-header .container{
+    position:relative;
+  }
+
+  .site-header .nav{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    position:relative;
+  }
+
+  .site-header .logo-wrap{
+    margin-right:0;
+  }
+
+  .site-header .nav-links{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    margin:0;
+    flex-wrap:nowrap;
+    white-space:nowrap;
+  }
+}
+
+/* Use the prior responsive/flex behavior below wide desktop. */
+@media(max-width:1359px){
+  .site-header .nav-links{
+    position:static;
+    transform:none;
   }
 }

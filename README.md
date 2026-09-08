@@ -1,32 +1,102 @@
 # Forged to Serve Foundation Website
 
-Official static website for **Forged to Serve Foundation**.
+Official website repository for **Forged to Serve Foundation**.
 
-**Website:** https://forgedtoserve.org/  
-**Tagline:** *Forged by Service. Driven to Serve.*  
-**Commitment:** *No Hero or Family Left Behind.*
+## Current Site Notes
+
+- Current production version: **v14**
+- Production site: **https://forgedtoserve.org**
+- Static HTML/CSS/JavaScript site with deployable files under `/public`
+- Hosted with **Cloudflare Pages**
+- Source controlled through **GitHub**
+- Cloudflare Pages build output directory: `public`
+- **Termly** handles consent management, Privacy Policy, Cookie Policy, and consent preferences
+- **Formspree** handles general website contact-form submissions
+- **Zeffy** handles online donations
+- Facebook content is embedded on the homepage
+- Foundation email: `info@forgedtoserve.org`
+- Public Facebook page: `https://facebook.com/forgedtoserve`
+
+## Current Leadership
+
+- **Richard Hacker** — Founder, President & Executive Director
+- **Vanessa Hacker** — Vice President / Treasurer
+- **Scott F. Lowry** — Board Member
+- **Nicole Ingraham** — Secretary / Board Member
+
+Board biographies and photos are being added as finalized for public use.
+
+## Current Program Areas
+
+- **Families of the Fallen**
+- **Veteran Small Business Assistance**
+- **Service Dogs for Veterans**
+
+Public-facing program pages describe planned assistance while eligibility rules, award criteria, application procedures, and program limits continue to be formally developed.
+
+## Important Design / Technical Rules
+
+- Keep all deployable website files under `/public`.
+- Do **not** move the site back to the repository root unless Cloudflare Pages deployment settings are changed at the same time.
+- Preserve the approved Forged to Serve shield logo and established navy / gold / cream visual identity.
+- Preserve the official tagline: **“Forged by Service. Driven to Serve.”**
+- Preserve the public commitment wording: **“No Hero or Family Left Behind.”**
+- Use **Libre Baskerville** for major headings and leadership names, **Source Sans 3** for body copy, and **Montserrat** for navigation, buttons, kickers, labels, and roles.
+- Keep desktop navigation visually centered independently of the brand block.
+- Preserve natural image aspect ratios and avoid stretched portraits/logos.
+- Keep Leadership cards uniform in size and structure as additional bios/photos are added.
+- Do not publish final program eligibility or award rules until they are formally approved.
+- Keep family eligibility language consistent with the foundation’s approved public scope.
+- Keep family support-dog wording neutral until the board formally settles the exact program model and terminology.
+- Run a fresh Termly scan after adding new third-party embeds, scripts, analytics, or services.
+- Validate internal links and local assets before packaging a release.
+- Keep `README.md` and repository documentation at the repo root; public site files belong in `/public`.
 
 ## Deployment
 
-The site is deployed through **GitHub → Cloudflare Pages**.
+Cloudflare Pages should use:
 
-1. Push the contents of this repository to GitHub.
-2. In Cloudflare Pages, connect the GitHub repository.
-3. Framework preset: **None**
-4. Build command: **leave blank**
-5. Build output directory: **public**
-6. Deploy.
-7. Custom domains:
-   - `forgedtoserve.org`
-   - `www.forgedtoserve.org`
+- Framework preset: **None**
+- Build command: **leave blank**
+- Build output directory: **public**
+- Root directory: **repository root / blank**
 
-The Zeffy donation form, Formspree contact form, Termly consent tools, and approved Forged to Serve branding are already integrated into the site.
+Custom domains:
+
+- `forgedtoserve.org`
+- `www.forgedtoserve.org`
+
+No DNS, Microsoft 365, Zeffy, Formspree, Termly, SSL, or custom-domain changes are required solely because the repository uses a `/public` deployment structure.
+
+## Updating This Change Log
+
+For each meaningful production change, add a new sequential version section using this format:
+
+```text
+## v15 — Short Change Name
+
+Brief summary of the work.
+
+Key changes:
+- Change one
+- Change two
+- Change three
+```
+
+Use the next sequential version number for meaningful production changes.
+
+Small typo fixes, internal documentation updates, and other changes that do not materially affect the public website do not need their own version.
+
+When creating a new production package:
+
+- Update this README.
+- Validate all internal links and local assets.
+- Preserve image aspect ratios.
+- Confirm the `/public` folder contains every deployable asset.
+- Confirm the Cloudflare Pages build output directory remains `public`.
+- Produce both a full deployment ZIP and a changed-files-only ZIP when practical.
 
 ---
-
-# Site Change Log
-
-This section documents major production changes to the Forged to Serve website so future edits can be traced without relying only on Git commit history.
 
 ## v1 — Initial Foundation Site
 
@@ -207,31 +277,16 @@ Key changes:
 - Preserved existing navigation-item spacing and Donate button styling
 - Left tablet and mobile navigation behavior unchanged
 
-## Current Site Notes
 
-- Static HTML/CSS/JavaScript site with deployable files under `/public`
-- Hosted on Cloudflare Pages
-- Source controlled through GitHub
-- Microsoft 365 handles foundation email
-- Zeffy handles donations
-- Formspree handles website contact submissions
-- Termly handles consent management
-- No advertising or analytics cookies were detected in the latest documented cookie scan
+## v14 — Stable Header + Cache Refresh
 
-## Updating This Change Log
-
-When making a meaningful production change, add a new section using:
-
-```md
-## v13 — Short Change Name
-
-Brief summary of the work.
+Made the desktop header positioning deterministic and reduced refresh-time movement.
 
 Key changes:
 
-- Change one
-- Change two
-- Change three
-```
-
-Small typo fixes do not need their own version unless they materially affect the public site.
+- Pinned the wide-desktop navigation group to the true horizontal center of the viewport
+- Kept the foundation brand anchored independently on the left
+- Replaced the CSS Google Fonts `@import` with document-level font loading and preconnects
+- Changed font loading to `display=optional` to reduce font-swap layout shift
+- Added `?v=14` cache-busting to the shared CSS and JavaScript references so browsers and Cloudflare fetch the newest assets
+- Preserved the existing tablet and mobile header behavior
