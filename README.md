@@ -195,6 +195,18 @@ Key changes:
 
 ---
 
+
+## v13 — Header Navigation Centering
+
+Refined the desktop header so the navigation group is visually centered across the page rather than being pushed off-center by the width of the foundation brand block.
+
+Key changes:
+
+- Centered the desktop navigation independently of the logo/name block
+- Kept the Forged to Serve brand anchored to the left
+- Preserved existing navigation-item spacing and Donate button styling
+- Left tablet and mobile navigation behavior unchanged
+
 ## Current Site Notes
 
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
