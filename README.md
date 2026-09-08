@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v14**
+- Current production version: **v15**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -97,6 +97,22 @@ When creating a new production package:
 - Produce both a full deployment ZIP and a changed-files-only ZIP when practical.
 
 ---
+
+
+## v15 — Header Architecture Rebuild
+
+Rebuilt the site header instead of continuing to layer positioning overrides on the original navigation.
+
+Key changes:
+
+- Split the header into three independent zones: brand, primary navigation, and Donate
+- Centered the primary navigation mathematically in the desktop viewport/container
+- Kept the foundation brand anchored left and Donate anchored right
+- Removed the conflicting experimental desktop navigation rules that had accumulated during earlier spacing adjustments
+- Removed absolute positioning from the desktop navigation to eliminate refresh-time movement
+- Updated active-page highlighting to include the standalone Donate button
+- Added `?v=15` cache-busting to the shared CSS and JavaScript assets
+- Preserved responsive tablet and mobile behavior
 
 ## v1 — Initial Foundation Site
 
