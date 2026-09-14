@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v23**
+- Current production version: **v24**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -77,6 +77,18 @@ A full production audit was completed for **v18**. See:
 For each meaningful production change, add a new sequential version section:
 
 ```text
+## v24 — Leadership Page Closing Section Refresh
+
+Updated the lower Leadership page now that board profiles and photos are finalized.
+
+Key changes:
+
+- Replaced the outdated note about future biographies and photos with a current summary of the leadership team's combined experience
+- Updated the governance section to emphasize transparency, financial stewardship, program standards, and accountability
+- Updated the final callout to invite visitors to connect with leadership about programs, partnerships, and involvement
+- Preserved all v23 photo corrections and Scott F. Lowry's restored Why I Serve section
+- Updated shared CSS references to `?v=24`
+
 ## v23 — Leadership Photo Correction + Scott Why I Serve Restore
 
 Corrected the Leadership page issues reported after v22.
