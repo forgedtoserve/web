@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v22**
+- Current production version: **v23**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -77,6 +77,19 @@ A full production audit was completed for **v18**. See:
 For each meaningful production change, add a new sequential version section:
 
 ```text
+## v23 — Leadership Photo Correction + Scott Why I Serve Restore
+
+Corrected the Leadership page issues reported after v22.
+
+Key changes:
+
+- Rebuilt Vanessa Hacker's card image so her full face, hair, shoulders, and upper torso are visible instead of the extreme close crop
+- Rebuilt Nicole Ingraham's card image to keep Nicole and both dogs visible
+- Used full-width blurred image backgrounds so portrait source photos can fit the established landscape leadership cards without cutting off people or dogs
+- Restored Scott F. Lowry's **Why I Serve** section beneath his updated biography
+- Added image cache-busting to force browsers to fetch the corrected Vanessa and Nicole photos
+- Updated shared CSS references to `?v=23`
+
 ## v22 — Scott F. Lowry Biography Update
 
 Updated Scott F. Lowry’s Leadership page biography.
