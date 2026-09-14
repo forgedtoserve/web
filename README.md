@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v20**
+- Current production version: **v22**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -77,6 +77,32 @@ A full production audit was completed for **v18**. See:
 For each meaningful production change, add a new sequential version section:
 
 ```text
+## v22 — Scott F. Lowry Biography Update
+
+Updated Scott F. Lowry’s Leadership page biography.
+
+Key changes:
+
+- Confirmed Scott’s public role as **Program Director**
+- Updated his biography to reflect nearly 18 years of U.S. Army service, including multiple deployments
+- Expanded his post-military experience in information technology, operations, nonprofit leadership, community service, veteran advocacy, and program development
+- Clarified his role in developing and coordinating Forged to Serve programs, partnerships, resources, and opportunities for veterans and families of fallen service members
+- Preserved the established Leadership page layout
+- Updated shared CSS references to `?v=22`
+
+## v21 — Leadership Photo Refinements + Board Group Photo
+
+Refined the Leadership page photography based on the finalized board images.
+
+Key changes:
+
+- Reframed Vanessa Hacker’s leadership photo to show her full face and upper body instead of an overly tight crop
+- Reframed Nicole Ingraham’s leadership photo to include Nicole and both dogs
+- Added the supplied Board of Directors group photo as a full-width leadership image above the individual profiles
+- Preserved the established leadership-card image dimensions and layout
+- Added responsive styling for the Board of Directors group photo
+- Updated shared CSS references to `?v=21`
+
 ## v20 — Vanessa Hacker Leadership Profile
 
 Expanded the Leadership page with Vanessa Hacker’s finalized public biography and photo.
