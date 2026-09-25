@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v19**
+- Current production version: **v20**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -76,6 +76,18 @@ A full production audit was completed for **v18**. See:
 For each meaningful production change, add a new sequential version section:
 
 ```text
+## v20 — Vanessa Hacker Leadership Photo
+
+Updated the public Leadership page with Vanessa Hacker’s approved photo.
+
+Key changes:
+
+- Replaced Vanessa Hacker’s initials placeholder with her photograph
+- Preserved the existing uniform leadership-card dimensions and image treatment
+- Added descriptive alt text for accessibility
+- Added `vanessa-hacker.jpg` to the public assets folder
+- Updated the Leadership page asset references to v20
+
 ## v19 — Short Change Name
 
 Brief summary of the work.

@@ -1079,3 +1079,9 @@ iframe{max-width:100%}
     width:100%;
   }
 }
+
+
+/* v20 Vanessa leadership photo */
+.board-media .board-photo[src*="vanessa-hacker"]{
+  object-position:center center !important;
+}
