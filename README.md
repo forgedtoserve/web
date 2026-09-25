@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v20**
+- Current production version: **v21**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -76,6 +76,18 @@ A full production audit was completed for **v18**. See:
 For each meaningful production change, add a new sequential version section:
 
 ```text
+## v21 — Vanessa Hacker Biography Restored
+
+Restored Vanessa Hacker’s full approved leadership biography alongside her photo.
+
+Key changes:
+
+- Replaced the placeholder Vanessa biography with her full approved profile
+- Added her business, real estate, property management, accounting, and community-relationship background
+- Added her statement on continued responsibility to veterans under **Why I Serve**
+- Preserved the existing Vanessa Hacker photo and Vice President / Treasurer title
+- Updated Leadership page asset references to v21
+
 ## v20 — Vanessa Hacker Leadership Photo
 
 Updated the public Leadership page with Vanessa Hacker’s approved photo.
