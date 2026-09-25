@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v24**
+- Current production version: **v19**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -21,8 +21,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 - **Richard Hacker** — Founder, President & Executive Director
 - **Vanessa Hacker** — Vice President / Treasurer
-- **Scott F. Lowry** — Program Director
-- **Nicole Ingraham** — Secretary, Paws4Patriots Director & Outreach Coordinator
+- **Scott F. Lowry** — Secretary / Board Member
 
 Board biographies and photos are being added as finalized for public use.
 
@@ -77,72 +76,6 @@ A full production audit was completed for **v18**. See:
 For each meaningful production change, add a new sequential version section:
 
 ```text
-## v24 — Leadership Page Closing Section Refresh
-
-Updated the lower Leadership page now that board profiles and photos are finalized.
-
-Key changes:
-
-- Replaced the outdated note about future biographies and photos with a current summary of the leadership team's combined experience
-- Updated the governance section to emphasize transparency, financial stewardship, program standards, and accountability
-- Updated the final callout to invite visitors to connect with leadership about programs, partnerships, and involvement
-- Preserved all v23 photo corrections and Scott F. Lowry's restored Why I Serve section
-- Updated shared CSS references to `?v=24`
-
-## v23 — Leadership Photo Correction + Scott Why I Serve Restore
-
-Corrected the Leadership page issues reported after v22.
-
-Key changes:
-
-- Rebuilt Vanessa Hacker's card image so her full face, hair, shoulders, and upper torso are visible instead of the extreme close crop
-- Rebuilt Nicole Ingraham's card image to keep Nicole and both dogs visible
-- Used full-width blurred image backgrounds so portrait source photos can fit the established landscape leadership cards without cutting off people or dogs
-- Restored Scott F. Lowry's **Why I Serve** section beneath his updated biography
-- Added image cache-busting to force browsers to fetch the corrected Vanessa and Nicole photos
-- Updated shared CSS references to `?v=23`
-
-## v22 — Scott F. Lowry Biography Update
-
-Updated Scott F. Lowry’s Leadership page biography.
-
-Key changes:
-
-- Confirmed Scott’s public role as **Program Director**
-- Updated his biography to reflect nearly 18 years of U.S. Army service, including multiple deployments
-- Expanded his post-military experience in information technology, operations, nonprofit leadership, community service, veteran advocacy, and program development
-- Clarified his role in developing and coordinating Forged to Serve programs, partnerships, resources, and opportunities for veterans and families of fallen service members
-- Preserved the established Leadership page layout
-- Updated shared CSS references to `?v=22`
-
-## v21 — Leadership Photo Refinements + Board Group Photo
-
-Refined the Leadership page photography based on the finalized board images.
-
-Key changes:
-
-- Reframed Vanessa Hacker’s leadership photo to show her full face and upper body instead of an overly tight crop
-- Reframed Nicole Ingraham’s leadership photo to include Nicole and both dogs
-- Added the supplied Board of Directors group photo as a full-width leadership image above the individual profiles
-- Preserved the established leadership-card image dimensions and layout
-- Added responsive styling for the Board of Directors group photo
-- Updated shared CSS references to `?v=21`
-
-## v20 — Vanessa Hacker Leadership Profile
-
-Expanded the Leadership page with Vanessa Hacker’s finalized public biography and photo.
-
-Key changes:
-
-- Added Vanessa Hacker’s approved leadership photo
-- Confirmed her public name as **Vanessa Hacker**
-- Preserved her role as **Vice President / Treasurer**
-- Added her background in business, real estate, property management, accounting, and community relationships
-- Added her role in helping build the foundation alongside Richard and her focus on responsible stewardship and community relationships
-- Added her personal service statement
-- Preserved the established uniform Leadership card layout and photo dimensions
-- Updated shared site asset references to `?v=20`
-
 ## v19 — Short Change Name
 
 Brief summary of the work.
@@ -167,18 +100,17 @@ When creating a production package:
 
 ---
 
-## v19 — Nicole Ingraham Leadership Profile
+## v19 — Leadership Update
 
-Expanded the Leadership page with Nicole Ingraham’s finalized public biography and photo.
+Updated the public leadership page to reflect the current Board of Directors.
 
 Key changes:
 
-- Added Nicole Ingraham’s approved leadership photo
-- Updated Nicole’s public roles to **Secretary, Paws4Patriots Director & Outreach Coordinator**
-- Added her veteran-family connection, service-dog background, Golden Heart Service Dogs experience, prior veteran-nonprofit experience, outreach responsibilities, and personal service statement
-- Updated Scott F. Lowry’s public title to **Program Director**
-- Preserved the established uniform Leadership card layout and photo dimensions
-- Updated shared site asset references to `?v=19`
+- Removed Nicole Ingraham from the public Leadership page
+- Updated Scott F. Lowry to **Secretary / Board Member**
+- Added governance responsibilities to Scott’s public leadership biography
+- Rebalanced the three-member Leadership layout so the third card remains the same width and is centered on desktop
+- Updated the current leadership roster in this README
 
 ## v18 — Full Production Audit
 
