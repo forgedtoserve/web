@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v21**
+- Current production version: **v23**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -14,6 +14,7 @@ Official website repository for **Forged to Serve Foundation**.
 - **Formspree** handles general website contact-form submissions
 - **Zeffy** handles online donations
 - Facebook content is embedded on the homepage
+- Homepage includes a temporary Garth Brooks raffle popup through October 21, 2026
 - Foundation email: `info@forgedtoserve.org`
 - Public Facebook page: `https://facebook.com/forgedtoserve`
 
@@ -123,6 +124,37 @@ When creating a production package:
 - Produce both a full deployment ZIP and a changed-files-only ZIP when practical.
 
 ---
+
+## v23 — Raffle Banner, Exact Logos & QR Code
+
+Enhanced the temporary Garth Brooks raffle popup with the supplied campaign media.
+
+Key changes:
+
+- Added the supplied Garth Brooks raffle banner image
+- Added the supplied QR code linking directly to the Zeffy raffle
+- Added the exact supplied Forged to Serve Foundation and The Dallas Lowry Foundation logos
+- Corrected the popup button to the same Zeffy URL encoded in the supplied QR code
+- Reworked the popup into a two-column desktop layout with a stacked mobile layout
+- Preserved the October 21, 2026 automatic popup expiration
+- Updated popup dismissal storage to v23 so the refreshed campaign creative can display
+- Optimized the large raffle banner as WebP for faster page loading
+
+## v22 — Garth Brooks Raffle Popup
+
+Added a temporary homepage popup promoting the Garth Brooks fundraising raffle.
+
+Key changes:
+
+- Added an accessible, responsive homepage raffle modal
+- Promotes a pair of Garth Brooks tickets for the October 23 BOK Center concert
+- Shows raffle pricing of **$10 for 1 entry** and **$50 for 6 entries**
+- States that **100% of raffle proceeds benefit Forged to Serve Foundation**
+- Identifies The Dallas Lowry Foundation as the raffle host
+- Shows the October 21 winner-drawing date
+- Suppresses the popup for 24 hours after dismissal and 72 hours after clicking the raffle button
+- Automatically stops displaying after the raffle closes on October 21, 2026 at 6:00 PM Central
+- Added responsive and reduced-motion styling for the popup
 
 ## v19 — Leadership Update
 
