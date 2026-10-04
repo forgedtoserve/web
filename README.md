@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v23**
+- Current production version: **v24**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -124,6 +124,19 @@ When creating a production package:
 - Produce both a full deployment ZIP and a changed-files-only ZIP when practical.
 
 ---
+
+## v24 — Full Raffle Banner Display
+
+Adjusted the Garth Brooks raffle popup so the supplied square banner is always shown in full.
+
+Key changes:
+
+- Removed the desktop `object-fit: cover` behavior that was cropping the raffle artwork
+- Changed the banner to `object-fit: contain`
+- Preserved the banner's square aspect ratio
+- Centered the full artwork inside the dark visual panel
+- Applied the same no-crop behavior on mobile
+- Updated the homepage stylesheet cache version to v24
 
 ## v23 — Raffle Banner, Exact Logos & QR Code
 
