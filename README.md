@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v24**
+- Current production version: **v25**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -124,6 +124,20 @@ When creating a production package:
 - Produce both a full deployment ZIP and a changed-files-only ZIP when practical.
 
 ---
+
+## v25 — Desktop Popup Reliability Fix
+
+Made the raffle popup self-contained so it cannot fall into normal page flow if a cached or partially deployed stylesheet is served.
+
+Key changes:
+
+- Moved all raffle-modal positioning and layout CSS directly into `index.html`
+- Uses a very high fixed overlay z-index and scoped `#garth-raffle-modal` rules
+- Preserves the full square raffle artwork with no cropping
+- Keeps the desktop two-column layout and mobile stacked layout
+- Removed duplicate raffle-modal CSS from the shared stylesheet to prevent conflicts
+- Added `!important` only to the temporary popup rules to isolate them from existing site styles
+- Updated homepage stylesheet cache reference to v25
 
 ## v24 — Full Raffle Banner Display
 
