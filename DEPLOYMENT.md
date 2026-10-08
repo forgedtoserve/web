@@ -128,3 +128,16 @@ This release adds direct links for the four organizing partners on the veteran-b
 - **Broken Warrior Ranch** opens `https://www.brokenwarriorranch.net/`
 - external partner links open in a new tab with secure `noopener noreferrer` attributes
 - Cloudflare Pages build output remains `public`
+
+
+## v33 deployment checks
+
+This release establishes the official event name **United for Warriors Poker Run and Concert** without changing the established event routes. After Cloudflare Pages deploys v33, verify:
+
+- the homepage event spotlight displays **United for Warriors Poker Run and Concert**
+- `https://forgedtoserve.org/veteranbenefit/` uses **United for Warriors Poker Run and Concert** in the page heading and metadata
+- `https://forgedtoserve.org/veteranbenefit/contact/` identifies the event by the new name
+- Formspree submissions use subjects beginning with `United for Warriors Poker Run and Concert`
+- `/veteranbenefit/` and `/veteranbenefit/contact/` remain the public routes
+- no flat `public/veteranbenefit.html` exists
+- Cloudflare Pages build output remains `public`

@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v32**
+- Current site package version: **v33**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -127,6 +127,11 @@ When creating a production package:
 ---
 
 
+
+
+## v33 — United for Warriors Event Naming
+
+Established the official public event name as **United for Warriors Poker Run and Concert**. Updated the homepage event spotlight, event-page title and social metadata, event-contact page, Formspree subjects/event identifiers, and event footer/navigation labels while preserving the existing `/veteranbenefit/` and `/veteranbenefit/contact/` routes.
 
 ## v32 — Event Partner Links
 

@@ -213,3 +213,8 @@ Static validation checked **17 HTML pages**, **499 links**, **42 image instances
 ## v32 Incremental Review
 
 The v32 release adds official public links for all four organizing partners on the June 5 veteran-benefit page. Forged to Serve Foundation links to its own production domain; VFW Post 9126 and Broken Warrior Ranch link to their supplied public websites; and the previously established Warhound Veteran Motorcycle Association Facebook link is retained. External links use secure new-tab attributes. No routes or deployable assets are added or deleted by this release. Static validation checked **17 HTML pages**, **702 local links/assets references**, **42 image instances**, and all form controls with **0 errors**.
+
+
+## v33 Incremental Validation — United for Warriors Naming
+
+Validated the production content update establishing **United for Warriors Poker Run and Concert** as the official event name. Confirmed the homepage event spotlight, `/veteranbenefit/` hero and metadata, `/veteranbenefit/contact/` metadata and Formspree identifiers, and event footer labels are consistent. Existing event routes remain unchanged and no obsolete flat `public/veteranbenefit.html` file is present.

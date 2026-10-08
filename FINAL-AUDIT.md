@@ -241,3 +241,8 @@ The v32 release adds direct links for all organizing partners on `/veteranbenefi
 - Broken Warrior Ranch links to `https://www.brokenwarriorranch.net/`
 - external partner links include `target="_blank"` and `rel="noopener noreferrer"`
 - no route or file deletion is required for this release
+
+
+## v33 Incremental Validation — United for Warriors Naming
+
+Validated the production content update establishing **United for Warriors Poker Run and Concert** as the official event name. Confirmed the homepage event spotlight, `/veteranbenefit/` hero and metadata, `/veteranbenefit/contact/` metadata and Formspree identifiers, and event footer labels are consistent. Existing event routes remain unchanged and no obsolete flat `public/veteranbenefit.html` file is present.
