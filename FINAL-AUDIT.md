@@ -1,8 +1,33 @@
 # Forged to Serve Foundation Website — Final Audit
 
-**Version:** v18  
+**Baseline full audit:** v18  
+**Current release validated:** v26  
 **Status:** **Conditional production pass**  
 **Condition:** Complete the official mailing-address / Termly policy refresh described below.
+
+
+## v26 Incremental Release Validation — October 8, 2026
+
+The June 5, 2027 veteran-benefit release was validated against the existing v18 production-audit baseline.
+
+Release-specific validation confirmed:
+
+- **16 HTML pages checked** after adding `veteranbenefit.html`
+- **0 broken internal links**
+- **0 missing local asset references**
+- **0 pages missing titles or meta descriptions**
+- **0 indexed pages missing canonical URLs, Open Graph metadata, or Twitter/X metadata**
+- **0 duplicate HTML IDs**
+- **0 pages missing skip-to-content support**
+- **0 images missing alt text**
+- **0 local images missing intrinsic width/height**
+- **0 `target="_blank"` links missing `noopener noreferrer`**
+- `sitemap.xml` includes `https://forgedtoserve.org/veteranbenefit`
+- Homepage links to the new event page
+- Event page uses the existing local logo and shared site assets; no new third-party event embed or script was added
+- Cloudflare Pages deployable output remains entirely under `/public`
+
+The v18 manual Termly/legal items and production smoke-test recommendations remain in effect.
 
 ## Automated Static Validation
 

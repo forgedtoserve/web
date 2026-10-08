@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v25**
+- Current production version: **v26**
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -124,6 +124,23 @@ When creating a production package:
 - Produce both a full deployment ZIP and a changed-files-only ZIP when practical.
 
 ---
+
+## v26 — June 5 Veteran Benefit Event Page
+
+Added the first public event page for the June 5, 2027 veteran benefit at BlackGold Park in Glenpool.
+
+Key changes:
+
+- Added the new production route `https://forgedtoserve.org/veteranbenefit`
+- Added the current working event schedule, organizing partners, poker run, Kids Zone, Veterans Row, food/vendor information, fundraising activities, and live-music lineup
+- Listed Three Broke Teachers and the Guitars for Vets band as planned opening acts, with the headliner marked to be announced
+- Added event-specific sponsorship opportunity categories without publishing unapproved package pricing
+- Added preliminary vendor/booth information, including the working $50 craft/artisan booth plan and no-fee Veterans Row resource booths
+- Added a homepage Save the Date spotlight linking to the event page
+- Added the event route to `sitemap.xml`
+- Added responsive event-page styling to the shared stylesheet
+- Updated homepage stylesheet cache reference to v26
+- Preserved Cloudflare Pages build output as `public`
 
 ## v25 — Desktop Popup Reliability Fix
 

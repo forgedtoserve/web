@@ -30,3 +30,16 @@ After Cloudflare finishes deploying v18, verify:
 - Cookie Preferences opens the Termly preference center
 
 Then run a fresh Termly cookie scan.
+
+## v26 post-deployment checks
+
+After Cloudflare finishes deploying v26, verify:
+
+- `https://forgedtoserve.org/` shows the June 5 Save the Date spotlight
+- `https://forgedtoserve.org/veteranbenefit` loads without requiring `.html` in the public URL
+- the event page is responsive on desktop and mobile
+- event-page links to sponsorship contact, vendor sections, and foundation pages work
+- `https://forgedtoserve.org/sitemap.xml` includes `/veteranbenefit`
+- the existing Garth Brooks raffle popup still behaves as expected through its scheduled October 21, 2026 expiration
+- Cloudflare Pages build output remains `public`
+
