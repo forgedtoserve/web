@@ -31,15 +31,20 @@ After Cloudflare finishes deploying v18, verify:
 
 Then run a fresh Termly cookie scan.
 
-## v26 post-deployment checks
+## v26 deployment checks
 
-After Cloudflare finishes deploying v26, verify:
+This release adds the veteran benefit as a directory route, not a flat HTML page. Confirm the repository contains:
 
-- `https://forgedtoserve.org/` shows the June 5 Save the Date spotlight
-- `https://forgedtoserve.org/veteranbenefit` loads without requiring `.html` in the public URL
-- the event page is responsive on desktop and mobile
-- event-page links to sponsorship contact, vendor sections, and foundation pages work
-- `https://forgedtoserve.org/sitemap.xml` includes `/veteranbenefit`
-- the existing Garth Brooks raffle popup still behaves as expected through its scheduled October 21, 2026 expiration
+- `public/veteranbenefit/index.html`
+- **No** `public/veteranbenefit.html`
+
+After the v26 commit reaches `main` and Cloudflare Pages finishes deploying, verify:
+
+- `https://forgedtoserve.org/veteranbenefit` loads the event page
+- the homepage Save the Date button opens `/veteranbenefit`
+- event-page navigation, logo, CSS, JavaScript, and footer links load from the nested route
+- `https://forgedtoserve.org/sitemap.xml` includes `https://forgedtoserve.org/veteranbenefit`
 - Cloudflare Pages build output remains `public`
+
+The Cloudflare project is connected to GitHub and automatic deployments only occur after the updated files are committed/pushed to the connected production branch.
 

@@ -174,3 +174,8 @@ These items depend on information or external services and were intentionally no
 ## Production Recommendation
 
 Deploy v18 after reviewing the manual Termly/address item. Technically, the static site is in strong production condition after remediation. The only material audit item that should not be guessed or auto-filled is the Foundation’s official postal contact information in the Termly policies.
+
+## v26 Incremental Review
+
+The June 5, 2027 veteran benefit page was added as `public/veteranbenefit/index.html` so the public-facing route is `/veteranbenefit`. No flat `public/veteranbenefit.html` file is included. Shared CSS, homepage linking, sitemap coverage, nested-route asset references, and release documentation were reviewed for this package.
+

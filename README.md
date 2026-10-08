@@ -4,7 +4,8 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current production version: **v26**
+- Current site package version: **v26**
+- Live production remains **v25** until this package is committed to `main` and Cloudflare Pages deploys it
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -125,21 +126,21 @@ When creating a production package:
 
 ---
 
+
 ## v26 — June 5 Veteran Benefit Event Page
 
-Added the first public event page for the June 5, 2027 veteran benefit at BlackGold Park in Glenpool.
+Added the initial public event page for the June 5, 2027 veteran benefit at BlackGold Park in Glenpool.
 
 Key changes:
 
-- Added the new production route `https://forgedtoserve.org/veteranbenefit`
-- Added the current working event schedule, organizing partners, poker run, Kids Zone, Veterans Row, food/vendor information, fundraising activities, and live-music lineup
-- Listed Three Broke Teachers and the Guitars for Vets band as planned opening acts, with the headliner marked to be announced
-- Added event-specific sponsorship opportunity categories without publishing unapproved package pricing
-- Added preliminary vendor/booth information, including the working $50 craft/artisan booth plan and no-fee Veterans Row resource booths
-- Added a homepage Save the Date spotlight linking to the event page
-- Added the event route to `sitemap.xml`
-- Added responsive event-page styling to the shared stylesheet
-- Updated homepage stylesheet cache reference to v26
+- Added the event at the agreed clean-route structure: `public/veteranbenefit/index.html`
+- Public URL/canonical: `https://forgedtoserve.org/veteranbenefit`
+- Added the working event schedule, organizing partners, poker run, Veterans Row, Kids Zone, food/community vendors, raffle/auction, adult beverage area, and concert lineup
+- Added Three Broke Teachers and the Guitars for Vets band, with the headliner marked to be announced
+- Added preliminary sponsorship and vendor/booth information without locking in unapproved commercial pricing
+- Added a homepage Save the Date spotlight linking to `/veteranbenefit`
+- Added the clean event URL to `sitemap.xml`
+- Updated shared event-page styling and homepage stylesheet cache reference to v26
 - Preserved Cloudflare Pages build output as `public`
 
 ## v25 — Desktop Popup Reliability Fix
