@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v37**
+- Current site package version: **v39**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -82,6 +82,34 @@ For each meaningful production change, add a new sequential version section:
 
 
 
+
+## v39 — United for Warriors URL Migration
+
+Moved the public event experience from the generic veteran-benefit route to the permanent **United for Warriors** event brand URL.
+
+Key changes:
+
+- New main event route: `public/unitedforwarriors/index.html` → `https://forgedtoserve.org/unitedforwarriors/`
+- New event contact route: `public/unitedforwarriors/contact/index.html` → `https://forgedtoserve.org/unitedforwarriors/contact/`
+- Updated homepage event links, event-page internal links, canonical URLs, Open Graph URLs, and sitemap entries
+- Added Cloudflare Pages 301 redirects from `/veteranbenefit` and `/veteranbenefit/contact` to the new branded routes
+- Removed the old `public/veteranbenefit/` directory from the full production package
+
+**Deletion required when applying the changed-files-only package:** remove `public/veteranbenefit/` from the repository after the new route files are committed.
+
+## v38 — United for Warriors Sponsorship Packages
+
+Published event sponsorship levels and named sponsorship opportunities for **United for Warriors Poker Run and Concert**.
+
+Key changes:
+
+- Added six public sponsorship packages from **$250 Community Supporter** through **$10,000 Presenting Sponsor**
+- Added named opportunities for the **Stage, Kids Zone, Veterans Row, Poker Run, Beverage Area, and Volunteer & Hospitality**
+- Added clear package benefits, in-kind/custom sponsorship guidance, and production-deadline language
+- Updated the event sponsorship inquiry form so sponsors can select the new package or named opportunity
+- Refreshed shared CSS/JavaScript cache-busting references to **v38** across every HTML page
+
+No files are deleted by this release.
 
 ## v37 — Mobile Header & Facebook Refinement
 

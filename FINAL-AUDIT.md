@@ -280,3 +280,12 @@ Validated the event-page layout correction introduced in v36. Confirmed the lega
 ## v37 Incremental Validation — Mobile Header & Facebook
 
 Validated the v37 responsive refinements. The shared header now uses an accessible mobile menu toggle while preserving a no-JavaScript fallback, and the homepage Facebook embed is constrained to a smaller mobile footprint with no horizontal overflow. Desktop header geometry, existing routes, event content, and Formspree workflows remain unchanged. Shared CSS and JavaScript cache-busting references are updated to v37 across the public HTML set. No file deletion is required for this release.
+
+## v38 Incremental Review — Event Sponsorship Packages
+
+Validated the public sponsorship update for **United for Warriors Poker Run and Concert**. The event page now publishes six tiered sponsorship packages ($250, $500, $1,000, $2,500, $5,000, and $10,000) plus six named event opportunities. The sponsorship inquiry form mirrors the published choices, while retaining custom/in-kind and undecided options. Sponsor benefits avoid ticket or attendance promises and include a production-deadline qualifier for printed/promotional placement. Shared asset query versions are updated to v38 across the public HTML set. No routes or files are removed.
+
+
+## v39 — United for Warriors URL Migration Validation
+
+Validated the event route migration from `/veteranbenefit/` to `/unitedforwarriors/`. The full production package now uses `public/unitedforwarriors/index.html` and `public/unitedforwarriors/contact/index.html`, with homepage links, event internal links, canonical metadata, Open Graph URLs, and sitemap entries updated to the branded route. Cloudflare Pages `_redirects` rules preserve the former event URLs with permanent 301 redirects. The obsolete `public/veteranbenefit/` directory is absent from the full package.

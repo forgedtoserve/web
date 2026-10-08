@@ -204,3 +204,34 @@ This release refines the global mobile header and homepage Facebook embed. After
 - Cloudflare Pages build output remains `public`
 
 No file deletion is required for v37.
+
+## v38 deployment checks
+
+This release publishes sponsorship pricing and benefits for United for Warriors Poker Run and Concert. After deployment, verify:
+
+- `/veteranbenefit/` displays six sponsorship-package cards from **$250 Community Supporter** through **$10,000 Presenting Sponsor**
+- the named-opportunity section lists Stage, Kids Zone, Veterans Row, Poker Run, Beverage Area, and Volunteer & Hospitality sponsorships
+- the **Become a Sponsor** button opens `/veteranbenefit/contact/#sponsorship`
+- the sponsorship form dropdown includes all published package and named-opportunity choices
+- package grids collapse cleanly on tablet and mobile widths without horizontal overflow
+- all pages request `site.css?v=38` and `site.js?v=38`
+- Cloudflare Pages build output remains `public`
+
+No file deletion is required for v38.
+
+
+## v39 deployment checks
+
+This release moves United for Warriors to its permanent branded URL. After deployment, verify:
+
+- `https://forgedtoserve.org/unitedforwarriors/` loads the main event page
+- `https://forgedtoserve.org/unitedforwarriors/contact/` loads sponsorship, vendor, and general inquiry forms
+- Homepage event links use `/unitedforwarriors/` and `/unitedforwarriors/contact/`
+- Event canonical and Open Graph URLs use the new branded route
+- `sitemap.xml` contains only the new United for Warriors event URLs
+- `/veteranbenefit` and `/veteranbenefit/` return a permanent redirect to `/unitedforwarriors/`
+- `/veteranbenefit/contact` and `/veteranbenefit/contact/` return a permanent redirect to `/unitedforwarriors/contact/`
+- `public/veteranbenefit/` is no longer present in the repository
+- Cloudflare Pages build output remains `public`
+
+**Changed-files deployment note:** GitHub browser uploads do not delete obsolete files. If using the changed-files-only ZIP, manually delete the old `public/veteranbenefit/` directory and commit that deletion.
