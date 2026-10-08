@@ -191,3 +191,9 @@ Event inquiry workflows were moved from the main veteran-benefit page to `public
 
 
 Static v28 validation covered 17 HTML pages with no broken internal links/local assets, duplicate IDs, intrinsic-image-dimension defects, label association defects, or H1-count defects. No files are deleted by this release.
+## v29 Incremental Review
+
+The homepage was visually redesigned without adding or removing public routes. The refresh is scoped through homepage-specific classes and retains the approved mission, program, event, partnership, donation, Facebook, and raffle content. The homepage stylesheet reference is cache-busted to v29. Interior-page structure is intentionally unchanged.
+
+Static v29 validation covers the full `/public` tree and confirms the homepage continues to use a single H1, intrinsic dimensions on local images, valid internal route targets, and existing accessible navigation/skip-link infrastructure. No files are deleted by this release. Validation checked **17 HTML pages**, **483 local links/assets references**, **42 local image instances**, and **4 forms** with **0 errors**.
+

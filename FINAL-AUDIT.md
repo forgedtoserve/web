@@ -187,3 +187,18 @@ Post-change static validation checked **17 HTML pages** and found:
 - no flat `public/veteranbenefit.html` file
 - 0 event inquiry forms remaining on the main `/veteranbenefit/` page
 - 3 Formspree inquiry forms on `/veteranbenefit/contact/`
+## v29 Incremental Package Validation — Homepage Visual Refresh
+
+The v29 release refreshes `public/index.html` and the shared stylesheet while preserving the existing route map. Package validation confirms:
+
+- homepage primary navigation and call-to-action targets resolve to existing local routes
+- the veteran-benefit spotlight targets `/veteranbenefit/` and `/veteranbenefit/contact/`
+- local homepage images retain intrinsic `width` and `height` attributes
+- the homepage maintains one H1 and the existing skip-to-content target
+- new visual rules are scoped to homepage-specific classes to minimize regression risk on interior pages
+- the homepage uses `assets/site.css?v=29` to avoid stale custom-domain stylesheet caching
+- `/public` remains the complete Cloudflare Pages deployment output
+- no route or file deletion is required for this release
+
+Static v29 validation checked **17 HTML pages**, **483 local links/assets references**, **42 local image instances**, and **4 forms** with **0 errors**. Live rendering, the Facebook embed, Termly behavior, and the active raffle popup remain post-deployment smoke tests.
+

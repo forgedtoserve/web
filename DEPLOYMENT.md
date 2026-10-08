@@ -76,4 +76,17 @@ This release moves event forms to the dedicated `/veteranbenefit/contact/` route
 - `sitemap.xml` includes `https://forgedtoserve.org/veteranbenefit/contact`
 - no flat `public/veteranbenefit.html` exists
 - Cloudflare Pages build output remains `public`
+## v29 deployment checks
+
+This release is a visual-only homepage redesign; no routes are added or removed. After Cloudflare Pages deploys v29, verify:
+
+- `https://forgedtoserve.org/` loads the redesigned homepage hero and mission strip
+- the homepage shows the three redesigned program cards and their links open the correct program pages
+- the June 5, 2027 event spotlight opens `/veteranbenefit/` and its involvement link opens `/veteranbenefit/contact/`
+- Donate, About, Partners, Facebook, and Contact calls to action remain functional
+- the temporary Garth Brooks raffle popup still opens and dismisses normally while its campaign is active
+- homepage styling loads from `assets/site.css?v=29`
+- existing interior pages retain their established layout and navigation
+- no new deployable files exist outside `/public`
+- Cloudflare Pages build output remains `public`
 

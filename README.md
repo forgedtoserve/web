@@ -4,8 +4,8 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v28**
-- Live production remains **v27** until this package is committed to `main` and Cloudflare Pages deploys it
+- Current site package version: **v29**
+- Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -126,6 +126,23 @@ When creating a production package:
 
 ---
 
+
+## v29 — Homepage Visual Refresh
+
+Reworked the public homepage into a more distinctive Forged to Serve presentation while preserving the established navy / gold / cream brand system and approved mission language.
+
+Key changes:
+
+- Rebuilt the homepage hero with a layered navy treatment, stronger typography, dimensional logo presentation, and branded mission tags
+- Added a three-part mission strip for Veterans, Families, and Opportunity
+- Replaced the generic service cards with a more editorial three-program layout and numbered visual hierarchy
+- Added a stronger Why We Serve / pledge section using the existing public mission language
+- Redesigned the June 5, 2027 veteran-benefit spotlight with a dedicated date card and clearer event calls to action
+- Reworked the community-partner and closing calls to action for stronger visual contrast
+- Refined the Facebook section to fit the updated homepage visual system
+- Scoped the new CSS to homepage-specific classes so interior-page layouts remain stable
+- Cache-busted the homepage stylesheet reference to v29
+- Cloudflare Pages build output remains `public`
 
 ## v28 — Veteran Benefit Contact & Applications Page
 
