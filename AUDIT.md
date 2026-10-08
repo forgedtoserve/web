@@ -222,3 +222,17 @@ Validated the production content update establishing **United for Warriors Poker
 ## v34 Incremental Review
 
 The recurring homepage commitment-card overlap was traced to long-lived immutable caching of shared files under `/assets/*`: an older stylesheet could remain in a browser even after the corrected CSS was deployed. v34 hardens the hero layout with explicit normal-flow rules and refreshes the cache-busting query for both shared CSS and JavaScript across every HTML page. This prevents previously cached v29/v30-era rules from continuing to position the commitment card over the logo. No public routes or content are removed.
+
+## v35 Incremental Validation — United for Warriors Visual Branding
+
+Validated the event-page image and link update introduced in v35.
+
+- Added six supplied event image assets under `/public/assets`
+- Confirmed organizer and performer images include explicit intrinsic width and height values
+- Confirmed CSS uses `object-fit: contain` and does not force image cropping
+- Confirmed partner and performer links use the intended destinations and secure new-tab attributes for external sites
+- Confirmed `/veteranbenefit/` and `/veteranbenefit/contact/` routes are unchanged
+- Confirmed all shared CSS/JavaScript cache-busting references are updated to v35
+- Confirmed no flat `public/veteranbenefit.html` exists
+- No file deletion is required for this release
+

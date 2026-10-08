@@ -256,3 +256,17 @@ The v34 release addresses the recurring homepage hero overlap at both the layout
 - nested veteran-benefit routes retain root-relative shared-asset references
 - all v33 public content and routes remain intact
 - no file deletion is required for this release
+
+## v35 Incremental Validation — United for Warriors Visual Branding
+
+Validated the event-page image and link update introduced in v35.
+
+- Added six supplied event image assets under `/public/assets`
+- Confirmed organizer and performer images include explicit intrinsic width and height values
+- Confirmed CSS uses `object-fit: contain` and does not force image cropping
+- Confirmed partner and performer links use the intended destinations and secure new-tab attributes for external sites
+- Confirmed `/veteranbenefit/` and `/veteranbenefit/contact/` routes are unchanged
+- Confirmed all shared CSS/JavaScript cache-busting references are updated to v35
+- Confirmed no flat `public/veteranbenefit.html` exists
+- No file deletion is required for this release
+
