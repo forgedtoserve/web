@@ -184,3 +184,10 @@ The June 5, 2027 veteran benefit page was added as `public/veteranbenefit/index.
 ## v27 Incremental Review
 
 The veteran-benefit page now uses the Foundation's existing Formspree endpoint for sponsorship and vendor/booth submissions. Both forms have unique field IDs, required labels, distinct hidden subject/inquiry metadata, sensitive-information warnings, accessible status messaging, and a successful-submission redirect to `/thank-you`. The clean directory route remains `public/veteranbenefit/index.html`; no flat `public/veteranbenefit.html` file is included. Live Formspree delivery remains a post-deployment smoke test because external service delivery cannot be proven by static validation alone.
+
+## v28 Incremental Review
+
+Event inquiry workflows were moved from the main veteran-benefit page to `public/veteranbenefit/contact/index.html`. The main `/veteranbenefit` page now links to anchored sections on `/veteranbenefit/contact/` for sponsorship, vendor/booth participation, and general event questions. All three event forms use the existing Formspree endpoint with distinct subjects and inquiry metadata. Static review confirms unique form-control IDs, associated labels, sensitive-information guidance, root-relative nested-route assets, and sitemap coverage for the new contact route.
+
+
+Static v28 validation covered 17 HTML pages with no broken internal links/local assets, duplicate IDs, intrinsic-image-dimension defects, label association defects, or H1-count defects. No files are deleted by this release.

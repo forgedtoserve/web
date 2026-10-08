@@ -1187,3 +1187,22 @@ iframe{max-width:100%}
 .event-checkbox input{width:18px;height:18px;margin-top:.2rem;flex:0 0 auto}
 .event-form-panel .form-note a{text-decoration:underline}
 @media(max-width:700px){.event-form-panel{padding:22px 18px}.event-form-panel h3{font-size:1.4rem}}
+
+
+/* v28 veteran benefit contact and applications page */
+#sponsorship,#vendor,#general{scroll-margin-top:105px}
+.event-contact-hero{padding:66px 0}
+.event-contact-hero-grid{max-width:880px}
+.event-contact-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.event-contact-choice{display:flex;flex-direction:column;gap:6px;text-decoration:none;background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px;color:var(--navy);box-shadow:0 9px 24px rgba(11,31,51,.045);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.event-contact-choice:hover,.event-contact-choice:focus-visible{transform:translateY(-2px);box-shadow:0 13px 30px rgba(11,31,51,.09);border-color:var(--gold)}
+.event-contact-choice span{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:var(--gold-text)}
+.event-contact-choice strong{font-family:var(--font-display);font-size:1.32rem}
+.event-contact-choice small{color:var(--muted);font-size:.95rem}
+.event-contact-section .lede{max-width:860px}
+.event-contact-form-panel{max-width:980px}
+.event-general-form{max-width:860px}
+.event-contact-footer-callout{display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center}
+.event-contact-footer-callout h2{color:#fff;margin-bottom:.25em}
+.event-contact-footer-callout p{color:#dce7ef;max-width:780px;margin-bottom:0}
+@media(max-width:900px){.event-contact-choices{grid-template-columns:1fr}.event-contact-footer-callout{grid-template-columns:1fr}.event-contact-footer-callout .btn{justify-self:start}}

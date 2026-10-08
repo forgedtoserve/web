@@ -157,3 +157,33 @@ The v27 release adds Formspree-backed sponsorship and vendor/booth forms to `pub
 - `/public` remains the Cloudflare Pages deployment output
 
 External Formspree delivery must still be smoke-tested after deployment.
+
+## v28 Incremental Package Validation — Event Contact Page
+
+The v28 release moves event forms to the dedicated `public/veteranbenefit/contact/index.html` route. Static package validation confirms:
+
+- `/veteranbenefit` no longer contains the large sponsorship or vendor forms
+- sponsorship and vendor calls to action link to `/veteranbenefit/contact/#sponsorship` and `/veteranbenefit/contact/#vendor`
+- the event closing action links to `/veteranbenefit/contact/#general`
+- the dedicated event contact page contains Sponsorship, Vendor / Booth, and General Event Question forms
+- all three forms use distinct Formspree `_subject`, `event`, and `inquiry_type` values
+- form labels and IDs are unique and required fields remain browser-validated
+- successful asynchronous submissions continue to redirect to `/thank-you`
+- `sitemap.xml` includes the event contact route
+- `/public` remains the Cloudflare Pages deployment output
+
+External Formspree delivery remains a post-deployment smoke test.
+
+
+### v28 static validation results
+
+Post-change static validation checked **17 HTML pages** and found:
+
+- 0 broken internal links or missing local assets
+- 0 duplicate HTML IDs
+- 0 local images missing intrinsic width/height
+- 0 form controls missing associated visible labels
+- 0 heading-count defects
+- no flat `public/veteranbenefit.html` file
+- 0 event inquiry forms remaining on the main `/veteranbenefit/` page
+- 3 Formspree inquiry forms on `/veteranbenefit/contact/`

@@ -61,5 +61,19 @@ This release adds Formspree-backed sponsorship and vendor forms to the existing 
 - the event page loads `/assets/site.css?v=27`
 - `public/veteranbenefit/index.html` remains the only veteran-benefit page structure; no flat `public/veteranbenefit.html` exists
 - Cloudflare Pages build output remains `public`
+## v28 deployment checks
 
+This release moves event forms to the dedicated `/veteranbenefit/contact/` route. After Cloudflare Pages deploys v28, verify:
+
+- `https://forgedtoserve.org/veteranbenefit/` loads without large inline forms
+- **Sponsorship Inquiry** opens `/veteranbenefit/contact/#sponsorship`
+- **Apply for a Booth** opens `/veteranbenefit/contact/#vendor`
+- **Event Contact & Applications** opens `/veteranbenefit/contact/#general`
+- `https://forgedtoserve.org/veteranbenefit/contact/` loads with all three event inquiry workflows
+- one sponsorship test, one vendor test, and one general-question test arrive through Formspree with their distinct subjects
+- successful submissions redirect to `/thank-you`
+- the event and event-contact pages load `/assets/site.css?v=28`
+- `sitemap.xml` includes `https://forgedtoserve.org/veteranbenefit/contact`
+- no flat `public/veteranbenefit.html` exists
+- Cloudflare Pages build output remains `public`
 

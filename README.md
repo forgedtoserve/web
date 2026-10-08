@@ -4,8 +4,8 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v27**
-- Live production remains **v25** until this package is committed to `main` and Cloudflare Pages deploys it
+- Current site package version: **v28**
+- Live production remains **v27** until this package is committed to `main` and Cloudflare Pages deploys it
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
 - Hosted with **Cloudflare Pages**
@@ -126,6 +126,22 @@ When creating a production package:
 
 ---
 
+
+## v28 — Veteran Benefit Contact & Applications Page
+
+Moved event inquiry forms off the main veteran benefit page and into a dedicated contact/application route.
+
+Key changes:
+
+- Added `public/veteranbenefit/contact/index.html` at `/veteranbenefit/contact/`
+- Moved the Sponsorship Inquiry and Vendor / Booth Application forms to the dedicated event contact page
+- Added a third Formspree-backed General Event Question form
+- Replaced large inline forms on the main event page with compact calls to action linking directly to the appropriate contact-page section
+- Added contact-page choice cards for Sponsorship, Vendors & Booths, and General Questions
+- Added the event contact page to `sitemap.xml`
+- Preserved distinct Formspree subjects and inquiry metadata for each workflow
+- Updated event/contact styling and cache-busted the event stylesheet reference to v28
+- Cloudflare Pages build output remains `public`
 
 ## v27 — Veteran Benefit Formspree Inquiries
 
