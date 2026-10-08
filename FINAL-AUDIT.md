@@ -270,3 +270,8 @@ Validated the event-page image and link update introduced in v35.
 - Confirmed no flat `public/veteranbenefit.html` exists
 - No file deletion is required for this release
 
+
+
+## v36 Incremental Validation — United for Warriors Image Layout
+
+Validated the event-page layout correction introduced in v36. Confirmed the legacy lineup selector no longer targets nested performer-card elements; organizer and performer images use constrained, aspect-ratio-preserving presentation; the event and contact routes remain unchanged; and every HTML page references the v36 shared-asset cache-busting query. No file deletion is required for this release.

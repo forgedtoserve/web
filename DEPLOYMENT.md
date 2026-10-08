@@ -172,3 +172,19 @@ This release adds supplied partner and performer imagery to the United for Warri
 - `/public` remains the Cloudflare Pages build output
 
 No file deletion is required for this release.
+
+
+## v36 deployment checks
+
+This release fixes the distorted/oversized organizer and performer artwork on the United for Warriors event page. After Cloudflare Pages deploys v36, verify:
+
+- `https://forgedtoserve.org/veteranbenefit/` loads normally
+- the four **Organizing Partners** display as a balanced 2×2 logo-card grid on desktop
+- no partner logo grows beyond its card or stretches vertically/horizontally
+- the **Broke Teachers** and **Guitars for Vets Band** artwork displays fully inside compact logo wells
+- performer artwork is not reduced to a narrow vertical strip
+- the **Headliner — TBA** card aligns with the two confirmed performer cards
+- all pages request `site.css?v=36` and `site.js?v=36`
+- `/public` remains the Cloudflare Pages build output
+
+No file deletion is required for this release.

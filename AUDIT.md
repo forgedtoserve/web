@@ -236,3 +236,8 @@ Validated the event-page image and link update introduced in v35.
 - Confirmed no flat `public/veteranbenefit.html` exists
 - No file deletion is required for this release
 
+
+
+## v36 Incremental Review — Event Image Layout
+
+The v36 release addresses the production rendering defects shown in the United for Warriors organizer and concert-lineup screenshots. The root CSS issue was a legacy `.event-lineup div` selector that applied grid/card styling to every nested `<div>` in the newer visual performer cards. That selector is now limited to the legacy direct-child lineup structure, and the visual lineup uses explicit scoped rules for logo wells and copy blocks. Organizer and performer images are constrained with `object-fit: contain`, auto dimensions, and maximum width/height values so supplied artwork retains its intrinsic aspect ratio without cropping or stretching. Shared asset query versions were bumped site-wide to v36 to avoid stale cached CSS. No routes, links, or event naming were changed.

@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v35**
+- Current site package version: **v36**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -80,6 +80,22 @@ For each meaningful production change, add a new sequential version section:
 
 ```text
 
+
+
+## v36 — United for Warriors Image Layout Fix
+
+Corrected the event-page organizer and performer image presentation shown in the production screenshots.
+
+Key changes:
+
+- Prevented the legacy `.event-lineup div` rule from styling nested elements inside the new performer cards
+- Constrained organizing-partner logos to consistent card-safe dimensions without cropping or stretching
+- Constrained Broke Teachers and Guitars for Vets artwork inside fixed logo wells while preserving natural aspect ratio
+- Hardened the visual lineup rules against older generic event styles
+- Refreshed shared CSS/JavaScript cache-busting references to **v36** across every HTML page
+- Preserved the existing event name, routes, partner links, and performer links
+
+No files are deleted by this release.
 
 ## v35 — United for Warriors Visual Branding
 
