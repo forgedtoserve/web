@@ -90,3 +90,28 @@ This release is a visual-only homepage redesign; no routes are added or removed.
 - no new deployable files exist outside `/public`
 - Cloudflare Pages build output remains `public`
 
+
+## v30 deployment checks
+
+This release corrects the homepage hero commitment-card overlap introduced in the v29 visual refresh. After Cloudflare Pages deploys v30, verify:
+
+- `https://forgedtoserve.org/` loads the refreshed homepage
+- the **Our Commitment** card sits fully below the shield logo and does not cover any portion of the logo
+- the layout remains stacked and non-overlapping on desktop, tablet, and mobile widths
+- the active raffle popup behavior is unchanged
+- the homepage loads `assets/site.css?v=30`
+- Cloudflare Pages build output remains `public`
+
+
+## v31 deployment checks
+
+This release corrects public leadership and event-partner information. After Cloudflare Pages deploys v31, verify:
+
+- the Leadership page lists **Scott F. Lowry — Secretary / Program Director**
+- Scott's biography says he serves as Secretary and Program Director
+- the leadership card kicker reads **Veteran & Program Leadership**
+- the homepage event spotlight refers to the **Warhound Veteran Motorcycle Association** poker run
+- `/veteranbenefit/` names **Warhound Veteran Motorcycle Association** in the event overview, partner list, and poker-run card
+- the Warhound partner link opens `https://www.facebook.com/WarhoundVMA` in a new tab
+- no `War Dogs Motorcycle Club` references remain in deployable public content
+- Cloudflare Pages build output remains `public`

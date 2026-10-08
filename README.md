@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v29**
+- Current site package version: **v31**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -23,7 +23,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 - **Richard Hacker** — Founder, President & Executive Director
 - **Vanessa Hacker** — Vice President / Treasurer
-- **Scott F. Lowry** — Secretary / Board Member
+- **Scott F. Lowry** — Secretary / Program Director
 
 Board biographies and photos are being added as finalized for public use.
 
@@ -126,6 +126,33 @@ When creating a production package:
 
 ---
 
+
+
+## v31 — Leadership & Event Partner Corrections
+
+Corrected current public leadership and veteran-benefit partner information.
+
+Key changes:
+
+- Updated Scott F. Lowry's current role to **Secretary / Program Director**
+- Updated Scott's leadership biography and image alternative text to match the current role
+- Updated the leadership kicker to **Veteran & Program Leadership**
+- Corrected the motorcycle organization name to **Warhound Veteran Motorcycle Association**
+- Added the official Warhound VMA Facebook link on the veteran-benefit partner list
+- Updated homepage and veteran-benefit poker-run references to the correct organization name
+
+## v30 — Homepage Hero Commitment Card Fix
+
+Corrected the homepage hero layout so the **Our Commitment** card no longer overlaps or covers the Forged to Serve logo at desktop or mobile widths.
+
+Key changes:
+
+- Moved the commitment card into normal document flow beneath the logo frame instead of absolutely positioning it over the artwork
+- Matched the card width to the logo frame for a cleaner, intentional stacked presentation
+- Removed mobile overlap offsets and unnecessary bottom padding
+- Cache-busted the homepage stylesheet reference to v30
+- No routes, forms, popup behavior, or content were changed
+- Cloudflare Pages build output remains `public`
 
 ## v29 — Homepage Visual Refresh
 

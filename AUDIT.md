@@ -197,3 +197,14 @@ The homepage was visually redesigned without adding or removing public routes. T
 
 Static v29 validation covers the full `/public` tree and confirms the homepage continues to use a single H1, intrinsic dimensions on local images, valid internal route targets, and existing accessible navigation/skip-link infrastructure. No files are deleted by this release. Validation checked **17 HTML pages**, **483 local links/assets references**, **42 local image instances**, and **4 forms** with **0 errors**.
 
+
+## v30 Incremental Review
+
+The homepage hero visual was corrected so the **Our Commitment** card is no longer absolutely positioned over the logo. The card now participates in normal layout flow beneath the logo frame, with matching maximum width and responsive sizing. The active raffle popup and all other homepage content remain unchanged.
+
+
+## v31 Incremental Review
+
+The v31 release corrects current leadership and veteran-benefit partner information without changing routes or site functionality. Scott F. Lowry is now presented as **Secretary / Program Director**, with matching biography and image alternative text. Public references to the motorcycle partner are corrected to **Warhound Veteran Motorcycle Association**, and the event partner list links to the organization's official Facebook page.
+
+Static validation checked **17 HTML pages**, **499 links**, **42 image instances**, and **4 forms** with **0 errors**. No stale `War Dogs Motorcycle Club` references remain in `/public`, no stale `Secretary / Board Member` references remain for Scott in `/public`, and the added external Facebook link includes `noopener noreferrer`. No files are deleted by this release.

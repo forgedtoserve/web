@@ -202,3 +202,29 @@ The v29 release refreshes `public/index.html` and the shared stylesheet while pr
 
 Static v29 validation checked **17 HTML pages**, **483 local links/assets references**, **42 local image instances**, and **4 forms** with **0 errors**. Live rendering, the Facebook embed, Termly behavior, and the active raffle popup remain post-deployment smoke tests.
 
+
+
+## v30 Incremental Package Validation — Homepage Hero Overlap Fix
+
+The v30 release corrects the v29 homepage hero overlap without changing site routes or functionality. Validation confirms:
+
+- the commitment card is no longer absolutely positioned over the logo
+- desktop and mobile rules keep the commitment card below the logo frame
+- the homepage loads `assets/site.css?v=30`
+- the active raffle popup markup and behavior are unchanged
+- `/public` remains the Cloudflare Pages deployment output
+
+
+## v31 Incremental Package Validation — Leadership & Event Partner Corrections
+
+The v31 release updates public-facing leadership and event-partner content. Validation confirms:
+
+- Scott F. Lowry is listed as **Secretary / Program Director** on the Leadership page
+- Scott's biography and image alternative text match the current role
+- the leadership kicker reads **Veteran & Program Leadership**
+- all public event references use **Warhound Veteran Motorcycle Association**
+- the event partner list links to `https://www.facebook.com/WarhoundVMA` with secure new-tab attributes
+- no `War Dogs Motorcycle Club` reference remains in deployable `/public` content
+- no stale `Secretary / Board Member` reference remains for Scott in deployable `/public` content
+- no route or file deletion is required for this release
+- static validation checked **17 HTML pages**, **499 links**, **42 image instances**, and **4 forms** with **0 errors**
