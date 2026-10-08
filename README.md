@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v39**
+- Current site package version: **v40**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -82,6 +82,14 @@ For each meaningful production change, add a new sequential version section:
 
 
 
+
+
+## v40 — Warhound Logo Transparency
+
+- Replaced the Warhound Veteran Motorcycle Association event-partner logo with a transparent-background PNG derived from the supplied artwork.
+- Preserved the logo at its intrinsic 800 × 800 dimensions.
+- Updated the United for Warriors partner-card reference to the PNG asset.
+- Removed the old black-background JPG from the full production package.
 
 ## v39 — United for Warriors URL Migration
 

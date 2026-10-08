@@ -235,3 +235,11 @@ This release moves United for Warriors to its permanent branded URL. After deplo
 - Cloudflare Pages build output remains `public`
 
 **Changed-files deployment note:** GitHub browser uploads do not delete obsolete files. If using the changed-files-only ZIP, manually delete the old `public/veteranbenefit/` directory and commit that deletion.
+
+
+## v40 deployment checks
+
+- Confirm `/public/assets/united-for-warriors-warhound-vma.png` is present.
+- Confirm `/public/unitedforwarriors/index.html` references the PNG asset.
+- The full production package removes `/public/assets/united-for-warriors-warhound-vma.jpg`.
+- If deploying only the changed-files ZIP through GitHub's browser uploader, the old JPG may remain as an unused asset; it can be deleted manually but does not affect the live page.

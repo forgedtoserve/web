@@ -289,3 +289,8 @@ Validated the public sponsorship update for **United for Warriors Poker Run and 
 ## v39 — United for Warriors URL Migration Validation
 
 Validated the event route migration from `/veteranbenefit/` to `/unitedforwarriors/`. The full production package now uses `public/unitedforwarriors/index.html` and `public/unitedforwarriors/contact/index.html`, with homepage links, event internal links, canonical metadata, Open Graph URLs, and sitemap entries updated to the branded route. Cloudflare Pages `_redirects` rules preserve the former event URLs with permanent 301 redirects. The obsolete `public/veteranbenefit/` directory is absent from the full package.
+
+
+## v40 Incremental Review — Warhound Partner Logo
+
+Validated the Warhound Veteran Motorcycle Association partner-logo replacement on the United for Warriors event page. The supplied 800 × 800 artwork was converted to a transparent-background PNG while preserving the enclosed black emblem artwork and intrinsic dimensions. The event page references the new PNG asset, and the obsolete JPG is removed from the full production package.
