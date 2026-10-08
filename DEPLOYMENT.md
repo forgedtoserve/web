@@ -141,3 +141,17 @@ This release establishes the official event name **United for Warriors Poker Run
 - `/veteranbenefit/` and `/veteranbenefit/contact/` remain the public routes
 - no flat `public/veteranbenefit.html` exists
 - Cloudflare Pages build output remains `public`
+
+## v34 deployment checks
+
+This release corrects the recurring homepage hero overlap and refreshes cache-busted shared assets site-wide. After Cloudflare Pages deploys v34, verify:
+
+- `https://forgedtoserve.org/` shows the **Our Commitment** card fully below the Foundation logo with no overlap
+- the same non-overlapping layout remains correct at desktop, tablet, and mobile widths
+- the homepage requests `assets/site.css?v=34` and `assets/site.js?v=34`
+- nested event routes request `/assets/site.css?v=34` and `/assets/site.js?v=34`
+- interior pages render normally after the shared-asset cache-bust
+- the active raffle popup still functions normally
+- `/public` remains the Cloudflare Pages build output
+
+No file deletion is required for this release.

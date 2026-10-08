@@ -1208,7 +1208,7 @@ iframe{max-width:100%}
 @media(max-width:900px){.event-contact-choices{grid-template-columns:1fr}.event-contact-footer-callout{grid-template-columns:1fr}.event-contact-footer-callout .btn{justify-self:start}}
 
 /* =========================================================
-   v29 — Homepage visual refresh
+   v30 — Homepage hero overlap fix
    Scoped to the homepage so established interior-page layouts remain stable.
    ========================================================= */
 .home-main{overflow:hidden;background:#fff}
@@ -1283,7 +1283,9 @@ iframe{max-width:100%}
   letter-spacing:.07em;
   text-transform:uppercase;
 }
-.home-hero-visual{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center}
+.home-hero-visual{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
+/* Keep the commitment card in normal document flow. The !important guards against
+   stale/legacy overlap rules if an older stylesheet fragment is ever combined. */
 .home-logo-frame{
   position:relative;
   width:min(100%,410px);
@@ -1315,10 +1317,13 @@ iframe{max-width:100%}
   border-radius:50%;
 }
 .home-commitment-card{
-  position:absolute;
-  left:-34px;
-  bottom:-34px;
-  width:min(360px,88%);
+  position:static !important;
+  left:auto !important;
+  right:auto !important;
+  bottom:auto !important;
+  transform:none !important;
+  width:min(100%,410px);
+  margin:0;
   padding:20px 22px;
   border:1px solid rgba(255,255,255,.2);
   border-left:4px solid #e0b75e;
@@ -1510,8 +1515,8 @@ iframe{max-width:100%}
 
 @media(max-width:980px){
   .home-hero-grid,.home-story-grid,.home-partner-grid{grid-template-columns:1fr}
-  .home-hero-visual{min-height:auto;max-width:560px;margin:10px auto 20px;width:100%}
-  .home-commitment-card{left:0}
+  .home-hero-visual{max-width:560px;margin:10px auto 20px;width:100%}
+  .home-commitment-card{width:min(100%,410px)}
   .home-program-grid{grid-template-columns:1fr}
   .home-program-card{min-height:0}
   .home-program-topline{margin-bottom:28px}
@@ -1522,9 +1527,9 @@ iframe{max-width:100%}
 @media(max-width:720px){
   .home-hero{padding:68px 0 88px}
   .home-hero-copy h1{font-size:clamp(3rem,14vw,4.7rem)}
-  .home-hero-visual{padding-bottom:56px}
+  .home-hero-visual{padding-bottom:0}
   .home-logo-frame{width:min(88vw,390px)}
-  .home-commitment-card{left:4%;right:4%;bottom:0;width:auto}
+  .home-commitment-card{width:min(88vw,390px)}
   .home-mission-strip{margin-top:-26px}
   .home-mission-strip-grid{grid-template-columns:1fr}
   .home-mission-strip-grid>div+div{border-left:0;border-top:1px solid #e4ddd0}

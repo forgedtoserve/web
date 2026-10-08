@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v33**
+- Current site package version: **v34**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -50,6 +50,7 @@ Public-facing program pages describe planned assistance while eligibility rules,
 - Keep family support-dog wording neutral until the board formally settles the program model and terminology.
 - Run a fresh Termly scan after adding third-party embeds, scripts, analytics, or services.
 - Validate internal links, local assets, sitemap, metadata, and responsive layout before packaging a release.
+- Because `/assets/*` is served with long-lived immutable caching, bump the shared `site.css` and `site.js` cache-busting query on **every HTML page** whenever either shared asset changes.
 - Keep `README.md`, `AUDIT.md`, `FINAL-AUDIT.md`, and deployment documentation at the repository root.
 
 ## Deployment
@@ -78,6 +79,18 @@ A full production audit was completed for **v18**. See:
 For each meaningful production change, add a new sequential version section:
 
 ```text
+
+## v34 — Homepage Hero Cache-Bust & Overlap Hardening
+
+Corrected the recurring homepage logo/commitment-card overlap and hardened shared-asset cache handling.
+
+Key changes:
+
+- Forces the **Our Commitment** card to remain in normal flow beneath the logo, with explicit non-overlap safeguards
+- Updates every HTML page to request `site.css?v=34` and `site.js?v=34`, ensuring browsers do not reuse stale immutable shared assets
+- Documents the cache-busting requirement for future shared CSS/JavaScript changes
+- Preserves all v33 content, including **United for Warriors Poker Run and Concert** naming and partner links
+
 ## v21 — Vanessa Hacker Biography Restored
 
 Restored Vanessa Hacker’s full approved leadership biography alongside her photo.

@@ -246,3 +246,13 @@ The v32 release adds direct links for all organizing partners on `/veteranbenefi
 ## v33 Incremental Validation — United for Warriors Naming
 
 Validated the production content update establishing **United for Warriors Poker Run and Concert** as the official event name. Confirmed the homepage event spotlight, `/veteranbenefit/` hero and metadata, `/veteranbenefit/contact/` metadata and Formspree identifiers, and event footer labels are consistent. Existing event routes remain unchanged and no obsolete flat `public/veteranbenefit.html` file is present.
+
+## v34 Incremental Package Validation — Hero Cache-Bust & Non-Overlap Hardening
+
+The v34 release addresses the recurring homepage hero overlap at both the layout and caching layers. Validation confirms:
+
+- `.home-commitment-card` is explicitly kept in normal flow with static positioning and no transform/offset overlap
+- all 17 HTML pages now request the current `site.css?v=34` and `site.js?v=34` shared assets
+- nested veteran-benefit routes retain root-relative shared-asset references
+- all v33 public content and routes remain intact
+- no file deletion is required for this release
