@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v40**
+- Current site package version: **v41**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -83,6 +83,22 @@ For each meaningful production change, add a new sequential version section:
 
 
 
+
+
+## v41 — Homepage Hero Scale Refinement
+
+Reduced the visual scale of the homepage hero so the opening section no longer dominates a desktop viewport.
+
+Key changes:
+
+- Reduced desktop and mobile hero vertical padding
+- Reduced the headline maximum size while preserving the approved wording and hierarchy
+- Reduced the hero logo frame and commitment card from roughly 410 px to 335 px on desktop
+- Tightened hero spacing and supporting copy scale for a more balanced first-screen composition
+- Preserved the navy / gold visual treatment, CTA buttons, mission tags, and commitment wording
+- Bumped shared CSS and JavaScript cache-busting references to `v41` across all public HTML pages
+
+No file deletion is required for this release.
 
 ## v40 — Warhound Logo Transparency
 

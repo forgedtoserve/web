@@ -243,3 +243,18 @@ This release moves United for Warriors to its permanent branded URL. After deplo
 - Confirm `/public/unitedforwarriors/index.html` references the PNG asset.
 - The full production package removes `/public/assets/united-for-warriors-warhound-vma.jpg`.
 - If deploying only the changed-files ZIP through GitHub's browser uploader, the old JPG may remain as an unused asset; it can be deleted manually but does not affect the live page.
+
+
+## v41 deployment checks
+
+This release reduces the homepage hero scale. After deployment, verify:
+
+- the homepage hero occupies noticeably less vertical space on desktop
+- the main headline remains prominent but no longer fills most of the first viewport
+- the Forged to Serve logo frame and commitment card are smaller and remain centered/aligned
+- CTA buttons and mission tags remain visible without overlap
+- mobile hero content remains single-column with no horizontal overflow
+- all public HTML pages request `site.css?v=41` and `site.js?v=41`
+- `/public` remains the Cloudflare Pages build output
+
+No file deletion is required for v41.

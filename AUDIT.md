@@ -260,3 +260,8 @@ Validated the event route migration from `/veteranbenefit/` to `/unitedforwarrio
 ## v40 Incremental Review — Warhound Partner Logo
 
 Validated the Warhound Veteran Motorcycle Association partner-logo replacement on the United for Warriors event page. The supplied 800 × 800 artwork was converted to a transparent-background PNG while preserving the enclosed black emblem artwork and intrinsic dimensions. The event page references the new PNG asset, and the obsolete JPG is removed from the full production package.
+
+
+## v41 Incremental Review — Homepage Hero Scale
+
+Validated the homepage hero scale refinement introduced in v41. The hero padding, display-heading scale, visual-column width, logo frame, and commitment card were reduced while retaining the approved visual identity and content. Responsive rules were adjusted proportionally for mobile. Shared CSS and JavaScript cache-busting references are updated to v41 across all public HTML pages. No routes, event content, forms, or deployable assets were removed.
