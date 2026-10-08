@@ -155,3 +155,20 @@ This release corrects the recurring homepage hero overlap and refreshes cache-bu
 - `/public` remains the Cloudflare Pages build output
 
 No file deletion is required for this release.
+
+
+## v35 deployment checks
+
+This release adds supplied partner and performer imagery to the United for Warriors event page. After Cloudflare Pages deploys v35, verify:
+
+- `https://forgedtoserve.org/veteranbenefit/` shows four organizing-partner logo cards
+- each organizer logo opens the correct Forged to Serve, VFW Post 9126, Warhound VMA, or Broken Warrior Ranch destination
+- the Evening Concert section shows the supplied Broke Teachers and Guitars for Vets artwork
+- Broke Teachers opens `https://www.facebook.com/profile.php?id=61584258839078`
+- Guitars for Vets opens `https://www.facebook.com/g4vglenpool`
+- the 8 PM headliner remains clearly marked **TBA**
+- all six new event images retain their natural proportions without cropping or distortion
+- all pages request `site.css?v=35` and `site.js?v=35`
+- `/public` remains the Cloudflare Pages build output
+
+No file deletion is required for this release.

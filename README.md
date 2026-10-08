@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v34**
+- Current site package version: **v35**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -79,6 +79,21 @@ A full production audit was completed for **v18**. See:
 For each meaningful production change, add a new sequential version section:
 
 ```text
+
+
+## v35 — United for Warriors Visual Branding
+
+Added organizer and performer artwork to the **United for Warriors Poker Run and Concert** page so the event has a stronger visual identity and direct links to participating organizations and acts.
+
+Key changes:
+
+- Added logo cards for Forged to Serve Foundation, VFW Post 9126, Warhound Veteran Motorcycle Association, and Broken Warrior Ranch
+- Added visual concert cards for Broke Teachers and the Guitars for Vets band
+- Linked Broke Teachers to their Facebook page and Guitars for Vets Glenpool to its Facebook page
+- Added six event-specific image assets using the supplied artwork with preserved aspect ratios and intrinsic dimensions
+- Kept the headliner position as **TBA** with a branded placeholder
+- Updated shared CSS/JavaScript cache-busting references site-wide to `v35` because the shared stylesheet changed
+- No routes were added or removed, and no file deletion is required
 
 ## v34 — Homepage Hero Cache-Bust & Overlap Hardening
 
@@ -242,7 +257,7 @@ Key changes:
 - Added the event at the agreed clean-route structure: `public/veteranbenefit/index.html`
 - Public URL/canonical: `https://forgedtoserve.org/veteranbenefit`
 - Added the working event schedule, organizing partners, poker run, Veterans Row, Kids Zone, food/community vendors, raffle/auction, adult beverage area, and concert lineup
-- Added Three Broke Teachers and the Guitars for Vets band, with the headliner marked to be announced
+- Added Broke Teachers and the Guitars for Vets band, with the headliner marked to be announced
 - Added preliminary sponsorship and vendor/booth information without locking in unapproved commercial pricing
 - Added a homepage Save the Date spotlight linking to `/veteranbenefit`
 - Added the clean event URL to `sitemap.xml`
