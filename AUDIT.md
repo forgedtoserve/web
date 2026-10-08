@@ -241,3 +241,8 @@ Validated the event-page image and link update introduced in v35.
 ## v36 Incremental Review — Event Image Layout
 
 The v36 release addresses the production rendering defects shown in the United for Warriors organizer and concert-lineup screenshots. The root CSS issue was a legacy `.event-lineup div` selector that applied grid/card styling to every nested `<div>` in the newer visual performer cards. That selector is now limited to the legacy direct-child lineup structure, and the visual lineup uses explicit scoped rules for logo wells and copy blocks. Organizer and performer images are constrained with `object-fit: contain`, auto dimensions, and maximum width/height values so supplied artwork retains its intrinsic aspect ratio without cropping or stretching. Shared asset query versions were bumped site-wide to v36 to avoid stale cached CSS. No routes, links, or event naming were changed.
+
+
+## v37 Incremental Review — Mobile Header & Facebook
+
+Validated the v37 responsive refinements. The shared header now uses an accessible mobile menu toggle while preserving a no-JavaScript fallback, and the homepage Facebook embed is constrained to a smaller mobile footprint with no horizontal overflow. Desktop header geometry, existing routes, event content, and Formspree workflows remain unchanged. Shared CSS and JavaScript cache-busting references are updated to v37 across the public HTML set. No file deletion is required for this release.

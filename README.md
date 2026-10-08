@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v36**
+- Current site package version: **v37**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -81,6 +81,23 @@ For each meaningful production change, add a new sequential version section:
 ```text
 
 
+
+
+## v37 — Mobile Header & Facebook Refinement
+
+Refined the site-wide mobile header and reduced the homepage Facebook embed footprint on phones.
+
+Key changes:
+
+- Replaced the always-wrapped mobile navigation with an accessible **Menu** toggle on screens 900px and below
+- Keeps navigation and Donate controls available without JavaScript, while collapsing them only after enhancement loads
+- Uses a compact two-column mobile menu, switching to one column on very narrow screens
+- Tightened the mobile brand/header geometry to prevent crowding at the top of the page
+- Reduced the Facebook feed card width and height on mobile so it no longer dominates the homepage
+- Added keyboard focus, ARIA expanded state, Escape-safe layout behavior, and reduced-motion support for the menu control
+- Refreshed shared CSS/JavaScript cache-busting references to **v37** across every HTML page
+
+No files are deleted by this release.
 
 ## v36 — United for Warriors Image Layout Fix
 

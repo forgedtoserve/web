@@ -188,3 +188,19 @@ This release fixes the distorted/oversized organizer and performer artwork on th
 - `/public` remains the Cloudflare Pages build output
 
 No file deletion is required for this release.
+
+
+## v37 deployment checks
+
+This release refines the global mobile header and homepage Facebook embed. After deployment, verify:
+
+- On a phone-width viewport, the header initially shows the brand plus a compact **Menu** button
+- Tapping **Menu** reveals all primary navigation links and the Donate button; tapping it again closes the menu
+- Keyboard focus and `aria-expanded` state update correctly on the menu button
+- Desktop navigation remains unchanged above 900px
+- The homepage Facebook feed fits within the mobile viewport without horizontal overflow and uses a shorter card height
+- `site.css?v=37` and `site.js?v=37` are requested on all public HTML pages
+- `/veteranbenefit/` and `/veteranbenefit/contact/` remain unchanged as routes
+- Cloudflare Pages build output remains `public`
+
+No file deletion is required for v37.
