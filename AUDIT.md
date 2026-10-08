@@ -208,3 +208,8 @@ The homepage hero visual was corrected so the **Our Commitment** card is no long
 The v31 release corrects current leadership and veteran-benefit partner information without changing routes or site functionality. Scott F. Lowry is now presented as **Secretary / Program Director**, with matching biography and image alternative text. Public references to the motorcycle partner are corrected to **Warhound Veteran Motorcycle Association**, and the event partner list links to the organization's official Facebook page.
 
 Static validation checked **17 HTML pages**, **499 links**, **42 image instances**, and **4 forms** with **0 errors**. No stale `War Dogs Motorcycle Club` references remain in `/public`, no stale `Secretary / Board Member` references remain for Scott in `/public`, and the added external Facebook link includes `noopener noreferrer`. No files are deleted by this release.
+
+
+## v32 Incremental Review
+
+The v32 release adds official public links for all four organizing partners on the June 5 veteran-benefit page. Forged to Serve Foundation links to its own production domain; VFW Post 9126 and Broken Warrior Ranch link to their supplied public websites; and the previously established Warhound Veteran Motorcycle Association Facebook link is retained. External links use secure new-tab attributes. No routes or deployable assets are added or deleted by this release. Static validation checked **17 HTML pages**, **702 local links/assets references**, **42 image instances**, and all form controls with **0 errors**.

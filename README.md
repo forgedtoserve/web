@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v31**
+- Current site package version: **v32**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -127,6 +127,18 @@ When creating a production package:
 ---
 
 
+
+## v32 — Event Partner Links
+
+Added direct public links for each organizing partner on the June 5 veteran-benefit page.
+
+Key changes:
+
+- Linked Forged to Serve Foundation to `https://forgedtoserve.org/`
+- Linked VFW Post 9126 to `https://vfw9126.org/`
+- Preserved the Warhound Veteran Motorcycle Association Facebook link
+- Linked Broken Warrior Ranch to `https://www.brokenwarriorranch.net/`
+- Applied secure new-tab handling to external partner links
 
 ## v31 — Leadership & Event Partner Corrections
 

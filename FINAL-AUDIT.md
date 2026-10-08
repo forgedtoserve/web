@@ -199,6 +199,7 @@ The v29 release refreshes `public/index.html` and the shared stylesheet while pr
 - the homepage uses `assets/site.css?v=29` to avoid stale custom-domain stylesheet caching
 - `/public` remains the complete Cloudflare Pages deployment output
 - no route or file deletion is required for this release
+- static validation checked **17 HTML pages**, **702 links/assets references**, and **42 image instances** with **0 errors**
 
 Static v29 validation checked **17 HTML pages**, **483 local links/assets references**, **42 local image instances**, and **4 forms** with **0 errors**. Live rendering, the Facebook embed, Termly behavior, and the active raffle popup remain post-deployment smoke tests.
 
@@ -228,3 +229,15 @@ The v31 release updates public-facing leadership and event-partner content. Vali
 - no stale `Secretary / Board Member` reference remains for Scott in deployable `/public` content
 - no route or file deletion is required for this release
 - static validation checked **17 HTML pages**, **499 links**, **42 image instances**, and **4 forms** with **0 errors**
+
+
+## v32 Incremental Package Validation — Event Partner Links
+
+The v32 release adds direct links for all organizing partners on `/veteranbenefit/`. Validation confirms:
+
+- Forged to Serve Foundation links to `https://forgedtoserve.org/`
+- VFW Post 9126 links to `https://vfw9126.org/`
+- Warhound Veteran Motorcycle Association links to `https://www.facebook.com/WarhoundVMA`
+- Broken Warrior Ranch links to `https://www.brokenwarriorranch.net/`
+- external partner links include `target="_blank"` and `rel="noopener noreferrer"`
+- no route or file deletion is required for this release

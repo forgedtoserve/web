@@ -115,3 +115,16 @@ This release corrects public leadership and event-partner information. After Clo
 - the Warhound partner link opens `https://www.facebook.com/WarhoundVMA` in a new tab
 - no `War Dogs Motorcycle Club` references remain in deployable public content
 - Cloudflare Pages build output remains `public`
+
+
+## v32 deployment checks
+
+This release adds direct links for the four organizing partners on the veteran-benefit page. After Cloudflare Pages deploys v32, verify:
+
+- `https://forgedtoserve.org/veteranbenefit/` loads normally
+- **Forged to Serve Foundation** opens `https://forgedtoserve.org/`
+- **VFW Post 9126** opens `https://vfw9126.org/`
+- **Warhound Veteran Motorcycle Association** opens `https://www.facebook.com/WarhoundVMA`
+- **Broken Warrior Ranch** opens `https://www.brokenwarriorranch.net/`
+- external partner links open in a new tab with secure `noopener noreferrer` attributes
+- Cloudflare Pages build output remains `public`
