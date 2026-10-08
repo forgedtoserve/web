@@ -76,14 +76,23 @@ A full production audit was completed for **v18**. See:
 
 ## Updating This Change Log
 
-For each meaningful production change, add a new sequential version section:
+For each meaningful production change, add a new sequential version section.
 
-```text
+Small typo fixes and internal documentation-only changes do not need their own version.
 
+When creating a production package:
 
+- Update this README.
+- Update audit documentation when appropriate.
+- Validate all internal links and local assets.
+- Preserve image aspect ratios and intrinsic dimensions.
+- Confirm `/public` contains every deployable asset.
+- Confirm Cloudflare Pages build output remains `public`.
+- Produce both a full deployment ZIP and a changed-files-only ZIP when practical.
 
+---
 
-
+## Change Log
 
 ## v42 — Remove Installable-App Prompt
 
@@ -204,57 +213,6 @@ Key changes:
 - Updates every HTML page to request `site.css?v=34` and `site.js?v=34`, ensuring browsers do not reuse stale immutable shared assets
 - Documents the cache-busting requirement for future shared CSS/JavaScript changes
 - Preserves all v33 content, including **United for Warriors Poker Run and Concert** naming and partner links
-
-## v21 — Vanessa Hacker Biography Restored
-
-Restored Vanessa Hacker’s full approved leadership biography alongside her photo.
-
-Key changes:
-
-- Replaced the placeholder Vanessa biography with her full approved profile
-- Added her business, real estate, property management, accounting, and community-relationship background
-- Added her statement on continued responsibility to veterans under **Why I Serve**
-- Preserved the existing Vanessa Hacker photo and Vice President / Treasurer title
-- Updated Leadership page asset references to v21
-
-## v20 — Vanessa Hacker Leadership Photo
-
-Updated the public Leadership page with Vanessa Hacker’s approved photo.
-
-Key changes:
-
-- Replaced Vanessa Hacker’s initials placeholder with her photograph
-- Preserved the existing uniform leadership-card dimensions and image treatment
-- Added descriptive alt text for accessibility
-- Added `vanessa-hacker.jpg` to the public assets folder
-- Updated the Leadership page asset references to v20
-
-## v19 — Short Change Name
-
-Brief summary of the work.
-
-Key changes:
-- Change one
-- Change two
-- Change three
-```
-
-Small typo fixes and internal documentation-only changes do not need their own version.
-
-When creating a production package:
-
-- Update this README.
-- Update audit documentation when appropriate.
-- Validate all internal links and local assets.
-- Preserve image aspect ratios and intrinsic dimensions.
-- Confirm `/public` contains every deployable asset.
-- Confirm Cloudflare Pages build output remains `public`.
-- Produce both a full deployment ZIP and a changed-files-only ZIP when practical.
-
----
-
-
-
 
 ## v33 — United for Warriors Event Naming
 
@@ -420,6 +378,30 @@ Key changes:
 - Suppresses the popup for 24 hours after dismissal and 72 hours after clicking the raffle button
 - Automatically stops displaying after the raffle closes on October 21, 2026 at 6:00 PM Central
 - Added responsive and reduced-motion styling for the popup
+
+## v21 — Vanessa Hacker Biography Restored
+
+Restored Vanessa Hacker’s full approved leadership biography alongside her photo.
+
+Key changes:
+
+- Replaced the placeholder Vanessa biography with her full approved profile
+- Added her business, real estate, property management, accounting, and community-relationship background
+- Added her statement on continued responsibility to veterans under **Why I Serve**
+- Preserved the existing Vanessa Hacker photo and Vice President / Treasurer title
+- Updated Leadership page asset references to v21
+
+## v20 — Vanessa Hacker Leadership Photo
+
+Updated the public Leadership page with Vanessa Hacker’s approved photo.
+
+Key changes:
+
+- Replaced Vanessa Hacker’s initials placeholder with her photograph
+- Preserved the existing uniform leadership-card dimensions and image treatment
+- Added descriptive alt text for accessibility
+- Added `vanessa-hacker.jpg` to the public assets folder
+- Updated the Leadership page asset references to v20
 
 ## v19 — Leadership Update
 
