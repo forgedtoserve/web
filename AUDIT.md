@@ -265,3 +265,8 @@ Validated the Warhound Veteran Motorcycle Association partner-logo replacement o
 ## v41 Incremental Review — Homepage Hero Scale
 
 Validated the homepage hero scale refinement introduced in v41. The hero padding, display-heading scale, visual-column width, logo frame, and commitment card were reduced while retaining the approved visual identity and content. Responsive rules were adjusted proportionally for mobile. Shared CSS and JavaScript cache-busting references are updated to v41 across all public HTML pages. No routes, event content, forms, or deployable assets were removed.
+
+## v42 Incremental Validation — Install Prompt Removal
+
+The production package no longer exposes PWA installability metadata. The manifest link was removed from every public HTML page and `public/site.webmanifest` was removed. Standard favicon/touch-icon support remains. No service worker or custom browser-install prompt code is present. This change is intentionally limited to browser-install behavior and does not alter public routes, page content, forms, or third-party integrations. Static validation checked **17 HTML pages**, **693 links/assets references**, and **48 image instances** with **0 errors**.
+

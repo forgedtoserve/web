@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v41**
+- Current site package version: **v42**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -84,6 +84,20 @@ For each meaningful production change, add a new sequential version section:
 
 
 
+
+## v42 — Remove Installable-App Prompt
+
+Removed Progressive Web App installability metadata so Android browsers no longer treat the site as an installable app during normal browsing.
+
+Key changes:
+
+- Removed the `rel="manifest"` reference from all 17 public HTML pages
+- Removed `public/site.webmanifest` from the production package
+- Preserved standard favicon and Apple touch-icon metadata
+- Confirmed no service-worker registration, `beforeinstallprompt`, or `appinstalled` code exists
+- No CSS, JavaScript, public routes, event content, or forms were changed
+
+**Changed-files deployment note:** if using the changed-files-only ZIP, manually delete `public/site.webmanifest` from GitHub because browser uploads do not remove obsolete files.
 
 ## v41 — Homepage Hero Scale Refinement
 

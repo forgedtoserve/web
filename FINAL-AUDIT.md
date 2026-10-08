@@ -299,3 +299,8 @@ Validated the Warhound Veteran Motorcycle Association partner-logo replacement o
 ## v41 Incremental Validation — Homepage Hero Scale
 
 Validated the v41 homepage hero refinement. Confirmed the hero remains responsive, the logo and commitment card stay in normal flow without overlap, all shared asset query references are v41 across the public HTML set, and no public routes or event functionality changed. No file deletion is required for this release.
+
+## v42 Incremental Review — Remove Installable-App Metadata
+
+Validated the removal of the website's installable-app metadata. All 17 public HTML pages no longer link to `site.webmanifest`, and `public/site.webmanifest` is absent from the production package. Standard favicon and Apple touch-icon links remain intact. Repository-wide checks found no service-worker registration, `beforeinstallprompt`, or `appinstalled` handlers. No routes, forms, CSS, JavaScript, or event content changed in this release. Static validation checked **17 HTML pages**, **693 links/assets references**, and **48 image instances** with **0 errors**.
+

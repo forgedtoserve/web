@@ -258,3 +258,17 @@ This release reduces the homepage hero scale. After deployment, verify:
 - `/public` remains the Cloudflare Pages build output
 
 No file deletion is required for v41.
+
+## v42 deployment checks
+
+This release removes PWA/app-install metadata. After deployment, verify:
+
+- `public/site.webmanifest` is no longer present in the repository
+- page source on the homepage and United for Warriors pages contains no `<link rel="manifest">` reference
+- normal favicons and the Apple touch icon still load
+- Android browsing no longer receives the site-provided installable-app metadata
+- there is no service-worker registration or custom install-prompt JavaScript
+- `/public` remains the Cloudflare Pages build output
+
+**Changed-files deployment note:** GitHub browser uploads do not delete obsolete files. If using the changed-files-only ZIP, manually delete `public/site.webmanifest` and commit that deletion.
+
