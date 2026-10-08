@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>June 5, 2027 Veteran Benefit | Forged to Serve Foundation</title>
 <meta content="Save the date for a veteran benefit event at BlackGold Park in Glenpool on June 5, 2027, featuring a motorcycle poker run, veteran resources, family activities, food, fundraising, and live music." name="description"/>
-<link href="/assets/site.css?v=26" rel="stylesheet"/>
+<link href="/assets/site.css?v=27" rel="stylesheet"/>
 <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
 <link href="/assets/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/assets/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
@@ -169,7 +169,33 @@
 </div>
 <div class="event-sponsor-callout">
 <div><h3>Packages and pricing are coming soon.</h3><p>We are also open to appropriate custom and in-kind sponsorship opportunities tied to specific event needs.</p></div>
-<a class="btn btn-gold" href="mailto:info@forgedtoserve.org?subject=June%205%202027%20Veteran%20Benefit%20Sponsorship">Ask About Sponsorship</a>
+<a class="btn btn-gold" href="#sponsor-inquiry">Sponsorship Inquiry</a>
+</div>
+<div class="event-form-panel" id="sponsor-inquiry">
+<div class="kicker kicker-dark">Start the Conversation</div>
+<h3>Sponsorship inquiry</h3>
+<p class="event-form-intro">Interested in supporting the June 5 veteran benefit? Send us your information and the kind of sponsorship you are considering. A member of the Forged to Serve team will follow up with you.</p>
+<form action="https://formspree.io/f/xppzljgj" class="contact-form event-inquiry-form" method="POST" data-success-url="/thank-you">
+<input type="hidden" name="_subject" value="June 5, 2027 Veteran Benefit - Sponsorship Inquiry"/>
+<input type="hidden" name="event" value="June 5, 2027 Veteran Benefit"/>
+<input type="hidden" name="inquiry_type" value="Sponsorship"/>
+<div class="form-row">
+<div class="form-field"><label for="sponsor-organization">Business / organization <span aria-hidden="true">*</span></label><input id="sponsor-organization" name="organization" type="text" autocomplete="organization" required/></div>
+<div class="form-field"><label for="sponsor-name">Contact person <span aria-hidden="true">*</span></label><input id="sponsor-name" name="contact_name" type="text" autocomplete="name" required/></div>
+</div>
+<div class="form-row">
+<div class="form-field"><label for="sponsor-email">Email <span aria-hidden="true">*</span></label><input id="sponsor-email" name="email" type="email" autocomplete="email" required/></div>
+<div class="form-field"><label for="sponsor-phone">Phone <span class="optional">(optional)</span></label><input id="sponsor-phone" name="phone" type="tel" autocomplete="tel"/></div>
+</div>
+<div class="form-row">
+<div class="form-field"><label for="sponsor-interest">Sponsorship interest <span aria-hidden="true">*</span></label><select id="sponsor-interest" name="sponsorship_interest" required><option value="" selected disabled>Select one</option><option>Presenting Sponsor</option><option>Stage Sponsor</option><option>Kids Zone Sponsor</option><option>Veterans Row Sponsor</option><option>Beverage Area Sponsor</option><option>Volunteer Sponsor</option><option>Custom Sponsorship</option><option>Not sure yet</option></select></div>
+<div class="form-field"><label for="sponsor-type">Type of support <span aria-hidden="true">*</span></label><select id="sponsor-type" name="support_type" required><option value="" selected disabled>Select one</option><option>Financial sponsorship</option><option>In-kind goods or services</option><option>Combination of financial and in-kind support</option><option>Not sure yet</option></select></div>
+</div>
+<div class="form-field"><label for="sponsor-value">Estimated contribution or support <span class="optional">(optional)</span></label><input id="sponsor-value" name="estimated_support" type="text" placeholder="Example: $2,500, printing services, volunteer meals, equipment, etc."/></div>
+<div class="form-field"><label for="sponsor-message">Tell us what you have in mind <span class="optional">(optional)</span></label><textarea id="sponsor-message" name="message" rows="5"></textarea></div>
+<button class="btn btn-gold" type="submit">Send Sponsorship Inquiry</button>
+<p class="form-note">Please do not submit Social Security numbers, financial account information, medical records, passwords, or other sensitive personal information through this form. See our <a href="/privacy">Privacy Policy</a>.</p>
+</form>
 </div>
 </div>
 </section>
@@ -185,6 +211,35 @@
 <article class="event-vendor-card"><span class="event-vendor-label">Food</span><h3>Food trucks &amp; food vendors</h3><div class="event-vendor-price">Details: To be announced</div><p>Food-vendor participation, setup requirements, fees, permits, and insurance requirements will be finalized separately.</p></article>
 </div>
 <div class="event-note event-note-wide"><strong>Planning note:</strong> Vendor requirements, insurance documentation, booth dimensions, electrical access, setup instructions, and any applicable permits or licensing will be finalized before applications open.</div>
+<div class="event-vendor-actions"><a class="btn btn-gold" href="#vendor-application">Apply for a Booth</a></div>
+<div class="event-form-panel" id="vendor-application">
+<div class="kicker kicker-dark">Vendor Interest</div>
+<h3>Vendor / booth application</h3>
+<p class="event-form-intro">Use this form to tell us you are interested in participating. Submission does not guarantee acceptance or a booth assignment; final approvals will follow once event requirements and vendor details are finalized.</p>
+<form action="https://formspree.io/f/xppzljgj" class="contact-form event-inquiry-form" method="POST" data-success-url="/thank-you">
+<input type="hidden" name="_subject" value="June 5, 2027 Veteran Benefit - Vendor Booth Application"/>
+<input type="hidden" name="event" value="June 5, 2027 Veteran Benefit"/>
+<input type="hidden" name="inquiry_type" value="Vendor / Booth Application"/>
+<div class="form-row">
+<div class="form-field"><label for="vendor-business">Business / organization / vendor name <span aria-hidden="true">*</span></label><input id="vendor-business" name="vendor_name" type="text" autocomplete="organization" required/></div>
+<div class="form-field"><label for="vendor-contact">Contact person <span aria-hidden="true">*</span></label><input id="vendor-contact" name="contact_name" type="text" autocomplete="name" required/></div>
+</div>
+<div class="form-row">
+<div class="form-field"><label for="vendor-email">Email <span aria-hidden="true">*</span></label><input id="vendor-email" name="email" type="email" autocomplete="email" required/></div>
+<div class="form-field"><label for="vendor-phone">Phone <span aria-hidden="true">*</span></label><input id="vendor-phone" name="phone" type="tel" autocomplete="tel" required/></div>
+</div>
+<div class="form-row">
+<div class="form-field"><label for="vendor-type">Vendor type <span aria-hidden="true">*</span></label><select id="vendor-type" name="vendor_type" required><option value="" selected disabled>Select one</option><option>Veteran resource / nonprofit</option><option>Craft / artisan / maker</option><option>Community business</option><option>Food truck</option><option>Food vendor</option><option>Community nonprofit / organization</option><option>Other</option></select></div>
+<div class="form-field"><label for="vendor-electric">Will you need electrical access? <span aria-hidden="true">*</span></label><select id="vendor-electric" name="electrical_access" required><option value="" selected disabled>Select one</option><option>Yes</option><option>No</option><option>Not sure yet</option></select></div>
+</div>
+<div class="form-field"><label for="vendor-web">Website or social media <span class="optional">(optional)</span></label><input id="vendor-web" name="website_or_social" type="text" placeholder="Website, Facebook page, Instagram, etc."/></div>
+<div class="form-field"><label for="vendor-offering">What will you sell, serve, display, or provide? <span aria-hidden="true">*</span></label><textarea id="vendor-offering" name="products_services" rows="5" required></textarea></div>
+<div class="form-field"><label for="vendor-setup">Special setup needs or notes <span class="optional">(optional)</span></label><textarea id="vendor-setup" name="setup_requirements" rows="4" placeholder="Trailer size, generator, water, accessibility needs, unusual footprint, etc."></textarea></div>
+<label class="event-checkbox"><input type="checkbox" name="application_acknowledgment" value="I understand submission does not guarantee approval" required/> <span>I understand this submission is a request to participate and does not guarantee acceptance, booth placement, or final pricing.</span></label>
+<button class="btn btn-gold" type="submit">Submit Vendor Application</button>
+<p class="form-note">Please do not submit Social Security numbers, financial account information, medical records, passwords, or other sensitive personal information through this form. See our <a href="/privacy">Privacy Policy</a>.</p>
+</form>
+</div>
 </div>
 </section>
 <section class="section event-closing">
@@ -195,7 +250,7 @@
 <p>The official event name, headlining performer, poker run details, sponsorship packages, vendor applications, participating organizations, and additional activities will be announced as they are confirmed.</p>
 </div>
 <div class="event-closing-actions">
-<a class="btn btn-gold" href="mailto:info@forgedtoserve.org?subject=June%205%202027%20Veteran%20Benefit">Contact Forged to Serve</a>
+<a class="btn btn-gold" href="/contact">General Event Question</a>
 <a class="btn btn-navy" href="/">About the Foundation</a>
 </div>
 </div>
@@ -207,5 +262,55 @@
 <div><strong>Support</strong><br/><a href="/donate">Donate</a><br/><a href="/privacy">Privacy Policy</a><br/><a href="/cookie-policy">Cookie Policy</a><br/><a href="/terms">Terms of Use</a><br/><a class="termly-display-preferences" href="#">Cookie Preferences</a></div>
 </div><small>© <span data-year=""></span> Forged to Serve Foundation. All rights reserved.</small></div></footer>
 <script src="/assets/site.js?v=23"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".event-inquiry-form").forEach(function (form) {
+    const submitButton = form.querySelector('button[type="submit"]');
+    const status = document.createElement("p");
+    status.className = "form-status";
+    status.setAttribute("role", "status");
+    status.setAttribute("aria-live", "polite");
+    form.appendChild(status);
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      status.textContent = "";
+      status.classList.remove("is-error", "is-success");
+      submitButton.disabled = true;
+      const originalText = submitButton.textContent;
+      submitButton.textContent = "Sending...";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+          status.textContent = "Submitted successfully.";
+          status.classList.add("is-success");
+          window.location.href = form.dataset.successUrl || "/thank-you";
+          return;
+        }
+
+        let message = "We couldn't submit the form. Please try again.";
+        try {
+          const data = await response.json();
+          if (data && Array.isArray(data.errors) && data.errors.length) {
+            message = data.errors.map(function (e) { return e.message; }).join(" ");
+          }
+        } catch (_) {}
+        throw new Error(message);
+      } catch (error) {
+        status.textContent = error.message || "We couldn't submit the form. Please try again.";
+        status.classList.add("is-error");
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>

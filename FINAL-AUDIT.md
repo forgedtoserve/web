@@ -140,3 +140,20 @@ Package validation confirms:
 
 This section validates the package only; production remains unchanged until the v26 files are committed to the connected GitHub `main` branch and Cloudflare Pages completes a new deployment.
 
+
+
+## v27 Incremental Package Validation — Event Forms
+
+The v27 release adds Formspree-backed sponsorship and vendor/booth forms to `public/veteranbenefit/index.html`. Static package validation confirms:
+
+- both event forms point to the existing Formspree endpoint
+- sponsorship and vendor submissions use distinct `_subject`, `event`, and `inquiry_type` values
+- form controls have unique IDs and associated labels
+- required fields are marked and browser validation is enabled
+- sensitive-information guidance and Privacy Policy links are present
+- successful asynchronous submissions redirect to `/thank-you`
+- failure states remain on-page with `role="status"` / `aria-live="polite"` messaging
+- the event route remains `public/veteranbenefit/index.html` and no flat `public/veteranbenefit.html` exists
+- `/public` remains the Cloudflare Pages deployment output
+
+External Formspree delivery must still be smoke-tested after deployment.

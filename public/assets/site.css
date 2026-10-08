@@ -1174,3 +1174,16 @@ iframe{max-width:100%}
   .event-status{display:table;margin:7px 0 0}
   .event-lineup div{grid-template-columns:62px 1fr}
 }
+
+
+/* v27 veteran benefit Formspree inquiry forms */
+#sponsor-inquiry,#vendor-application{scroll-margin-top:110px}
+.event-form-panel{margin-top:30px;padding:30px;border:1px solid var(--border);border-radius:16px;background:#fff;box-shadow:0 12px 30px #0000000a}
+.event-form-panel h3{margin:.2rem 0 .5rem;font-size:1.65rem;color:var(--navy)}
+.event-form-intro{max-width:850px;color:var(--muted);margin:0 0 1rem}
+.event-form-panel .contact-form{max-width:none}
+.event-vendor-actions{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+.event-checkbox{display:flex;gap:.7rem;align-items:flex-start;margin:0 0 1.2rem;color:var(--navy);font-weight:700}
+.event-checkbox input{width:18px;height:18px;margin-top:.2rem;flex:0 0 auto}
+.event-form-panel .form-note a{text-decoration:underline}
+@media(max-width:700px){.event-form-panel{padding:22px 18px}.event-form-panel h3{font-size:1.4rem}}

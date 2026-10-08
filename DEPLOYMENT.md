@@ -47,4 +47,19 @@ After the v26 commit reaches `main` and Cloudflare Pages finishes deploying, ver
 - Cloudflare Pages build output remains `public`
 
 The Cloudflare project is connected to GitHub and automatic deployments only occur after the updated files are committed/pushed to the connected production branch.
+## v27 deployment checks
+
+This release adds Formspree-backed sponsorship and vendor forms to the existing `/veteranbenefit` page. After Cloudflare Pages finishes deploying, verify:
+
+- `https://forgedtoserve.org/veteranbenefit` loads normally
+- **Sponsorship Inquiry** scrolls to the sponsorship form
+- **Apply for a Booth** scrolls to the vendor form
+- submit one real sponsorship test and confirm it arrives through the existing Formspree workflow with subject `June 5, 2027 Veteran Benefit - Sponsorship Inquiry`
+- submit one real vendor test and confirm it arrives with subject `June 5, 2027 Veteran Benefit - Vendor Booth Application`
+- successful submissions redirect to `/thank-you`
+- failed submissions remain on-page and display an accessible error message
+- the event page loads `/assets/site.css?v=27`
+- `public/veteranbenefit/index.html` remains the only veteran-benefit page structure; no flat `public/veteranbenefit.html` exists
+- Cloudflare Pages build output remains `public`
+
 

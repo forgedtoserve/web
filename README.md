@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v26**
+- Current site package version: **v27**
 - Live production remains **v25** until this package is committed to `main` and Cloudflare Pages deploys it
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -126,6 +126,22 @@ When creating a production package:
 
 ---
 
+
+## v27 — Veteran Benefit Formspree Inquiries
+
+Added on-page Formspree workflows for event sponsorship and vendor participation.
+
+Key changes:
+
+- Replaced the sponsorship `mailto:` action with an on-page **Sponsorship Inquiry** form
+- Added a **Vendor / Booth Application** form beneath the vendor section
+- Both forms submit through the existing Forged to Serve Formspree endpoint
+- Added event and inquiry-type metadata plus distinct email subjects so submissions can be identified easily
+- Added accessible inline submission status handling and redirect to the existing Thank You page after successful submission
+- Added privacy/sensitive-information guidance to both event forms
+- Preserved the clean event route at `public/veteranbenefit/index.html` / `/veteranbenefit`
+- Updated event-page form styling and cache-busted the event stylesheet reference to v27
+- Cloudflare Pages build output remains `public`
 
 ## v26 — June 5 Veteran Benefit Event Page
 

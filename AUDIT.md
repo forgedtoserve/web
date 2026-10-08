@@ -179,3 +179,8 @@ Deploy v18 after reviewing the manual Termly/address item. Technically, the stat
 
 The June 5, 2027 veteran benefit page was added as `public/veteranbenefit/index.html` so the public-facing route is `/veteranbenefit`. No flat `public/veteranbenefit.html` file is included. Shared CSS, homepage linking, sitemap coverage, nested-route asset references, and release documentation were reviewed for this package.
 
+
+
+## v27 Incremental Review
+
+The veteran-benefit page now uses the Foundation's existing Formspree endpoint for sponsorship and vendor/booth submissions. Both forms have unique field IDs, required labels, distinct hidden subject/inquiry metadata, sensitive-information warnings, accessible status messaging, and a successful-submission redirect to `/thank-you`. The clean directory route remains `public/veteranbenefit/index.html`; no flat `public/veteranbenefit.html` file is included. Live Formspree delivery remains a post-deployment smoke test because external service delivery cannot be proven by static validation alone.
