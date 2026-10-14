@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v42**
+- Current site package version: **v44**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -17,6 +17,7 @@ Official website repository for **Forged to Serve Foundation**.
 - Facebook content is embedded on the homepage
 - Homepage includes a temporary Garth Brooks raffle popup through October 21, 2026
 - Foundation email: `info@forgedtoserve.org`
+- IRS-recognized **501(c)(3) public charity** under IRC Section 170(b)(1)(A)(vi); Federal EIN `42-5213008`; exemption effective September 2, 2026
 - Public Facebook page: `https://facebook.com/forgedtoserve`
 
 ## Current Leadership
@@ -93,6 +94,38 @@ When creating a production package:
 ---
 
 ## Change Log
+
+## v44 — 501(c)(3) Public Charity Status
+
+Updated the public website after receipt of the IRS determination letter confirming Forged to Serve Foundation's federal tax-exempt and public-charity status.
+
+Key changes:
+
+- Identified Forged to Serve Foundation site-wide as an **IRS-recognized 501(c)(3) public charity**
+- Added donor-facing contribution-deductibility language to the Donate page
+- Added the IRS public-charity classification under **IRC Section 170(b)(1)(A)(vi)** and the **September 2, 2026** exemption effective date to the About page
+- Updated the Terms of Use donation section to reflect the Foundation's approved tax-exempt status and contribution deductibility
+- Added Schema.org `nonprofitStatus: Nonprofit501c3` to homepage Organization structured data while preserving the existing EIN
+- Updated all 17 public page footers with the 501(c)(3) public-charity status and Federal EIN
+- No CSS or JavaScript files were changed, so existing `v41` shared-asset cache-busting references remain valid
+
+No file deletion is required for this release.
+
+## v43 — Federal EIN Information
+
+Added the Foundation’s federal Employer Identification Number (EIN) to the public website and cleaned stale files that prior releases had already marked for removal.
+
+Key changes:
+
+- Added **Federal EIN: 42-5213008** to the site-wide footer across all 17 current public HTML pages
+- Added the EIN beside donor-facing information on the Donate page
+- Added `taxID` to the homepage Organization structured data
+- Preserved the existing language that does not automatically represent donations as tax deductible
+- Removed the stale `public/site.webmanifest` file left behind after v42
+- Removed the stale `public/veteranbenefit/` directory left behind after the v39 migration to `/unitedforwarriors/`
+- No CSS or JavaScript files were changed, so existing `v41` shared-asset cache-busting references remain valid
+
+**Changed-files deployment note:** if using the changed-files-only ZIP, manually delete `public/site.webmanifest` and the entire `public/veteranbenefit/` directory from GitHub. Browser uploads do not remove obsolete files.
 
 ## v42 — Remove Installable-App Prompt
 
