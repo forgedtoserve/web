@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v44**
+- Current site package version: **v46**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -14,7 +14,7 @@ Official website repository for **Forged to Serve Foundation**.
 - **Termly** handles consent management, Privacy Policy, Cookie Policy, and consent preferences
 - **Formspree** handles general website contact-form submissions
 - **Zeffy** handles online donations
-- Facebook content is embedded on the homepage
+- Homepage links directly to the Foundation’s official Facebook page; the unreliable native Facebook Page Plugin timeline embed was removed in v46
 - Homepage includes a temporary Garth Brooks raffle popup through October 21, 2026
 - Foundation email: `info@forgedtoserve.org`
 - IRS-recognized **501(c)(3) public charity** under IRC Section 170(b)(1)(A)(vi); Federal EIN `42-5213008`; exemption effective September 2, 2026
@@ -94,6 +94,33 @@ When creating a production package:
 ---
 
 ## Change Log
+
+## v46 — Facebook Homepage Reliability Fix
+
+Removed the native Meta/Facebook Page Plugin timeline embed after it began rendering the Page header without loading the timeline, leaving a large blank area on the homepage.
+
+Key changes:
+
+- Removed the unreliable Facebook Page Plugin iframe from the homepage
+- Replaced the blank feed area with a branded Facebook card and direct links to the official Foundation Facebook page
+- Preserved the existing Stay Connected section and official `https://facebook.com/forgedtoserve` destination
+- Avoided adding a third-party social-feed service or new tracking script
+- No CSS or JavaScript files were changed, so existing `v41` shared-asset cache-busting references remain valid
+
+No file deletion is required for this release.
+
+## v45 — Zeffy Donation Campaign Update
+
+Updated the website donation embed to use the Foundation’s new Zeffy campaign, **Support Veterans & Families**.
+
+Key changes:
+
+- Replaced the previous Zeffy donation-form slug with `support-veterans-and-families` on the Donate page
+- Updated both the primary Zeffy embed configuration and the iframe fallback to the new campaign
+- New public campaign URL: `https://www.zeffy.com/en-US/donation-form/support-veterans-and-families`
+- No CSS or JavaScript files were changed, so existing `v41` shared-asset cache-busting references remain valid
+
+No file deletion is required for this release.
 
 ## v44 — 501(c)(3) Public Charity Status
 
