@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v48**
+- Current site package version: **v49**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -94,6 +94,18 @@ When creating a production package:
 ---
 
 ## Change Log
+
+## v49 — David Oakleaf Live Photo Full-Frame Fix
+
+Corrected the David Oakleaf live-performance image on the United for Warriors Artists page so the complete supplied promotional photo — including the embedded David Oakleaf logo at the bottom — remains visible instead of being vertically cropped.
+
+Key changes:
+
+- Removed the fixed maximum-height crop from the live-performance image
+- Preserved the image’s natural aspect ratio so the embedded artist logo and decorative artwork are fully visible
+- Rebalanced the live-performance media/text columns for a cleaner desktop presentation
+- Updated site-wide shared CSS/JavaScript cache-busting references to `v49` because the shared stylesheet changed
+- No routes were added or removed, and no file deletion is required
 
 ## v48 — David Oakleaf Logo Safe-Area Fix
 

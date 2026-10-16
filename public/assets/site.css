@@ -1751,8 +1751,8 @@ iframe{max-width:100%}
 .artist-logo-card img{display:block;width:100%;height:auto}
 .artist-logo-card-dark{max-width:510px;background:#050709;border:1px solid rgba(255,255,255,.14);padding:8px}
 .artist-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.artist-secondary-photo{display:grid;grid-template-columns:minmax(250px,.58fr) minmax(0,.42fr);gap:26px;align-items:center;margin-top:40px;padding:18px;border:1px solid rgba(255,255,255,.15);border-radius:15px;background:rgba(255,255,255,.06)}
-.artist-secondary-photo img{display:block;width:100%;height:auto;max-height:360px;object-fit:cover;object-position:center 28%;border-radius:10px}
+.artist-secondary-photo{display:grid;grid-template-columns:minmax(320px,.46fr) minmax(0,.54fr);gap:30px;align-items:center;margin-top:40px;padding:18px;border:1px solid rgba(255,255,255,.15);border-radius:15px;background:rgba(255,255,255,.06)}
+.artist-secondary-photo img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;object-position:center;border-radius:10px}
 .artist-secondary-photo p{color:#dce6ee;margin:.35rem 0 0}
 .artist-photo-label{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.77rem}
 .artist-feature-section{scroll-margin-top:132px}
