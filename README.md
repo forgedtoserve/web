@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v50**
+- Current site package version: **v51**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -94,6 +94,21 @@ When creating a production package:
 ---
 
 ## Change Log
+
+
+## v51 — United for Warriors Layout Refinement
+
+Refined the United for Warriors event and artist pages after desktop review.
+
+Key changes:
+
+- Reworked the **More than a concert** section so the event-partner panel sits below the introduction instead of creating a large blank desktop column
+- Expanded the event-partner cards into a responsive full-width grid, including Everybody Eats
+- Removed the redundant standalone David Oakleaf logo from both the main headliner copy and the secondary **Live Performance** card; David’s supplied headliner photo already carries his branding
+- Added the confirmed **8:00–10:00 PM** headliner time directly to the Live Performance copy
+- Vertically centered and simplified the Live Performance copy beside David's performance photo
+- Updated shared CSS/JavaScript cache-busting references site-wide to `v51` because the shared stylesheet changed
+- No routes or image assets were added or removed
 
 ## v50 — David Oakleaf Live Performance Card Redesign
 
