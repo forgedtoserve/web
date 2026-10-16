@@ -1805,3 +1805,30 @@ iframe{max-width:100%}
 @media(max-width:1120px){.event-partner-logo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:700px){.event-partner-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.event-partner-logo-card{min-height:155px}}
 @media(max-width:460px){.event-partner-logo-grid{grid-template-columns:1fr}}
+
+
+/* v52 United for Warriors intro balance */
+.event-intro-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(360px,.75fr);gap:44px;align-items:start}
+.event-intro-grid>div:first-child{max-width:none}
+.event-partner-panel{margin-top:0}
+.event-partner-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+.event-partner-logo-card{min-height:172px}
+.event-intro-highlights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:30px}
+.event-intro-highlight{background:linear-gradient(145deg,#fff,#fbf8f1);border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:0 8px 20px rgba(11,31,51,.045)}
+.event-intro-highlight span{display:block;color:var(--gold-text);font-size:.78rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.event-intro-highlight h3{margin:0 0 7px;color:var(--navy);font-size:1.08rem}
+.event-intro-highlight p{margin:0;color:var(--muted);font-size:.94rem;line-height:1.55}
+.event-intro-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+@media(max-width:1160px){
+  .event-intro-grid{grid-template-columns:minmax(0,1fr) 360px;gap:30px}
+}
+@media(max-width:900px){
+  .event-intro-grid{grid-template-columns:1fr}
+  .event-partner-panel{margin-top:10px}
+  .event-partner-logo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  .event-intro-highlights{grid-template-columns:1fr}
+  .event-partner-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:460px){.event-partner-logo-grid{grid-template-columns:1fr}}

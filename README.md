@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v51**
+- Current site package version: **v52**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -95,6 +95,20 @@ When creating a production package:
 
 ## Change Log
 
+
+## v52 — United for Warriors Intro Balance
+
+Refined the **More than a concert** section after desktop review to use the available space more intentionally while preserving the partner panel beside the event overview.
+
+Key changes:
+
+- Restored the two-column desktop layout with **Event Partners** on the right
+- Added four compact event-highlight cards beneath the overview copy so the left column no longer ends in a large blank area
+- Added direct **View Full Schedule** and **Meet the Artists** calls to action
+- Returned the partner cards to a two-column layout inside the sidebar for better balance
+- Preserved responsive stacking on tablets and phones
+- Updated shared CSS/JavaScript cache-busting references site-wide to `v52` because the shared stylesheet changed
+- No routes or image assets were added or removed
 
 ## v51 — United for Warriors Layout Refinement
 
