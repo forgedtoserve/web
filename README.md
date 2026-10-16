@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v49**
+- Current site package version: **v50**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -94,6 +94,19 @@ When creating a production package:
 ---
 
 ## Change Log
+
+## v50 — David Oakleaf Live Performance Card Redesign
+
+Redesigned the David Oakleaf live-performance card so the desktop layout can no longer expose a partially clipped embedded logo. The live photo is now intentionally cropped above its baked-in logo, while the complete official David Oakleaf logo is displayed separately beside the performance copy.
+
+Key changes:
+
+- Added a clean live-performance crop that removes the baked-in logo area from the photo
+- Added the complete safe-area David Oakleaf logo as its own element in the live-performance card
+- Replaced the previous `artist-secondary-photo` layout with a new dedicated `artist-live-performance-v50` component, avoiding the older desktop max-height rule entirely
+- Preserved responsive stacking so the full photo and full logo remain visible on smaller screens
+- Updated site-wide shared CSS/JavaScript cache-busting references to `v50` because the shared stylesheet changed
+- No routes were added or removed, and no file deletion is required
 
 ## v49 — David Oakleaf Live Photo Full-Frame Fix
 

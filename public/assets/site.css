@@ -1790,3 +1790,11 @@ iframe{max-width:100%}
   .artist-feature-logo-card{width:138px;height:112px;right:10px;bottom:-20px}
   .artist-g4v-logo-card{width:122px;height:122px}
 }
+
+
+/* v50 David Oakleaf live-performance card redesign */
+.artist-live-performance-v50{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.65fr);gap:30px;align-items:center;margin-top:40px;padding:18px;border:1px solid rgba(255,255,255,.15);border-radius:15px;background:rgba(255,255,255,.06)}
+.artist-live-performance-image-v50{display:block;width:100%;height:auto;max-height:none;object-fit:contain;object-position:center;border-radius:10px}
+.artist-live-performance-copy-v50 p{color:#dce6ee;margin:.45rem 0 0;line-height:1.7}
+.artist-live-performance-logo-v50{display:block;width:min(100%,320px);height:auto;margin:24px 0 0;padding:7px;border-radius:10px;background:#050709;border:1px solid rgba(255,255,255,.12)}
+@media(max-width:900px){.artist-live-performance-v50{grid-template-columns:1fr}.artist-live-performance-logo-v50{width:min(100%,280px)}}
