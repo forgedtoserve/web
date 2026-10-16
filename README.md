@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v47**
+- Current site package version: **v48**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -94,6 +94,20 @@ When creating a production package:
 ---
 
 ## Change Log
+
+## v48 — David Oakleaf Logo Safe-Area Fix
+
+Corrected the David Oakleaf artist logo presentation so decorative border, stars, and corner details remain fully visible at every responsive size.
+
+Key changes:
+
+- Added a padded safe-area WebP version of the supplied David Oakleaf logo without altering the artwork
+- Updated the United for Warriors main lineup card to use the safe-area logo asset
+- Updated the Artists & Bands headliner section to use the same safe-area logo asset
+- Preserved the existing v47 layout, artist biographies, photos, links, schedule, and event content
+- Shared CSS and JavaScript were not changed, so no site-wide cache-busting update is required
+
+No file deletion is required for this release.
 
 ## v47 — United for Warriors Artists & Confirmed Headliner
 
