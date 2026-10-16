@@ -1719,3 +1719,74 @@ iframe{max-width:100%}
 .event-sponsor-opportunity-grid p{margin:8px 0 0;color:var(--muted);font-size:.94rem}
 @media(max-width:900px){.event-sponsor-tier-grid,.event-sponsor-opportunity-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.event-sponsor-tier-grid,.event-sponsor-opportunity-grid{grid-template-columns:1fr}.event-sponsor-tier-card,.event-sponsor-named{padding:20px}.event-sponsor-tier-card h3{font-size:1.8rem}}
+
+
+/* v47 United for Warriors artist page and confirmed concert lineup */
+.event-partner-text-card{background:linear-gradient(145deg,#fff,#f8f2e6)!important;border-color:#d7c28e!important}
+.event-partner-text-card strong{font-family:var(--font-display);font-size:1.45rem;color:var(--navy);line-height:1.05}
+.event-partner-text-card span{font-weight:700;color:var(--muted)}
+.event-lineup-action{margin-top:18px}
+.event-performer-card-headliner{border-color:rgba(202,162,77,.72)!important;background:linear-gradient(135deg,rgba(202,162,77,.16),rgba(255,255,255,.08))!important}
+.event-performer-logo-dark{background:#050709!important}
+.artist-page-hero{background:radial-gradient(circle at 84% 24%,rgba(202,162,77,.2),transparent 28%),linear-gradient(135deg,#081624 0%,#102b46 68%,#173b5f 100%)}
+.artist-page-hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(310px,.75fr);gap:52px;align-items:center}
+.artist-page-hero h1{max-width:760px}
+.artist-page-hero p{max-width:760px;color:#e6edf3;font-size:1.12rem}
+.artist-lineup-summary{display:grid;grid-template-columns:82px 1fr;gap:11px 16px;padding:28px;border:1px solid rgba(255,255,255,.18);border-radius:16px;background:rgba(255,255,255,.08);box-shadow:0 20px 44px rgba(0,0,0,.2)}
+.artist-lineup-summary span{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.06em;font-size:.82rem}
+.artist-lineup-summary strong{color:#fff;line-height:1.35}
+.artist-jump-nav{position:sticky;top:76px;z-index:8;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 7px 20px rgba(11,31,51,.06)}
+.artist-jump-nav .container{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:10px 0}
+.artist-jump-nav a{padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--navy);font-weight:800;font-size:.88rem}
+.artist-jump-nav a:hover,.artist-jump-nav a:focus-visible{background:var(--cream)}
+.artist-headliner-section{background:#081624;color:#fff;scroll-margin-top:132px}
+.artist-headliner-label{display:inline-flex;margin-bottom:20px;padding:7px 11px;border:1px solid rgba(202,162,77,.55);border-radius:999px;color:var(--gold);font-weight:900;letter-spacing:.09em;text-transform:uppercase;font-size:.76rem}
+.artist-headliner-grid{display:grid;grid-template-columns:minmax(330px,.82fr) minmax(0,1.18fr);gap:48px;align-items:start}
+.artist-headliner-photo{overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 55px rgba(0,0,0,.28);background:#101b26}
+.artist-headliner-photo img{display:block;width:100%;height:auto}
+.artist-headliner-copy h2{color:#fff;font-size:clamp(2.25rem,4.4vw,3.7rem);margin:.36rem 0 .2rem;letter-spacing:-.025em}
+.artist-headliner-copy p{color:#dce6ee;line-height:1.76}
+.artist-genre{color:var(--gold)!important;font-weight:900;letter-spacing:.04em;margin-top:0}
+.artist-logo-card{display:flex;align-items:center;justify-content:center;border-radius:14px;overflow:hidden}
+.artist-logo-card img{display:block;width:100%;height:auto}
+.artist-logo-card-dark{max-width:510px;background:#050709;border:1px solid rgba(255,255,255,.14);padding:8px}
+.artist-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.artist-secondary-photo{display:grid;grid-template-columns:minmax(250px,.58fr) minmax(0,.42fr);gap:26px;align-items:center;margin-top:40px;padding:18px;border:1px solid rgba(255,255,255,.15);border-radius:15px;background:rgba(255,255,255,.06)}
+.artist-secondary-photo img{display:block;width:100%;height:auto;max-height:360px;object-fit:cover;object-position:center 28%;border-radius:10px}
+.artist-secondary-photo p{color:#dce6ee;margin:.35rem 0 0}
+.artist-photo-label{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.77rem}
+.artist-feature-section{scroll-margin-top:132px}
+.artist-feature-grid{display:grid;grid-template-columns:minmax(360px,.9fr) minmax(0,1.1fr);gap:52px;align-items:center}
+.artist-feature-grid-reverse .artist-feature-media{order:2}.artist-feature-grid-reverse .artist-feature-copy{order:1}
+.artist-feature-media{position:relative;min-width:0}
+.artist-feature-photo{display:block;width:100%;height:auto;max-height:520px;object-fit:cover;border-radius:18px;border:1px solid var(--border);box-shadow:0 18px 44px rgba(11,31,51,.12)}
+.artist-feature-logo-card{position:absolute;right:18px;bottom:-28px;width:190px;height:150px;display:flex;align-items:center;justify-content:center;padding:9px;border-radius:14px;background:#fff;border:1px solid var(--border);box-shadow:0 12px 26px rgba(11,31,51,.15);overflow:hidden}
+.artist-feature-logo-card img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.artist-g4v-logo-card{width:160px;height:160px}
+.artist-feature-copy{padding:10px 0}
+.artist-feature-copy h2{color:var(--navy);font-size:clamp(2.1rem,4vw,3.25rem);margin:.28rem 0 .28rem}
+.artist-feature-copy p{color:var(--muted);line-height:1.75}
+.artist-tagline{font-family:var(--font-display);color:var(--navy)!important;font-size:1.35rem!important;font-weight:700;line-height:1.35!important;margin-top:.2rem}
+.artist-members{padding-top:10px;border-top:1px solid var(--border)}
+.artist-night-section{text-align:center}
+.artist-night-section h2{color:#fff}
+.artist-night-section .event-heading p{color:#dce7ef}
+.artist-night-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){
+  .artist-page-hero-grid,.artist-headliner-grid,.artist-feature-grid,.artist-secondary-photo{grid-template-columns:1fr}
+  .artist-feature-grid-reverse .artist-feature-media,.artist-feature-grid-reverse .artist-feature-copy{order:initial}
+  .artist-feature-media{margin-bottom:28px}
+  .artist-feature-logo-card{right:14px;bottom:-24px}
+  .artist-jump-nav{top:72px}
+}
+@media(max-width:640px){
+  .artist-page-hero{padding:58px 0}
+  .artist-lineup-summary{grid-template-columns:68px 1fr;padding:20px}
+  .artist-jump-nav{position:static}
+  .artist-jump-nav .container{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:9px 0}
+  .artist-jump-nav a{white-space:nowrap}
+  .artist-headliner-grid{gap:28px}
+  .artist-logo-card-dark{max-width:100%}
+  .artist-feature-logo-card{width:138px;height:112px;right:10px;bottom:-20px}
+  .artist-g4v-logo-card{width:122px;height:122px}
+}

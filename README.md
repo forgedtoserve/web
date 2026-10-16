@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v46**
+- Current site package version: **v47**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -94,6 +94,25 @@ When creating a production package:
 ---
 
 ## Change Log
+
+## v47 — United for Warriors Artists & Confirmed Headliner
+
+Created a dedicated Artists & Bands page for the 2027 United for Warriors Poker Run and Concert and updated the event site for the confirmed concert lineup.
+
+Key changes:
+
+- Added permanent route `/unitedforwarriors/artists/` with full artist profiles and supplied promotional imagery
+- Confirmed **David Oakleaf & The Open Road** as the 8:00–10:00 PM headliner and added David's supplied biography, artist logo, and promotional photos
+- Added a dedicated **Broke Teachers** profile featuring Matt Caldwell, James Quinn, and Michelle Quinn
+- Corrected the band name to **Glenpool Guitars for Vets Band** and described the group accurately as veterans, instructors, civilian musicians, and friends of the program
+- Updated the United for Warriors working schedule, concert lineup cards, live-music copy, and closing announcements
+- Updated the homepage event spotlight with the confirmed lineup and an Artists & Bands link
+- Added **Everybody Eats** of Tulsa to the event-partner presentation without inventing an unverified logo or external link
+- Added the new Artists & Bands route to `sitemap.xml` and site footers
+- Added seven optimized WebP artist assets while preserving source aspect ratios
+- Updated shared CSS for the artist-page layout and bumped site-wide `site.css` and `site.js` cache-busting references to `v47`
+
+No file deletion is required for this release.
 
 ## v46 — Facebook Homepage Reliability Fix
 
