@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v56**
+- Current site package version: **v57**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -94,6 +94,22 @@ When creating a production package:
 ---
 
 ## Change Log
+
+
+## v57 — Formspree Standard Submission + reCAPTCHA Compatibility
+
+Restored standard Formspree POST submissions across all seven website forms after the AJAX enhancement conflicted with the form's enabled reCAPTCHA configuration.
+
+Key changes:
+
+- Removed the `@formspree/ajax` browser library from Service Dogs, Veteran Business, Families, Contact, and United for Warriors contact pages
+- Removed the v56 AJAX enhancer from all seven Formspree forms
+- Preserved the existing Formspree endpoint, form fields, validation, inquiry labels, and reCAPTCHA/spam-protection workflow
+- Standard Formspree submissions now handle CAPTCHA and submission normally without requiring a custom CAPTCHA key
+- Custom post-submit routing to `https://forgedtoserve.org/thank-you` should be configured in the Formspree form's **Settings → Thank You Redirect**
+- Removed the external `unpkg.com` AJAX dependency from active pages; no additional Termly vendor scan is required solely for the v57 form fix
+
+No public routes or program content were removed. The obsolete `public/assets/formspree-forms.js` helper is removed from the full package; it may remain harmlessly in GitHub when applying the changed-files package and can be deleted during routine cleanup.
 
 ## v56 — Form Confirmation Redirect
 
