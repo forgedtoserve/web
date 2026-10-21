@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v47**
+- Current site package version: **v48**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -13,7 +13,7 @@ Official website repository for **Forged to Serve Foundation**.
 - Cloudflare Pages build output directory: `public`
 - **Termly** handles consent management, Privacy Policy, Cookie Policy, and consent preferences
 - **Formspree** handles general website contact-form submissions
-- **Zeffy** handles online donations and United for Warriors event ticketing
+- **Zeffy** handles online donations, United for Warriors attendee ticketing, sponsorships, and vendor registration
 - Homepage links directly to the Foundation’s official Facebook page; the unreliable native Facebook Page Plugin timeline embed was removed in v46
 - Homepage includes a temporary Garth Brooks raffle popup through October 21, 2026
 - Foundation email: `info@forgedtoserve.org`
@@ -94,6 +94,24 @@ When creating a production package:
 ---
 
 ## Change Log
+
+## v48 — United for Warriors Sponsorship & Vendor Registration
+
+Connected the event website to the official Zeffy sponsorship and vendor registration campaign and finalized current vendor pricing.
+
+Key changes:
+
+- Added direct Zeffy sponsorship and vendor-registration calls to action on the United for Warriors event page
+- Updated the homepage event card so **Sponsor or register as a vendor** opens the Zeffy campaign directly
+- Added the Zeffy registration link to the event contact page while preserving Formspree for custom/in-kind sponsorships and vendor questions
+- Finalized public vendor pricing at **$50 Craft / Artisan**, **$100 Business Vendor**, **$200 Food Truck / Food Vendor**, and **No Fee Veteran Resource Booth**
+- Updated the Stage Sponsor description to clarify that support can help cover artist expenses, stage production, sound, lighting, and related concert costs
+- Replaced remaining headliner TBA language with the confirmed **David Oakleaf & The Open Road** billing on the homepage and event page
+- Sponsorship/vendor destination: `https://www.zeffy.com/en-US/ticketing/united-for-warriors-sponsorships-and-vendor-registration`
+- Attendee ticketing remains separate at `https://www.zeffy.com/en-US/ticketing/united-for-warriors`
+- No CSS or JavaScript files were changed, so existing `v41` shared-asset cache-busting references remain valid
+
+No file deletion is required for this release.
 
 ## v47 — United for Warriors Ticketing Link
 
