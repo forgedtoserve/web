@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v55**
+- Current site package version: **v56**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -94,6 +94,24 @@ When creating a production package:
 ---
 
 ## Change Log
+
+## v56 — Form Confirmation Redirect
+
+Improved Formspree submission feedback and post-submit navigation across the site.
+
+Key changes:
+
+- Added Formspree's official `@formspree/ajax` browser library to all website forms that submit through the Foundation Formspree endpoint.
+- Redirects visitors to the site's existing `/thank-you` page only after Formspree confirms a successful submission.
+- Preserves the standard HTML `action` and `method` on every form as a no-JavaScript / blocked-script fallback.
+- Applies to the three program-interest forms, the main Contact form, and all United for Warriors inquiry forms.
+- Adds loading-state support and form-level error rendering through Formspree's supported library rather than custom `fetch()` code.
+- Added the new local helper asset `public/assets/formspree-forms.js`; no shared CSS or `site.js` changes were required.
+
+After deployment, run a fresh Termly scan because the affected pages now load Formspree's official AJAX library from `unpkg.com`.
+
+No public routes were added or removed.
+
 
 
 ## v55 — Formspree Submission Reliability Fix
