@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v53**
+- Current site package version: **v54**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -95,6 +95,24 @@ When creating a production package:
 
 ## Change Log
 
+
+## v54 — Program Interest & Assistance Inquiry Forms
+
+Added low-friction program-interest forms to the Foundation’s three core program pages while preserving the distinction between an inquiry and a formal application.
+
+Key changes:
+
+- Added a **Service Dog Program Interest Form** to `/dogs`
+- Added a **Veteran Business Program Interest Form** to `/business`
+- Added a **Family Support Inquiry** to `/families`
+- Routed all three forms through the existing Forged to Serve Formspree endpoint with distinct program and inquiry-type metadata
+- Added clear acknowledgment language that submission does not guarantee eligibility, placement, funding, services, or assistance
+- Avoided requesting diagnoses, medical records, DD214s, tax returns, bank statements, death certificates, Social Security numbers, or other sensitive documents during initial inquiry
+- Clarified program-page notices so interest inquiries are welcome now while formal application and assistance criteria remain in development
+- Added accessible async submission handling and redirect to the existing Thank You page
+- Reused existing form styles; no shared CSS or JavaScript files changed, so existing `v52` cache-busting references remain valid
+
+No file deletion is required for this release.
 
 ## v53 — United for Warriors Registration Links & Final Vendor Pricing
 

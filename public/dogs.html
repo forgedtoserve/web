@@ -8,11 +8,11 @@
 <img alt="Forged to Serve Foundation logo" class="header-logo" decoding="async" fetchpriority="high" height="480" loading="eager" src="assets/forged-to-serve-logo.jpg" width="480"/>
 <span class="brand-copy">FORGED TO SERVE FOUNDATION<small>FORGED BY SERVICE. DRIVEN TO SERVE.</small></span>
 </a>
-<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
-<span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+<button aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu" class="nav-toggle" type="button">
+<span aria-hidden="true" class="nav-toggle-icon"><span></span><span></span><span></span></span>
 <span class="nav-toggle-label">Menu</span>
 </button>
-<nav id="primary-nav" aria-label="Primary navigation" class="nav-links">
+<nav aria-label="Primary navigation" class="nav-links" id="primary-nav">
 <a href="about.html">About</a>
 <a href="leadership.html">Leadership</a>
 <a href="programs.html">Programs</a>
@@ -63,7 +63,7 @@
 <div class="kicker kicker-dark">Families of the Fallen</div>
 <h2>Support-dog assistance for eligible families.</h2>
 <p>Forged to Serve also intends to develop support-dog assistance for eligible spouses and children of fallen service members. The exact program model and terminology will be published once formally approved.</p>
-<p class="notice">Program details, eligibility requirements, partner standards, and application procedures will be announced as the program is formally established.</p>
+<p class="notice">Formal program details, eligibility requirements, partner standards, and application procedures will be announced as the program is established. Program-interest inquiries are welcome now.</p>
 </div>
 <div class="program-cta-card">
 <h3>Want to support this mission?</h3>
@@ -72,9 +72,89 @@
 </div>
 </div>
 </section>
-</main>
+<section class="section section-cream" id="program-interest">
+<div class="container">
+<div class="kicker kicker-dark">Program Interest</div>
+<h2>Service Dog Program Interest Form</h2>
+<p class="lede">Tell us how you are interested in the Service Dogs for Veterans program. This is an inquiry form only; formal eligibility requirements and application procedures are still being developed.</p>
+<div class="event-form-panel event-contact-form-panel">
+<form action="https://formspree.io/f/xppzljgj" class="contact-form program-interest-form" data-success-url="thank-you.html" method="POST">
+<input name="_subject" type="hidden" value="Service Dogs for Veterans - Program Interest"/>
+<input name="program" type="hidden" value="Service Dogs for Veterans"/>
+<input name="inquiry_type" type="hidden" value="Program Interest"/>
+<div class="form-row">
+<div class="form-field"><label for="dogs-name">Name <span aria-hidden="true">*</span></label><input autocomplete="name" id="dogs-name" name="name" required="" type="text"/></div>
+<div class="form-field"><label for="dogs-email">Email <span aria-hidden="true">*</span></label><input autocomplete="email" id="dogs-email" name="email" required="" type="email"/></div>
+</div>
+<div class="form-row">
+<div class="form-field"><label for="dogs-phone">Phone <span class="optional">(optional)</span></label><input autocomplete="tel" id="dogs-phone" name="phone" type="tel"/></div>
+<div class="form-field"><label for="dogs-status">Military / veteran status <span aria-hidden="true">*</span></label><select id="dogs-status" name="military_status" required=""><option disabled="" selected="" value="">Select one</option><option>Veteran</option><option>Active duty</option><option>National Guard / Reserve</option><option>Submitting on behalf of a veteran</option><option>Other / Not sure</option></select></div>
+</div>
+<div class="form-row">
+<div class="form-field"><label for="dogs-branch">Branch of service <span class="optional">(optional)</span></label><input id="dogs-branch" name="branch_of_service" type="text"/></div>
+<div class="form-field"><label for="dogs-location">City / State <span aria-hidden="true">*</span></label><input autocomplete="address-level2" id="dogs-location" name="city_state" required="" type="text"/></div>
+</div>
+<div class="form-row">
+<div class="form-field"><label for="dogs-help">What kind of program help are you seeking? <span aria-hidden="true">*</span></label><select id="dogs-help" name="support_interest" required=""><option disabled="" selected="" value="">Select one</option><option>Information about service-dog placement</option><option>Help locating a qualified training partner</option><option>Training or equipment support</option><option>Veterinary or ongoing support resources</option><option>I am not sure yet</option><option>Other</option></select></div>
+<div class="form-field"><label for="dogs-current">Do you currently have a dog you hope to work with? <span aria-hidden="true">*</span></label><select id="dogs-current" name="current_dog" required=""><option disabled="" selected="" value="">Select one</option><option>Yes</option><option>No</option><option>Not sure</option></select></div>
+</div>
+<div class="form-field"><label for="dogs-message">Tell us briefly how we may be able to help <span class="optional">(optional)</span></label><textarea id="dogs-message" name="message" rows="5"></textarea></div>
+<label class="event-checkbox"><input name="inquiry_acknowledgment" required="" type="checkbox" value="I understand this is an inquiry and does not guarantee eligibility, placement, funding, or assistance"/> <span>I understand this is a program inquiry and does not constitute an application or guarantee eligibility, placement, funding, or assistance.</span></label>
+<button class="btn btn-gold" type="submit">Submit Program Interest</button>
+<p class="form-note">Please do not submit diagnoses, medical records, Social Security numbers, DD214s, financial account information, passwords, or other sensitive documents through this form. We will request any necessary verification later through an appropriate process. See our <a href="privacy.html">Privacy Policy</a>.</p>
+</form>
+</div>
+</div>
+</section></main>
 <footer class="footer"><div class="container"><div class="footer-grid">
 <div><div class="footer-brand"><img alt="Forged to Serve Foundation logo" class="footer-logo" decoding="async" height="480" loading="lazy" src="assets/forged-to-serve-logo.jpg" width="480"/><strong>Forged to Serve Foundation</strong></div><p>Supporting veterans and the families of fallen service members through meaningful assistance, resources, and opportunity.</p><p><strong>Forged by Service. Driven to Serve.</strong></p><p><strong>IRS-recognized 501(c)(3) public charity</strong><br/><strong>Federal EIN:</strong> 42-5213008</p></div>
 <div><strong>Explore</strong><br/><a href="about.html">About Us</a><br/><a href="leadership.html">Leadership</a><br/><a href="programs.html">Programs</a><br/><a href="partners.html">Partners</a><br/><a href="contact.html">Contact</a></div>
 <div><strong>Support</strong><br/><a href="donate.html">Donate</a><br/><a href="privacy.html">Privacy Policy</a><br/><a href="cookie-policy.html">Cookie Policy</a><br/><a href="terms.html">Terms of Use</a><br/><a class="termly-display-preferences" href="#">Cookie Preferences</a></div>
-</div><small>© <span data-year=""></span> Forged to Serve Foundation. All rights reserved.</small></div></footer><script src="assets/site.js?v=52"></script></body></html>
+</div><small>© <span data-year=""></span> Forged to Serve Foundation. All rights reserved.</small></div></footer><script src="assets/site.js?v=52"></script><script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".program-interest-form").forEach(function (form) {
+    const submitButton = form.querySelector('button[type="submit"]');
+    const status = document.createElement("p");
+    status.className = "form-status";
+    status.setAttribute("role", "status");
+    status.setAttribute("aria-live", "polite");
+    form.appendChild(status);
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      status.textContent = "";
+      status.classList.remove("is-error", "is-success");
+      submitButton.disabled = true;
+      const originalText = submitButton.textContent;
+      submitButton.textContent = "Sending...";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
+        if (response.ok) {
+          status.textContent = "Submitted successfully.";
+          status.classList.add("is-success");
+          window.location.href = form.dataset.successUrl || "thank-you.html";
+          return;
+        }
+        let message = "We couldn't submit the form. Please try again.";
+        try {
+          const data = await response.json();
+          if (data && Array.isArray(data.errors) && data.errors.length) {
+            message = data.errors.map(function (e) { return e.message; }).join(" ");
+          }
+        } catch (_) {}
+        throw new Error(message);
+      } catch (error) {
+        status.textContent = error.message || "We couldn't submit the form. Please try again.";
+        status.classList.add("is-error");
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    });
+  });
+});
+</script></body></html>
