@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v48**
+- Current site package version: **v53**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -13,7 +13,7 @@ Official website repository for **Forged to Serve Foundation**.
 - Cloudflare Pages build output directory: `public`
 - **Termly** handles consent management, Privacy Policy, Cookie Policy, and consent preferences
 - **Formspree** handles general website contact-form submissions
-- **Zeffy** handles online donations, United for Warriors attendee ticketing, sponsorships, and vendor registration
+- **Zeffy** handles online donations
 - Homepage links directly to the Foundation’s official Facebook page; the unreliable native Facebook Page Plugin timeline embed was removed in v46
 - Homepage includes a temporary Garth Brooks raffle popup through October 21, 2026
 - Foundation email: `info@forgedtoserve.org`
@@ -95,35 +95,107 @@ When creating a production package:
 
 ## Change Log
 
-## v48 — United for Warriors Sponsorship & Vendor Registration
 
-Connected the event website to the official Zeffy sponsorship and vendor registration campaign and finalized current vendor pricing.
+## v53 — United for Warriors Registration Links & Final Vendor Pricing
+
+Connected the current v52 United for Warriors experience to the live Zeffy registration campaigns without removing or replacing the established artist, partner, or event content.
 
 Key changes:
 
-- Added direct Zeffy sponsorship and vendor-registration calls to action on the United for Warriors event page
-- Updated the homepage event card so **Sponsor or register as a vendor** opens the Zeffy campaign directly
-- Added the Zeffy registration link to the event contact page while preserving Formspree for custom/in-kind sponsorships and vendor questions
-- Finalized public vendor pricing at **$50 Craft / Artisan**, **$100 Business Vendor**, **$200 Food Truck / Food Vendor**, and **No Fee Veteran Resource Booth**
-- Updated the Stage Sponsor description to clarify that support can help cover artist expenses, stage production, sound, lighting, and related concert costs
-- Replaced remaining headliner TBA language with the confirmed **David Oakleaf & The Open Road** billing on the homepage and event page
-- Sponsorship/vendor destination: `https://www.zeffy.com/en-US/ticketing/united-for-warriors-sponsorships-and-vendor-registration`
-- Attendee ticketing remains separate at `https://www.zeffy.com/en-US/ticketing/united-for-warriors`
-- No CSS or JavaScript files were changed, so existing `v41` shared-asset cache-busting references remain valid
+- Added the attendee ticket / registration link: `https://www.zeffy.com/en-US/ticketing/united-for-warriors`
+- Added the sponsorship and vendor registration link: `https://www.zeffy.com/en-US/ticketing/united-for-warriors-sponsorships-and-vendor-registration`
+- Added direct registration calls to action on the homepage, event page, and event contact page
+- Preserved the dedicated `/unitedforwarriors/artists/` page, David Oakleaf imagery and biography, Broke Teachers and Glenpool Guitars for Vets artwork, and the Everybody Eats partner presentation
+- Finalized public vendor pricing at **$50 Craft / Artisan**, **$100 Business Vendor**, **$200 Food Truck / Food Vendor**, and **Free Veteran Resource Booth**
+- Expanded the **$5,000 Stage Sponsor** wording to note that the sponsorship helps support artist expenses, stage production, sound, lighting, and related entertainment costs
+- Kept the existing event inquiry forms available for custom, in-kind, special setup, and general questions
+- No CSS, JavaScript, routes, or image assets were changed; existing `v52` cache-busting references remain valid
 
 No file deletion is required for this release.
 
-## v47 — United for Warriors Ticketing Link
+## v52 — United for Warriors Intro Balance
 
-Connected the public website to the official Zeffy ticketing page for **United for Warriors Poker Run and Concert**.
+Refined the **More than a concert** section after desktop review to use the available space more intentionally while preserving the partner panel beside the event overview.
 
 Key changes:
 
-- Added a prominent **Get Tickets** button to the United for Warriors event-page hero
-- Added a second **Get Tickets** call to action near the bottom of the event page
-- Updated the homepage United for Warriors event card with a direct **Get Tickets** button while preserving links to event details and participation information
-- Ticket destination: `https://www.zeffy.com/en-US/ticketing/united-for-warriors`
-- No CSS or JavaScript files were changed, so existing `v41` shared-asset cache-busting references remain valid
+- Restored the two-column desktop layout with **Event Partners** on the right
+- Added four compact event-highlight cards beneath the overview copy so the left column no longer ends in a large blank area
+- Added direct **View Full Schedule** and **Meet the Artists** calls to action
+- Returned the partner cards to a two-column layout inside the sidebar for better balance
+- Preserved responsive stacking on tablets and phones
+- Updated shared CSS/JavaScript cache-busting references site-wide to `v52` because the shared stylesheet changed
+- No routes or image assets were added or removed
+
+## v51 — United for Warriors Layout Refinement
+
+Refined the United for Warriors event and artist pages after desktop review.
+
+Key changes:
+
+- Reworked the **More than a concert** section so the event-partner panel sits below the introduction instead of creating a large blank desktop column
+- Expanded the event-partner cards into a responsive full-width grid, including Everybody Eats
+- Removed the redundant standalone David Oakleaf logo from both the main headliner copy and the secondary **Live Performance** card; David’s supplied headliner photo already carries his branding
+- Added the confirmed **8:00–10:00 PM** headliner time directly to the Live Performance copy
+- Vertically centered and simplified the Live Performance copy beside David's performance photo
+- Updated shared CSS/JavaScript cache-busting references site-wide to `v51` because the shared stylesheet changed
+- No routes or image assets were added or removed
+
+## v50 — David Oakleaf Live Performance Card Redesign
+
+Redesigned the David Oakleaf live-performance card so the desktop layout can no longer expose a partially clipped embedded logo. The live photo is now intentionally cropped above its baked-in logo, while the complete official David Oakleaf logo is displayed separately beside the performance copy.
+
+Key changes:
+
+- Added a clean live-performance crop that removes the baked-in logo area from the photo
+- Added the complete safe-area David Oakleaf logo as its own element in the live-performance card
+- Replaced the previous `artist-secondary-photo` layout with a new dedicated `artist-live-performance-v50` component, avoiding the older desktop max-height rule entirely
+- Preserved responsive stacking so the full photo and full logo remain visible on smaller screens
+- Updated site-wide shared CSS/JavaScript cache-busting references to `v50` because the shared stylesheet changed
+- No routes were added or removed, and no file deletion is required
+
+## v49 — David Oakleaf Live Photo Full-Frame Fix
+
+Corrected the David Oakleaf live-performance image on the United for Warriors Artists page so the complete supplied promotional photo — including the embedded David Oakleaf logo at the bottom — remains visible instead of being vertically cropped.
+
+Key changes:
+
+- Removed the fixed maximum-height crop from the live-performance image
+- Preserved the image’s natural aspect ratio so the embedded artist logo and decorative artwork are fully visible
+- Rebalanced the live-performance media/text columns for a cleaner desktop presentation
+- Updated site-wide shared CSS/JavaScript cache-busting references to `v49` because the shared stylesheet changed
+- No routes were added or removed, and no file deletion is required
+
+## v48 — David Oakleaf Logo Safe-Area Fix
+
+Corrected the David Oakleaf artist logo presentation so decorative border, stars, and corner details remain fully visible at every responsive size.
+
+Key changes:
+
+- Added a padded safe-area WebP version of the supplied David Oakleaf logo without altering the artwork
+- Updated the United for Warriors main lineup card to use the safe-area logo asset
+- Updated the Artists & Bands headliner section to use the same safe-area logo asset
+- Preserved the existing v47 layout, artist biographies, photos, links, schedule, and event content
+- Shared CSS and JavaScript were not changed, so no site-wide cache-busting update is required
+
+No file deletion is required for this release.
+
+## v47 — United for Warriors Artists & Confirmed Headliner
+
+Created a dedicated Artists & Bands page for the 2027 United for Warriors Poker Run and Concert and updated the event site for the confirmed concert lineup.
+
+Key changes:
+
+- Added permanent route `/unitedforwarriors/artists/` with full artist profiles and supplied promotional imagery
+- Confirmed **David Oakleaf & The Open Road** as the 8:00–10:00 PM headliner and added David's supplied biography, artist logo, and promotional photos
+- Added a dedicated **Broke Teachers** profile featuring Matt Caldwell, James Quinn, and Michelle Quinn
+- Corrected the band name to **Glenpool Guitars for Vets Band** and described the group accurately as veterans, instructors, civilian musicians, and friends of the program
+- Updated the United for Warriors working schedule, concert lineup cards, live-music copy, and closing announcements
+- Updated the homepage event spotlight with the confirmed lineup and an Artists & Bands link
+- Added **Everybody Eats** of Tulsa to the event-partner presentation without inventing an unverified logo or external link
+- Added the new Artists & Bands route to `sitemap.xml` and site footers
+- Added seven optimized WebP artist assets while preserving source aspect ratios
+- Updated shared CSS for the artist-page layout and bumped site-wide `site.css` and `site.js` cache-busting references to `v47`
 
 No file deletion is required for this release.
 
