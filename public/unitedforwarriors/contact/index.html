@@ -72,7 +72,7 @@
 <h2>Sponsorship inquiry</h2>
 <p class="lede">Ready to sponsor United for Warriors? Choose and pay for a sponsorship through Zeffy. Use the inquiry form below for custom, in-kind, or special sponsorship requests.</p><p><a class="btn btn-gold" href="https://www.zeffy.com/en-US/ticketing/united-for-warriors-sponsorships-and-vendor-registration" rel="noopener noreferrer" target="_blank">Choose a Sponsorship</a></p>
 <div class="event-form-panel event-contact-form-panel">
-<form action="https://formspree.io/f/xppzljgj" class="contact-form event-inquiry-form" method="POST" data-success-url="/thank-you">
+<form action="https://formspree.io/f/xppzljgj" class="contact-form event-inquiry-form" method="POST">
 <input type="hidden" name="_subject" value="United for Warriors Poker Run and Concert - Sponsorship Inquiry"/>
 <input type="hidden" name="event" value="United for Warriors Poker Run and Concert"/>
 <input type="hidden" name="inquiry_type" value="Sponsorship"/>
@@ -102,7 +102,7 @@
 <h2>Vendor / booth application</h2>
 <p class="lede">Vendor registration is now open through Zeffy for craft/artisan booths, business booths, food trucks/food vendors, and approved veteran resource booths. Use the form below only for special setup questions or participation requests that do not fit the standard registration options.</p><p><a class="btn btn-gold" href="https://www.zeffy.com/en-US/ticketing/united-for-warriors-sponsorships-and-vendor-registration" rel="noopener noreferrer" target="_blank">Register as a Vendor or Resource Booth</a></p>
 <div class="event-form-panel event-contact-form-panel">
-<form action="https://formspree.io/f/xppzljgj" class="contact-form event-inquiry-form" method="POST" data-success-url="/thank-you">
+<form action="https://formspree.io/f/xppzljgj" class="contact-form event-inquiry-form" method="POST">
 <input type="hidden" name="_subject" value="United for Warriors Poker Run and Concert - Vendor Booth Application"/>
 <input type="hidden" name="event" value="United for Warriors Poker Run and Concert"/>
 <input type="hidden" name="inquiry_type" value="Vendor / Booth Application"/>
@@ -134,7 +134,7 @@
 <h2>General event question</h2>
 <p class="lede">For questions that do not fit sponsorship or vendor participation, send the planning team a message here.</p>
 <div class="event-form-panel event-contact-form-panel event-general-form">
-<form action="https://formspree.io/f/xppzljgj" class="contact-form event-inquiry-form" method="POST" data-success-url="/thank-you">
+<form action="https://formspree.io/f/xppzljgj" class="contact-form event-inquiry-form" method="POST">
 <input type="hidden" name="_subject" value="United for Warriors Poker Run and Concert - General Event Question"/>
 <input type="hidden" name="event" value="United for Warriors Poker Run and Concert"/>
 <input type="hidden" name="inquiry_type" value="General Event Question"/>
@@ -163,45 +163,6 @@
 <div><strong>Support</strong><br/><a href="/donate">Donate</a><br/><a href="/privacy">Privacy Policy</a><br/><a href="/cookie-policy">Cookie Policy</a><br/><a href="/terms">Terms of Use</a><br/><a class="termly-display-preferences" href="#">Cookie Preferences</a></div>
 </div><small>© <span data-year=""></span> Forged to Serve Foundation. All rights reserved.</small></div></footer>
 <script src="/assets/site.js?v=52"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".event-inquiry-form").forEach(function (form) {
-    const submitButton = form.querySelector('button[type="submit"]');
-    const status = document.createElement("p");
-    status.className = "form-status";
-    status.setAttribute("role", "status");
-    status.setAttribute("aria-live", "polite");
-    form.appendChild(status);
-    form.addEventListener("submit", async function (event) {
-      event.preventDefault();
-      status.textContent = "";
-      status.classList.remove("is-error", "is-success");
-      submitButton.disabled = true;
-      const originalText = submitButton.textContent;
-      submitButton.textContent = "Sending...";
-      try {
-        const response = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } });
-        if (response.ok) {
-          status.textContent = "Submitted successfully.";
-          status.classList.add("is-success");
-          window.location.href = form.dataset.successUrl || "/thank-you";
-          return;
-        }
-        let message = "We couldn't submit the form. Please try again.";
-        try {
-          const data = await response.json();
-          if (data && Array.isArray(data.errors) && data.errors.length) message = data.errors.map(function (e) { return e.message; }).join(" ");
-        } catch (_) {}
-        throw new Error(message);
-      } catch (error) {
-        status.textContent = error.message || "We couldn't submit the form. Please try again.";
-        status.classList.add("is-error");
-        submitButton.disabled = false;
-        submitButton.textContent = originalText;
-      }
-    });
-  });
-});
-</script>
+
 </body>
 </html>

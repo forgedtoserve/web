@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v54**
+- Current site package version: **v55**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -95,6 +95,20 @@ When creating a production package:
 
 ## Change Log
 
+
+## v55 — Formspree Submission Reliability Fix
+
+Replaced the site's custom JavaScript/AJAX Formspree submission handlers with standard HTML form POSTs for more reliable submissions across browsers, privacy tools, and content blockers.
+
+Key changes:
+
+- Removed custom `fetch()` interception from the main Contact form, all three program-interest forms, and all United for Warriors contact/inquiry forms
+- Preserved the existing Formspree endpoint, form subjects, program/inquiry metadata, required fields, and validation
+- Removed obsolete page-level `data-success-url` attributes that only applied to the former AJAX handlers
+- Forms now submit directly to Formspree using standard HTML behavior; configure the Formspree form's Thank You Redirect to `https://forgedtoserve.org/thank-you` for a branded post-submit destination
+- No CSS, shared JavaScript, program content, event content, routes, or images were changed
+
+No file deletion is required for this release.
 
 ## v54 — Program Interest & Assistance Inquiry Forms
 
