@@ -1,0 +1,16 @@
+Delete these obsolete files when applying the v58 changed-files-only package:
+
+public/assets/android-chrome-192x192.png
+public/assets/android-chrome-512x512.png
+public/assets/board-of-directors.jpg
+public/assets/dallas-lowry-foundation-logo.jpg
+public/assets/david-oakleaf-live.webp
+public/assets/david-oakleaf-logo.webp
+public/assets/forged-to-serve-raffle-logo.jpg
+public/assets/forged-to-serve-wordmark.jpg
+public/assets/garth-raffle-banner.webp
+public/assets/garth-raffle-qr.png
+public/assets/glenpool-g4v-band-indoor.webp
+public/assets/nicole-ingraham.jpg
+public/assets/united-for-warriors-three-broke-teachers.png
+public/assets/united-for-warriors-warhound-vma.jpg

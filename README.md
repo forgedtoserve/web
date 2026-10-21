@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v57**
+- Current site package version: **v58**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -15,7 +15,6 @@ Official website repository for **Forged to Serve Foundation**.
 - **Formspree** handles general website contact-form submissions
 - **Zeffy** handles online donations
 - Homepage links directly to the Foundation’s official Facebook page; the unreliable native Facebook Page Plugin timeline embed was removed in v46
-- Homepage includes a temporary Garth Brooks raffle popup through October 21, 2026
 - Foundation email: `info@forgedtoserve.org`
 - IRS-recognized **501(c)(3) public charity** under IRC Section 170(b)(1)(A)(vi); Federal EIN `42-5213008`; exemption effective September 2, 2026
 - Public Facebook page: `https://facebook.com/forgedtoserve`
@@ -70,7 +69,7 @@ Custom domains:
 
 ## Audit Status
 
-A full production audit was completed for **v18**. See:
+A full production audit was completed again before **v58**. See:
 
 - [`AUDIT.md`](AUDIT.md) — findings identified during the audit
 - [`FINAL-AUDIT.md`](FINAL-AUDIT.md) — post-fix validation and remaining manual items
@@ -94,6 +93,23 @@ When creating a production package:
 ---
 
 ## Change Log
+
+## v58 — Audit Remediation & Event SEO
+
+Applied the safe technical fixes identified in the October 2026 production audit.
+
+Key changes:
+
+- Removed obsolete Formspree AJAX queue stubs while preserving standard Formspree POST submissions and CAPTCHA behavior
+- Removed the expired Garth Brooks raffle popup, raffle JavaScript, and raffle-only public assets
+- Removed confirmed unused legacy public assets, including old leadership and superseded event/artist image variants
+- Made the dark accessible gold explicit for leadership-role and sponsorship-amount text on light backgrounds
+- Tightened selected page titles and meta descriptions for search-result readability
+- Added Schema.org `Event` JSON-LD for United for Warriors with date/time, BlackGold Park, organizer, and confirmed performers
+- Refreshed shared CSS/JavaScript cache-busting references to `v58` across all public HTML pages
+- Left Termly-generated legal-policy text untouched; the Privacy Policy questionnaire still needs to be regenerated in Termly to reflect the new program-interest form fields
+- **Changed-files deployment note:** delete the obsolete files listed in `DELETE-FILES-v58.txt`; uploading changed files alone will not remove old assets from GitHub
+
 
 
 ## v57 — Formspree Standard Submission + reCAPTCHA Compatibility

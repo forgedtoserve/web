@@ -304,3 +304,10 @@ Validated the v41 homepage hero refinement. Confirmed the hero remains responsiv
 
 Validated the removal of the website's installable-app metadata. All 17 public HTML pages no longer link to `site.webmanifest`, and `public/site.webmanifest` is absent from the production package. Standard favicon and Apple touch-icon links remain intact. Repository-wide checks found no service-worker registration, `beforeinstallprompt`, or `appinstalled` handlers. No routes, forms, CSS, JavaScript, or event content changed in this release. Static validation checked **17 HTML pages**, **693 links/assets references**, and **48 image instances** with **0 errors**.
 
+
+
+## v58 Audit Remediation Validation
+
+The v58 release applies the safe code/content fixes identified in the October 2026 audit. Validation targets include removal of expired raffle code/assets, removal of obsolete Formspree AJAX stubs, cleanup of confirmed unused assets, accessible dark-gold text on light backgrounds, refreshed metadata, and United for Warriors Event structured data.
+
+**Manual follow-up remains:** update/regenerate the Termly Privacy Policy questionnaire so it accurately reflects the fields now collected by the Service Dog, Veteran Business, and Family Support inquiry forms. The generated legal-policy text was intentionally not hand-edited in v58.
