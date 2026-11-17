@@ -74,6 +74,19 @@ A full production audit was completed again before **v58**. See:
 - [`AUDIT.md`](AUDIT.md) — findings identified during the audit
 - [`FINAL-AUDIT.md`](FINAL-AUDIT.md) — post-fix validation and remaining manual items
 
+## Preview Review Log — Required for Every Website Change
+
+The Forged to Serve **What Changed?** review history is at https://preview.forged-to-serve.pages.dev/test/#changes and lives in `public/test/index.html` on the `preview` branch. For **every** design, content, asset, functionality, navigation, or preview-dashboard update:
+
+1. Add a dated, human-readable `change-entry` **at the top** of the dashboard's What Changed section (newest first), grouping related edits from one update when appropriate.
+2. Record a concise title, what changed, which **pages or files** are affected, what remains to be reviewed, and a publication status.
+3. Use **Preview only** or **Needs review** for unpublished work; mark **Approved** only after explicit approval and **Published** only after verifying the production deployment. Do not imply an update is live while it remains on `preview`.
+4. Preserve earlier history in descending date order; put older entries in the expandable section if the newest entries become lengthy. Do not delete earlier published review notes just because `main` catches up.
+5. After changes, confirm the preview dashboard and affected pages render, and check Cloudflare Pages preview deployment status. Share a direct link to the review log and relevant page(s).
+6. Use the [GitHub main-to-preview comparison](https://github.com/forgedtoserve/web/compare/main...preview) as the authoritative record of file-level differences; the dashboard's descriptions are a reviewer-friendly summary.
+
+Changes to the `preview` branch do **not** go to the live website automatically. Do not merge changes into `main` without explicit approval. Keep the production version history below separate from the preview review history.
+
 ## Updating This Change Log
 
 For each meaningful production change, add a new sequential version section.
