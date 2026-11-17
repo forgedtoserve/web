@@ -23,7 +23,8 @@ Official website repository for **Forged to Serve Foundation**.
 
 - **Richard Hacker** — Founder, President & Executive Director
 - **Vanessa Hacker** — Vice President / Treasurer
-- **Scott F. Lowry** — Secretary / Program Director
+- **Scott F. Lowry** — Program Director
+- **Tera Vickers** — Secretary
 
 Board biographies and photos are being added as finalized for public use.
 
