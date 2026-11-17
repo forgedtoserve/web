@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v58**
+- Current site package version: **v59**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -23,7 +23,8 @@ Official website repository for **Forged to Serve Foundation**.
 
 - **Richard Hacker** — Founder, President & Executive Director
 - **Vanessa Hacker** — Vice President / Treasurer
-- **Scott F. Lowry** — Secretary / Program Director
+- **Scott F. Lowry** — Program Director
+- **Tera Vickers** — Secretary
 
 Board biographies and photos are being added as finalized for public use.
 
@@ -93,6 +94,13 @@ When creating a production package:
 ---
 
 ## Change Log
+
+## v59 — Leadership Profiles & Officer Role Corrections
+
+- Added **Tera Vickers** to the Board of Directors as **Secretary**, including her U.S. Air Force service background, veteran community work, and original, unretouched photograph.
+- Updated **Scott F. Lowry** to **Program Director**, removing his former Secretary title from the leadership page and biography.
+- Preserved the existing board-card styling, mission information, program pages, and website assets.
+- Production release includes only `public/leadership.html`, `public/assets/tera-vickers.jpg`, and this README. The `/test/` dashboard remains on the `preview` branch only.
 
 ## v58 — Audit Remediation & Event SEO
 
