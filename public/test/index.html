@@ -22,13 +22,92 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
 .stage{background:#dfe5e7;padding:22px 12px 26px;overflow:auto;text-align:center;min-height:380px}.device{margin:0 auto;transition:width .25s ease;max-width:100%;width:100%;background:#fff;border-radius:5px;border:1px solid #9caeb8;box-shadow:0 12px 30px #2136422b;overflow:hidden;text-align:left}.device iframe{border:0;width:100%;display:block;height:780px;background:white}.device.tablet{width:768px}.device.mobile{width:390px}.device.mobile iframe{height:720px}.stage-footer{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:14px 20px;background:white}.stage-footer p{font-size:12px;color:var(--muted);margin:0}.stage-footer a{font-size:13px;text-decoration:none;font-weight:800;color:#235173}.stage-footer a:hover{text-decoration:underline}
 .bottom{margin-top:22px;padding:18px 20px;background:white;border:1px solid var(--line);border-radius:11px}.bottom h2{font-family:Georgia,Cambria,serif;font-size:22px;margin:0 0 5px;color:var(--navy)}.bottom p{font-size:14px;color:#586675;margin:0}.footer{font-size:12px;text-align:center;color:#79838b;padding-top:22px}
 @media(max-width:970px){.workspace{grid-template-columns:1fr}.sidebar{padding:15px}.page-menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr))}.section-title{margin:15px 0 6px}.device iframe{height:680px}}@media(max-width:540px){.page{width:calc(100% - 20px);margin-top:19px}.topbar{padding:12px 13px}.brand img{height:43px;width:43px}.brand strong{font-size:16px}.brand small{font-size:9px}.preview-badge{font-size:10px}.sidebar h2{font-size:19px}.stage{padding:11px 5px}.toolbar{padding:13px}.control-group button{padding:8px 9px}.device iframe{height:600px}}
+
+/* Preview review history; leave existing page preview controls untouched. */
+.change-log{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:0 3px 15px #1727370b;margin-bottom:20px;padding:20px 23px}
+.change-head{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:17px}
+.change-head h2{font-family:Georgia,Cambria,serif;font-size:24px;color:var(--navy);margin:3px 0 5px}
+.change-head p{font-size:13px;color:#586675;max-width:680px;margin:0}
+.change-meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.change-state{background:#f9efd5;border:1px solid #e4c97e;color:#725015;font-size:12px;font-weight:800;border-radius:100px;padding:6px 11px}
+.change-compare{font-size:13px;color:#235173;text-decoration:none;font-weight:750;padding:8px 2px}
+.change-compare:hover{text-decoration:underline}
+.change-entry{border-top:1px solid #e5e9e7;padding:14px 0;display:grid;grid-template-columns:120px minmax(0,1fr);gap:14px}
+.change-date{font-size:12px;color:#687482;font-weight:700;padding-top:3px}
+.change-entry h3{font-size:16px;line-height:1.4;color:var(--navy);margin:0 0 4px}
+.change-entry p{font-size:13px;line-height:1.55;color:#516071;margin:0}
+.change-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.change-tags span{background:#eff3f5;color:#3b5363;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:700}
+.change-history{border-top:1px solid #e5e9e7;margin-top:1px;padding-top:12px}
+.change-history summary{cursor:pointer;color:#235173;font-weight:750;font-size:13px;list-style-position:inside}
+.change-history .change-entry:last-child{padding-bottom:2px}
+.change-note{color:#647282;font-size:12px;line-height:1.5;margin:14px 0 0}
+@media(max-width:560px){.change-log{padding:16px}.change-entry{grid-template-columns:1fr;gap:3px}.change-head h2{font-size:22px}.change-meta{align-items:flex-start}}
 </style>
 </head>
 <body>
 <header class="topbar"><a class="brand" href="../index.html" aria-label="Open preview homepage"><img src="../assets/forged-to-serve-logo.jpg" alt="Forged to Serve Foundation shield" width="54" height="54"><span><strong>Forged to Serve Foundation</strong><small>FORGED BY SERVICE. DRIVEN TO SERVE.</small></span></a><span class="preview-badge">Test Site · Not Production</span></header>
 <main class="page">
-<div class="intro"><div><div class="eyebrow">Website Review Center · v58 baseline</div><h1>Review changes before they go live.</h1><p>Browse this independent copy of the Forged to Serve website, switch screen sizes, and compare each page with the live site. This review dashboard is the only new page in the initial test package.</p></div><div class="intro-links"><a class="outline-link" href="../index.html" target="_blank" rel="noopener">Open Test Homepage</a><a class="outline-link" href="https://forgedtoserve.org/" target="_blank" rel="noopener noreferrer">Open Live Website</a></div></div>
+<div class="intro"><div><div class="eyebrow">Website Review Center · v58 baseline</div><h1>Review changes before they go live.</h1><p>Browse this independent copy of the Forged to Serve website, switch screen sizes, and compare each page with the live site. This review dashboard is the only new page in the initial test package.</p></div><div class="intro-links"><a class="outline-link" href="#changes">What Changed?</a><a class="outline-link" href="../index.html" target="_blank" rel="noopener">Open Test Homepage</a><a class="outline-link" href="https://forgedtoserve.org/" target="_blank" rel="noopener noreferrer">Open Live Website</a></div></div>
 <div class="notice" role="note"><div class="symbol" aria-hidden="true">!</div><p><strong>Important:</strong> This is a test copy. The website's forms, donation buttons, and registration links may still connect to real services. Use the review tools without submitting actual information or payments.</p></div>
+
+<section class="change-log" id="changes" aria-labelledby="change-log-title">
+  <div class="change-head">
+    <div>
+      <div class="eyebrow">Preview update history</div>
+      <h2 id="change-log-title">What Changed?</h2>
+      <p>See exactly what we've prepared for review, which pages are affected, and what still needs approval before the changes go live.</p>
+    </div>
+    <div class="change-meta">
+      <span class="change-state">Preview only · Not published</span>
+      <a class="change-compare" href="https://github.com/forgedtoserve/web/compare/main...preview" target="_blank" rel="noopener noreferrer">View exact GitHub changes ↗</a>
+    </div>
+  </div>
+  <!-- PREVIEW CHANGE LOG: REQUIRED before each website update. Add a .change-entry
+       immediately below this comment (newest first). Give a real local calendar date,
+       title, plain-English summary, affected pages/files, remaining review notes, and
+       Preview only / Needs review / Approved / Published status.
+       Do NOT call anything published until production deployment is confirmed.
+       Retain older entries; use the expandable history when necessary.
+       See repository README.md for the full review workflow. -->
+  <div class="change-entry">
+    <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time></div>
+    <div>
+      <h3>Added “What Changed?” review history</h3>
+      <p>The dashboard now has a dated change log, affected-page labels, review status, and a link to compare the preview branch with the live site's source. Future website updates must be recorded here, as documented in the repository README.</p>
+      <div class="change-tags"><span>Review dashboard · /test/</span><span>README files</span><span>Preview only</span></div>
+    </div>
+  </div>
+  <div class="change-entry">
+    <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time></div>
+    <div>
+      <h3>Added Tera Vickers to the leadership preview</h3>
+      <p>Added Tera's Board Member profile, describing her retired Air Force service and veteran outreach. <strong>Needs review:</strong> confirm biography and role; her portrait currently shows initials as a placeholder rather than a photo.</p>
+      <div class="change-tags"><span>Leadership · /leadership</span><span>Needs review</span><span>Preview only</span></div>
+    </div>
+  </div>
+  <details class="change-history">
+    <summary>Show earlier preview setup changes (2)</summary>
+    <div class="change-entry">
+      <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time></div>
+      <div>
+        <h3>Created visual website review dashboard</h3>
+        <p>Introduced a page selector, embedded page viewer, Desktop/Tablet/Phone controls, and direct links to compare pages against the live Forged to Serve site.</p>
+        <div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span></div>
+      </div>
+    </div>
+    <div class="change-entry">
+      <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time></div>
+      <div>
+        <h3>Established the preview review directory</h3>
+        <p>Created the dedicated <code>/test/</code> directory and review instructions on the <code>preview</code> branch to separate proposed website changes from production.</p>
+        <div class="change-tags"><span>Preview setup</span><span>Preview only</span></div>
+      </div>
+    </div>
+  </details>
+  <p class="change-note">This is a manually maintained review summary, not an automatically generated diff. The GitHub comparison above is the authoritative source for file changes. Test forms, donations, and registration links may still connect to live external services.</p>
+</section>
+
 <div class="workspace">
 <aside class="sidebar" aria-label="Page selector"><h2>Pages to review</h2><p>Choose any page to load inside the preview.</p>
 <div class="section-title">Foundation</div><nav class="page-menu" aria-label="Foundation pages">
