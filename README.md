@@ -4,7 +4,7 @@ Official website repository for **Forged to Serve Foundation**.
 
 ## Current Site Notes
 
-- Current site package version: **v58**
+- Current site package version: **v59**
 - Production updates only after the package is committed to `main` and Cloudflare Pages completes deployment
 - Production site: **https://forgedtoserve.org**
 - Static HTML/CSS/JavaScript site with deployable files under `/public`
@@ -107,6 +107,13 @@ When creating a production package:
 ---
 
 ## Change Log
+
+## v59 — Leadership Profiles & Officer Role Corrections
+
+- Added **Tera Vickers** as **Secretary**, including her original unretouched photograph and veteran service background.
+- Updated **Scott F. Lowry** to **Program Director**, removing his former Secretary title.
+- Released the leadership page, Tera's image asset and release notes to `main` in commit `a48de98c`.
+- The `/test/` review dashboard stays on the `preview` branch and is not included in production.
 
 ## v58 — Audit Remediation & Event SEO
 
