@@ -769,3 +769,23 @@ Connected the public domain and integrated Zeffy and Formspree.
 ## v1 — Initial Foundation Site
 
 Built the initial responsive static site and core public pages.
+
+
+## Website Change, Review, and Release Workflow (shared standard)
+
+This procedure applies to the Dallas Lowry Foundation, Forged to Serve Foundation, and VFW Post 9126 websites. Follow it for every future website change.
+
+1. **Preview first.** Make and deploy proposed website changes on the repository's existing preview branch. Do not modify production until the site owner approves the change. Keep Cloudflare Access protecting the preview site; never apply preview-only authentication to the public site.
+2. **Record the change.** Update the preview website's `/test/` review dashboard **and this README** in the same work cycle. Include the date, plain-language title and description, affected page paths, release version or **Unreleased**, and status (**Needs review**, **Ready**, **Published**, or **Pending**). Add a working link to review the affected page. Keep a chronological record; do not silently remove older entries.
+3. **Consistent review centers.** All three `/test/` dashboards should follow the approved Forged to Serve-style layout: branded header, prominent **TEST SITE · NOT PRODUCTION** label, production-baseline version, **What Changed?** release history, and side-by-side or device-size preview controls where implemented. Preserve each organization's own branding.
+4. **Release versions.** The production-baseline number refers to the version actually published to production, not a pending preview. Display the applicable version **beside each change**. For work not yet released use **Unreleased**; for historical items without reliable version evidence use **Version not recorded**. Do not invent historical version assignments. Keep version numbers synchronized between production documentation and the preview review dashboard.
+5. **Approval and publishing.** Obtain explicit approval before publishing. Promote only approved changes to the production branch, avoiding unrelated preview work. Increment the production release version when publishing an approved release, and mark the associated change **Published** with that release version in the dashboard and README.
+6. **Verify before claiming live.** Check the GitHub commit, Cloudflare deployment result, public production page, and preview dashboard after deployment. Distinguish **committed**, **deployed**, and **verified live** in reports. Never mark a change Published merely because a commit was pushed.
+7. **Protect integrations.** Test forms and email integrations safely. Preview forms, donation links, newsletter signups, and registration links may connect to real services; do not submit real personal data or payments just to check appearance.
+8. **Maintain consistency.** When improving the review workflow or dashboard design on one site, apply the same standard to the other two repositories, while respecting their different build systems and organizational branding.
+
+### Release record format
+
+`YYYY-MM-DD | Version: vX (or Unreleased) | Status: Needs review / Ready / Published / Pending | Pages: /affected-path/ | Summary: ... | Verification: ...`
+
+This README is the persistent operating guide. The review dashboard is the visible change history for reviewers. Both must be maintained together.
