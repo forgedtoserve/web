@@ -101,7 +101,7 @@ export async function onRequestGet({ request, env }) {
   const revision = new URL(request.url).searchParams.get("revision") || "";
   if (!/^[a-zA-Z0-9._-]{1,80}$/.test(revision)) return json({ error: "Invalid revision" }, 400);
   const response = await fetch(
-    "https://api.github.com/repos/forgedtoserve/Forged-To-Serve-Reviews/issues?state=all&per_page=100&sort=created&direction=desc",
+    "https://api.github.com/repos/forgedtoserve/Forged-To-Serve-Reviews/issues?state=open&per_page=100&sort=created&direction=desc",
     { headers: {
       "Authorization": "Bearer " + env.GITHUB_TOKEN,
       "Accept": "application/vnd.github+json",
@@ -126,7 +126,7 @@ export async function onRequestGet({ request, env }) {
   const issues = await response.json();
   const prefix = "Website review request — " + revision;
   const requests = (Array.isArray(issues) ? issues : [])
-    .filter(issue => !issue.pull_request && issue.title === prefix)
+    .filter(issue => !issue.pull_request && issue.state === "open" && issue.title === prefix)
     .map(issue => {
       const body = String(issue.body || "");
       const author = body.match(/^\- \*\*Requested by:\*\* (.+)$/m);
