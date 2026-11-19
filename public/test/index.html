@@ -70,10 +70,10 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
       <button type="button" disabled title="Available after secure owner authentication and deployment testing" style="padding:11px 16px;border:0;border-radius:8px;background:#68768a;color:white;cursor:not-allowed">Publish approved changes · Not enabled</button>
       <button type="button" disabled title="Available after verified release history and rollback testing" style="padding:11px 16px;border:1px solid #68768a;border-radius:8px;background:white;color:#48586b;cursor:not-allowed">Rollback previous release · Not enabled</button>
     </div>
-    <p style="margin:12px 0 0;font-size:.9rem">Release log format: MMM D, YYYY · h:mm:ss AM/PM CST/CDT. Publication status must come from verified deployments, not just GitHub commits.</p>
+    <p style="margin:12px 0 0;font-size:.9rem">Release log format: MMM D, YYYY · h:mm:ss AM/PM CST/CDT. Historical entries without verifiable times are marked “Exact time not recorded.” Publication status must come from verified deployments, not just GitHub commits.</p>
   </section>
   <div class="change-entry">
-    <div class="change-date"><time datetime="2026-11-18">Nov 18, 2026</time></div>
+    <div class="change-date"><time datetime="2026-11-18T18:06:42-06:00">Nov 18, 2026 · 6:06:42 PM CST</time><small style="display:block;font-size:.75rem;margin-top:5px">GitHub commit time · not live publication</small></div>
     <div><h3>Site-wide publishing and rollback controls — preview design</h3><p>Added a non-operational preview panel for the proposed owner-only publish and rollback workflow. Both controls are disabled until authentication, confirmation, deployment, and verification are implemented. Exact change and publication timestamps (including seconds) will be recorded by the release system once connected; no timestamp has been fabricated.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div>
   </div>
   <!-- PREVIEW CHANGE LOG: REQUIRED before each website update. Add a .change-entry
@@ -84,7 +84,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
        Retain older entries; use the expandable history when necessary.
        See repository README.md for the full review workflow. -->
   <div class="change-entry">
-    <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time></div>
+    <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time><small style="display:block;font-size:.75rem;margin-top:5px">Exact time not recorded</small></div>
     <div>
       <h3>v59 leadership release published <span class="version-badge">v59</span></h3>
       <p>Approved the leadership updates and committed the v59 release to GitHub <code>main</code>: Tera Vickers is Secretary with her original photograph, and Scott F. Lowry is Program Director. <strong>Published:</strong> the live website update was confirmed by the site owner on Nov 16, 2026. Production commit <code>a48de98</code>.</p>
@@ -92,7 +92,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
     </div>
   </div>
   <div class="change-entry">
-    <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time></div>
+    <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time><small style="display:block;font-size:.75rem;margin-top:5px">Exact time not recorded</small></div>
     <div>
       <h3>Added Tera Vickers's original photograph <span class="version-badge">v59</span></h3>
       <p>Replaced Tera's initials placeholder with her original, unretouched JPEG on the Leadership page. The image is presented in the existing board-card layout, and her role remains Secretary while Scott remains Program Director. <strong>Published:</strong> the original photograph and framing are in v59, with the live release confirmed by the site owner.</p>
@@ -100,7 +100,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
     </div>
   </div>
   <div class="change-entry">
-    <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time></div>
+    <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time><small style="display:block;font-size:.75rem;margin-top:5px">Exact time not recorded</small></div>
     <div>
       <h3>Corrected leadership roles: Tera is Secretary; Scott is Program Director <span class="version-badge">v59</span></h3>
       <p>Updated the leadership page and repository notes to list Tera Vickers as Secretary and Scott F. Lowry as Program Director only. Removed Scott's outdated Secretary title from his biography and image description. <strong>Published:</strong> the corrected roles and Tera's original portrait are in v59, with the live release confirmed by the site owner.</p>
@@ -108,7 +108,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
     </div>
   </div>
   <div class="change-entry">
-    <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time></div>
+    <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time><small style="display:block;font-size:.75rem;margin-top:5px">Exact time not recorded</small></div>
     <div>
       <h3>Added “What Changed?” review history <span class="version-badge">Unreleased</span></h3>
       <p>The dashboard now has a dated change log, affected-page labels, review status, and a link to compare the preview branch with the live site's source. Future website updates must be recorded here, as documented in the repository README.</p>
@@ -116,7 +116,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
     </div>
   </div>
   <div class="change-entry">
-    <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time></div>
+    <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time><small style="display:block;font-size:.75rem;margin-top:5px">Exact time not recorded</small></div>
     <div>
       <h3>Added Tera Vickers to the leadership preview <span class="version-badge">v59</span></h3>
       <p>Added Tera's Secretary profile, describing her retired Air Force service and veteran outreach. <strong>Published:</strong> the biography, Secretary role, and original portrait are included in v59, with the live release confirmed by the site owner.</p>
@@ -125,7 +125,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
   </div>
   <details class="change-history" id="full-change-history"><summary>Show older changes and release history (61 entries)</summary><p class="change-note">One continuous history: preview setup updates and past README releases. Labels distinguish preview-only changes from published releases.</p>
 <div class="change-entry">
-      <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time></div>
+      <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time><small style="display:block;font-size:.75rem;margin-top:5px">Exact time not recorded</small></div>
       <div>
         <h3>Created visual website review dashboard <span class="version-badge">Unreleased</span></h3>
         <p>Introduced a page selector, embedded page viewer, Desktop/Tablet/Phone controls, and direct links to compare pages against the live Forged to Serve site.</p>
@@ -133,7 +133,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
       </div>
     </div>
 <div class="change-entry">
-      <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time></div>
+      <div class="change-date"><time datetime="2026-11-16">Nov 16, 2026</time><small style="display:block;font-size:.75rem;margin-top:5px">Exact time not recorded</small></div>
       <div>
         <h3>Established the preview review directory <span class="version-badge">Unreleased</span></h3>
         <p>Created the dedicated <code>/test/</code> directory and review instructions on the <code>preview</code> branch to separate proposed website changes from production.</p>
