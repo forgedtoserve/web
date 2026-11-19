@@ -136,3 +136,52 @@ export async function onRequestGet({ request, env }) {
     });
   return json({ revision, requests });
 }
+
+export async function onRequestPatch({request,env}){
+  const origin=request.headers.get("Origin");
+  if(origin&&!new Set([new URL(request.url).origin,"https://preview.forgedtoserve.org"]).has(origin))
+    return json({error:"Origin not allowed"},403);
+  if(!env.ACCESS_TEAM_DOMAIN||!env.ACCESS_AUD||!env.REVIEWER_EMAILS||!env.GITHUB_TOKEN)
+    return json({error:"Review authentication is not configured"},503);
+  const jwt=request.headers.get("Cf-Access-Jwt-Assertion");
+  if(!jwt)return json({error:"Sign in first"},401);
+  let claims;
+  try{claims=await verifyAccessToken(jwt,env.ACCESS_TEAM_DOMAIN,env.ACCESS_AUD);}
+  catch{return json({error:"Sign-in could not be verified"},401);}
+  const email=String(claims.email||"").trim().toLowerCase();
+  if(!email||!env.REVIEWER_EMAILS.split(",").map(x=>x.trim().toLowerCase()).includes(email))
+    return json({error:"Reviewer not authorized"},403);
+  let body;
+  try{body=await request.json();}catch{return json({error:"Invalid request body"},400);}
+  const revision=String(body.revision||"");
+  const number=Number(body.issueNumber);
+  const reason=String(body.reason||"").trim();
+  if(revision!==CURRENT_REVISION)return json({error:"Revision changed; refresh the Review Center"},409);
+  if(!Number.isInteger(number)||number<1||reason.length<8||reason.length>1000||body.confirmed!==true)
+    return json({error:"A request number, explicit confirmation, and resolution note (8–1000 characters) are required"},400);
+  const url="https://api.github.com/repos/forgedtoserve/Forged-To-Serve-Reviews/issues/"+number;
+  const headers={"Authorization":"Bearer "+env.GITHUB_TOKEN,
+    "Accept":"application/vnd.github+json","User-Agent":"ForgedToServe-ReviewCenter/1.0",
+    "X-GitHub-Api-Version":"2022-11-28","Cache-Control":"no-cache"};
+  let found;
+  try{
+    const lookup=await fetch(url,{headers,cache:"no-store"});
+    if(!lookup.ok)return json({error:"Private request could not be verified"},502);
+    found=await lookup.json();
+  }catch{return json({error:"Private request could not be read"},502);}
+  if(found.title!=="Website review request — "+revision||found.pull_request)
+    return json({error:"Issue does not belong to the current review revision"},403);
+  if(found.state!=="open")return json({error:"This request is already closed",alreadyClosed:true},409);
+  const resolution="\n\n## Resolution\n\n- **Resolved by:** "+email+
+    "\n- **Resolved at:** "+new Date().toISOString()+
+    "\n- **Outcome:** "+reason.replace(/[\r\n]+/g," ");
+  const result=await fetch(url,{method:"PATCH",
+    headers:{...headers,"Content-Type":"application/json"},
+    body:JSON.stringify({state:"closed",state_reason:"completed",
+      body:String(found.body||"")+resolution})});
+  if(!result.ok)return json({error:"GitHub did not confirm resolution. The request remains open."},502);
+  const issue=await result.json();
+  if(issue.state!=="closed")return json({error:"GitHub did not confirm the closed state"},502);
+  return json({resolved:true,requestNumber:issue.number,resolvedBy:email,
+    resolvedAt:issue.closed_at||new Date().toISOString(),noPublishing:true});
+}
