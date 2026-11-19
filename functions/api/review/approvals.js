@@ -47,7 +47,7 @@ async function reviewer(request,env){
  return {email};
 }
 async function records(env){
- const res=await fetch(API+"?state=all&per_page=100&sort=created&direction=desc",{headers:ghHeaders(env)});
+ const res=await fetch(API+"?state=all&per_page=100&sort=created&direction=desc&fresh="+Date.now(),{headers:{...ghHeaders(env),"Cache-Control":"no-cache"},cache:"no-store"});
  if(!res.ok)throw Error("GitHub records could not be read ("+res.status+")");
  const list=await res.json();
  if(!Array.isArray(list)||list.length>=100)throw Error("Review history is too large to safely verify approvals");
