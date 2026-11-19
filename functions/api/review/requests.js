@@ -126,9 +126,9 @@ export async function onRequestGet({ request, env }) {
     .map(issue => {
       const body = String(issue.body || "");
       const author = body.match(/^\- \*\*Requested by:\*\* (.+)$/m);
-      const marker="## Request\\n\\n";
+      const marker="## Request\n\n";
       const start=body.indexOf(marker);
-      const note=start<0?"":body.slice(start+marker.length).split("\\n\\n---\\n")[0].trim();
+      const note=start<0?"":body.slice(start+marker.length).split("\n\n---\n")[0].trim();
       return {
         number: issue.number,
         requestedBy: author ? author[1].trim() : "Authorized reviewer",
