@@ -54,7 +54,7 @@ export async function onRequestPost({ request, env }) {
   const issueBody = [
     "## Website revision change request",
     "",
-    "- **Revision:** " + revision.replace(/[\\r\\n]/g, " "),
+    "- **Revision:** " + revision.replace(/[\r\n]/g, " "),
     "- **Requested by:** " + email,
     "- **Submitted:** " + createdAt,
     "- **Status:** Revisions requested",
