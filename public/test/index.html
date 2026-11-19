@@ -91,6 +91,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
     </div>
     <p style="margin:12px 0 0;font-size:.9rem">Release log format: MMM D, YYYY · h:mm:ss AM/PM CST/CDT. Historical entries without verifiable times are marked “Exact time not recorded.” Publication status must come from verified deployments, not just GitHub commits.</p>
   </section>
+  <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview bug fix · exact time not recorded</small></div><div><h3>Approval confirmation now updates status immediately <span class="version-badge">Unreleased</span></h3><p>Confirmed private approval request #2 saved, but a subsequent GitHub list read could briefly return stale data and incorrectly show “No approval recorded.” The Review Center now displays the GitHub-confirmed POST result immediately and disables the duplicate approval button; the backend requests fresh issue listings. Publishing remains disabled.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Private approval API</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div></div>
   <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview approval update · exact time not recorded</small></div><div><h3>Private revision approval tracking <span class="version-badge">Unreleased</span></h3><p>Added a review-only approval button and status for the current revision, storing verified reviewer identity and GitHub timestamp in a private issue. Open change requests block approval; new requests invalidate old sign-offs. No publishing or rollback is connected. Reviewers must test approval before relying on it.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Private approval API</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div></div>
   <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview layout update · exact time not recorded</small></div><div><h3>Moved Request Change to the top <span class="version-badge">Unreleased</span></h3><p>Moved the authenticated change-request form and open-request list to the beginning of What Changed? so reviewers can submit feedback without scrolling through release history. This earlier layout update kept the same private GitHub storage; approval tracking was added in a subsequent preview update, and publishing remains disabled.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div></div>
   <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview review cleanup · exact time not recorded</small></div><div><h3>Private requests working; completed test archived</h3><p>Verified an authenticated Request Change submission to the private GitHub repository and its display under this revision. Marked test request #1 completed in GitHub; the Review Center now displays open requests only. Corrected outdated connection descriptions. Review sign-offs are being tested; publishing remains disabled.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span><span>Not published</span></div></div></div>
@@ -281,14 +282,9 @@ function approvalWhen(raw){
  return raw?new Date(raw).toLocaleString('en-US',{timeZone:'America/Chicago',
    month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit',second:'2-digit',timeZoneName:'short'}):'Not recorded';
 }
-async function readApproval(){
- const response=await fetch(approvalEndpoint,{credentials:'same-origin',cache:'no-store'});
- let state;
- try{state=await response.json();}catch{throw new Error('The private approval service returned an invalid response.');}
- if(!response.ok)throw new Error(state.error||'Private approval service is unavailable.');
+function showApproval(state){
  if(state.approved){
-   const message='Approved for review by '+state.approvedBy+' on '+approvalWhen(state.approvedAt)+'.';
-   approvalSummary.textContent=message;
+   approvalSummary.textContent='Approved for review by '+state.approvedBy+' on '+approvalWhen(state.approvedAt)+'.';
    detailBy.textContent=state.approvedBy;detailBy.classList.remove('pending');
    detailTime.textContent=approvalWhen(state.approvedAt);
    approveButton.disabled=true;approveButton.textContent='Review approved';
@@ -305,6 +301,13 @@ async function readApproval(){
      approveButton.disabled=false;approveButton.textContent='Approve this revision (review only)';
    }
  }
+}
+async function readApproval(){
+ const response=await fetch(approvalEndpoint,{credentials:'same-origin',cache:'no-store'});
+ let state;
+ try{state=await response.json();}catch{throw new Error('The private approval service returned an invalid response.');}
+ if(!response.ok)throw new Error(state.error||'Private approval service is unavailable.');
+ showApproval(state);
  return state;
 }
 async function initApproval(){
@@ -324,7 +327,9 @@ approveButton.addEventListener('click',async()=>{
    let result;
    try{result=await response.json();}catch{throw new Error('Approval service returned an invalid response.');}
    if(!response.ok||!result.approved)throw new Error(result.error||'Approval was not saved.');
-   await readApproval();
+   // GitHub confirms the issue on POST; show that confirmed response immediately.
+   // A following issue-list GET may briefly lag behind GitHub's newly created issue.
+   showApproval(result);
    approvalMessage.textContent='Approval recorded privately as #'+result.approvalNumber+'. No website changes were published.';
  }catch(error){approvalMessage.textContent='Approval not confirmed: '+error.message;
    try{await readApproval();}catch{approveButton.disabled=true;approveButton.textContent='Approval unavailable';}}
