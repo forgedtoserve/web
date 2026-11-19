@@ -180,7 +180,7 @@ export async function onRequestPatch({request,env}){
   const result=await fetch(url,{method:"PATCH",
     headers:{...headers,"Content-Type":"application/json"},
     body:JSON.stringify({state:"closed",state_reason:"completed",
-      body:String(found.body||"")+resolution})});
+      body:String(found.body||"").replace(/^- \*\*Status:\*\* .+$/m,"- **Status:** Resolved")+resolution})});
   if(!result.ok)return json({error:"GitHub did not confirm resolution. The request remains open."},502);
   const issue=await result.json();
   if(issue.state!=="closed")return json({error:"GitHub did not confirm the closed state"},502);
