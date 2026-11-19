@@ -106,12 +106,13 @@ export async function onRequestGet({ request, env }) {
   if (!response.ok) {
     // Return a safe, non-credential diagnostic only to an authenticated, allowlisted reviewer.
     // GitHub's response message can distinguish missing permissions from other 403 causes.
-    let githubReason = "GitHub denied this request";
+    let githubReason = "GitHub denied this request without an explanation";
     try {
       const detail = await response.json();
-      const message = String(detail?.message || "").slice(0, 180);
-      if (/^(Resource not accessible by personal access token|Bad credentials|Not Found|API rate limit exceeded|You have triggered an abuse detection mechanism|Secondary rate limit exceeded|Issues are disabled for this repo)/i.test(message)) {
-        githubReason = message;
+      // Only expose short GitHub API error text after verifying reviewer identity.
+      // Never return an authorization header or the token itself.
+      if (typeof detail?.message === "string") {
+        githubReason = detail.message.replace(/github_pat_[A-Za-z0-9_]+/g, "[redacted]").slice(0, 200);
       }
     } catch {}
     return json({ error: "Could not read private review requests", githubStatus: response.status, githubReason }, 502);
