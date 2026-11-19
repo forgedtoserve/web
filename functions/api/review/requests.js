@@ -76,3 +76,48 @@ export async function onRequestPost({ request, env }) {
   const issue = await response.json();
   return json({ saved: true, requestNumber: issue.number, url: issue.html_url, requestedBy: email, submittedAt: createdAt }, 201);
 }
+
+
+// List private review requests for authorized reviewers only.
+// The public Preview HTML never contains the GitHub credential or saved notes.
+export async function onRequestGet({ request, env }) {
+  if (!env.ACCESS_TEAM_DOMAIN || !env.ACCESS_AUD || !env.REVIEWER_EMAILS || !env.GITHUB_TOKEN) {
+    return json({ error: "Review saving is not configured" }, 503);
+  }
+  const token = request.headers.get("Cf-Access-Jwt-Assertion");
+  if (!token) return json({ error: "Sign in through the review center first" }, 401);
+  let claims;
+  try { claims = await verifyAccessToken(token, env.ACCESS_TEAM_DOMAIN, env.ACCESS_AUD); }
+  catch { return json({ error: "Sign-in could not be verified" }, 401); }
+  const allowed = env.REVIEWER_EMAILS.split(",").map(x => x.trim().toLowerCase()).filter(Boolean);
+  const email = String(claims.email || "").toLowerCase();
+  if (!email || !allowed.includes(email)) return json({ error: "Reviewer not authorized" }, 403);
+
+  const revision = new URL(request.url).searchParams.get("revision") || "";
+  if (!/^[a-zA-Z0-9._-]{1,80}$/.test(revision)) return json({ error: "Invalid revision" }, 400);
+  const response = await fetch(
+    "https://api.github.com/repos/forgedtoserve/Forged-To-Serve-Reviews/issues?state=all&per_page=100&sort=created&direction=desc",
+    { headers: {
+      "Authorization": "Bearer " + env.GITHUB_TOKEN,
+      "Accept": "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28"
+    } }
+  );
+  if (!response.ok) return json({ error: "Could not read private review requests", githubStatus: response.status }, 502);
+  const issues = await response.json();
+  const prefix = "Website review request — " + revision;
+  const requests = (Array.isArray(issues) ? issues : [])
+    .filter(issue => !issue.pull_request && issue.title === prefix)
+    .map(issue => {
+      const body = String(issue.body || "");
+      const author = body.match(/^\- \*\*Requested by:\*\* (.+)$/m);
+      const note = body.match(/^## Request\s*\n\s*\n([\s\S]*?)(?:\n\n---\n|$)/m);
+      return {
+        number: issue.number,
+        requestedBy: author ? author[1].trim() : "Authorized reviewer",
+        submittedAt: issue.created_at,
+        note: note ? note[1].trim() : ""
+      };
+    });
+  return json({ revision, requests });
+}
