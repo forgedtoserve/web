@@ -4,7 +4,7 @@
 const json = (data, status = 200) => new Response(JSON.stringify(data), {
   status, headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" }
 });
-const CURRENT_REVISION="approval-tracking-2026-11-18";
+const CURRENT_REVISION="review-workflow-2026-11-18";
 const decode = value => {
   const s = value.replace(/-/g, "+").replace(/_/g, "/");
   return JSON.parse(atob(s.padEnd(Math.ceil(s.length / 4) * 4, "=")));
