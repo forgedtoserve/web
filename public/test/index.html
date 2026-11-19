@@ -43,6 +43,8 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
 .change-history .change-entry:last-child{padding-bottom:2px}
 .change-note{color:#647282;font-size:12px;line-height:1.5;margin:14px 0 0}
 @media(max-width:560px){.change-log{padding:16px}.change-entry{grid-template-columns:1fr;gap:3px}.change-head h2{font-size:22px}.change-meta{align-items:flex-start}}
+
+.revision-review{margin-top:11px;padding:12px 14px;border:1px solid #dce3e8;border-radius:8px;background:#f8fafb;font-size:13px}.revision-review dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 12px;margin:0}.revision-review dt{font-weight:750;color:#344a5d}.revision-review dd{margin:0;color:#536273}.revision-review .pending{color:#8b641e;font-weight:750}@media(max-width:560px){.revision-review dl{grid-template-columns:1fr;gap:2px}.revision-review dd{margin-bottom:7px}}
 </style>
 </head>
 <body>
@@ -65,18 +67,20 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
   </div>
   <section aria-label="Publishing controls development" style="margin:18px 0 26px;padding:20px;border:1px solid #d6dbe3;border-radius:12px;background:#f7f9fc;color:#17243b">
     <h3 style="margin:0 0 8px">Shared review, approval & publishing · In development</h3>
-    <p style="margin:0 0 12px">Planned shared review access for Scott, Vanessa, and Richard: any one of the three may request revisions or approve and publish the exact current revision after confirmation. All three will share comments and history, and receive email notifications. Approval will invalidate when the revision changes. Secure identity verification, feedback storage, email delivery, deployment integration, and rollback verification are not connected yet. No action on this panel can change the live website.</p>
+    <p style="margin:0 0 12px">Planned shared review access for Scott, Vanessa, Richard, and Tera: any one of the four may request revisions or approve and publish the exact current revision after confirmation. All four will share comments and history, and receive email notifications. Approval will invalidate when the revision changes. Secure identity verification, feedback storage, email delivery, deployment integration, and rollback verification are not connected yet. No action on this panel can change the live website.</p>
     <div style="display:flex;flex-wrap:wrap;gap:10px">
       <button type="button" disabled title="Available after secure owner authentication and deployment testing" style="padding:11px 16px;border:0;border-radius:8px;background:#68768a;color:white;cursor:not-allowed">Approve & publish · Not enabled</button>
       <button type="button" disabled title="Available after verified release history and rollback testing" style="padding:11px 16px;border:1px solid #68768a;border-radius:8px;background:white;color:#48586b;cursor:not-allowed">Restore previous release · Not enabled</button>
     </div>
     <p style="margin:12px 0 0;font-size:.9rem">Release log format: MMM D, YYYY · h:mm:ss AM/PM CST/CDT. Historical entries without verifiable times are marked “Exact time not recorded.” Publication status must come from verified deployments, not just GitHub commits.</p>
   </section>
+  <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview layout update · exact time not recorded</small></div><div><h3>Revision-by-revision approval details <span class="version-badge">Unreleased</span></h3><p>Added a review summary directly beneath this revision. Secure GitHub-backed comments and approvals are not implemented yet.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span></div><div class="revision-review"><dl><dt>Requested by</dt><dd>Scott (review layout direction)</dd><dt>Review notes</dt><dd>Keep notes and approvals under each revision number</dd><dt>Approved by</dt><dd class="pending">Awaiting approval</dd><dt>Approval time</dt><dd>Not recorded</dd><dt>Publication</dt><dd>Preview only · not published</dd></dl></div></div></div>
   <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Design update · exact time not recorded</small></div><div><h3>Shared review and one-person approval workflow</h3><p>Updated the proposed review workflow: Scott, Vanessa, or Richard can request changes, or approve the current revision to trigger publishing after confirmation. One approval is sufficient. Shared comments, screenshot attachments, notifications, revision-specific approvals, and rollback are planned but not connected. Live publication remains disabled until secure backend testing.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div></div>
   <div class="change-entry">
     <div class="change-date"><time datetime="2026-11-18T18:06:42-06:00">Nov 18, 2026 · 6:06:42 PM CST</time><small style="display:block;font-size:.75rem;margin-top:5px">GitHub commit time · not live publication</small></div>
     <div><h3>Site-wide publishing and rollback controls — preview design</h3><p>Added a non-operational preview panel for the proposed owner-only publish and rollback workflow. Both controls are disabled until authentication, confirmation, deployment, and verification are implemented. Exact change and publication timestamps (including seconds) will be recorded by the release system once connected; no timestamp has been fabricated.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div>
   </div>
+<p class="change-note">Revision review details will be stored in GitHub after authenticated write actions are implemented. The current display does not accept or record approvals; existing published history remains unchanged.</p>
   <!-- PREVIEW CHANGE LOG: REQUIRED before each website update. Add a .change-entry
        immediately below this comment (newest first). Give a real local calendar date,
        title, plain-English summary, affected pages/files, remaining review notes, and
