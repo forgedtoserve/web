@@ -91,6 +91,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
     </div>
     <p style="margin:12px 0 0;font-size:.9rem">Release log format: MMM D, YYYY · h:mm:ss AM/PM CST/CDT. Historical entries without verifiable times are marked “Exact time not recorded.” Publication status must come from verified deployments, not just GitHub commits.</p>
   </section>
+  <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview consistency fix · exact time not recorded</small></div><div><h3>Prevent stale approval display during review-request updates</h3><p>After the server confirms a new private request, approval is immediately disabled even if GitHub listing temporarily lags. Recently resolved requests are hidden locally while the issue list catches up. Production publishing remains disabled.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span><span>Not published</span></div></div></div>
   <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview workflow verification · exact time not recorded</small></div><div><h3>Review workflow hardening and fresh review revision <span class="version-badge">Unreleased</span></h3><p>Bound review requests and approvals to review-workflow-2026-11-18 so old approvals cannot carry into the updated workflow. Confirmed private record storage, preview-only approvals, approval invalidation, and simulated request resolution. Publishing and rollback remain disabled. The current revision requires its own review sign-off.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Private review API</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div></div>
   <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview workflow completion · exact time not recorded</small></div><div><h3>Resolve requests within Review Center <span class="version-badge">Unreleased</span></h3><p>Added an authenticated Mark resolved button for private change requests with a mandatory reason and confirmation. Review requests and approvals are limited to the current revision; both endpoints paginate private records. Publishing and rollback remain disabled pending separate release-controller setup and testing.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Requests and approval APIs</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div></div>
   <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview bug fix · exact time not recorded</small></div><div><h3>Approval confirmation now updates status immediately <span class="version-badge">Unreleased</span></h3><p>Confirmed private approval request #2 saved, but a subsequent GitHub list read could briefly return stale data and incorrectly show “No approval recorded.” The Review Center now displays the GitHub-confirmed POST result immediately and disables the duplicate approval button; the backend requests fresh issue listings. Publishing remains disabled.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Private approval API</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div></div>
@@ -280,11 +281,20 @@ const approvalMessage=document.getElementById('approval-message');
 const detailBy=document.getElementById('approval-detail-by');
 const detailTime=document.getElementById('approval-detail-time');
 const approvalEndpoint='/api/review/approvals?revision='+encodeURIComponent(reviewRevision);
+let recentSubmission=null;
+const recentlyResolved=new Set();
 function approvalWhen(raw){
  return raw?new Date(raw).toLocaleString('en-US',{timeZone:'America/Chicago',
    month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit',second:'2-digit',timeZoneName:'short'}):'Not recorded';
 }
 function showApproval(state){
+ if(recentSubmission!==null&&state.openRequests===0){
+   approvalSummary.textContent='New change request #'+recentSubmission+' was just saved. Approval is disabled while GitHub synchronizes.';
+   approveButton.disabled=true;approveButton.textContent='Resolve changes first';
+   detailBy.textContent='Awaiting review';detailTime.textContent='Not recorded';
+   return;
+ }
+ if(state.openRequests>0)recentSubmission=null;
  if(state.approved){
    approvalSummary.textContent='Approved for review by '+state.approvedBy+' on '+approvalWhen(state.approvedAt)+'.';
    detailBy.textContent=state.approvedBy;detailBy.classList.remove('pending');
@@ -347,7 +357,7 @@ async function readRequests(){
   const heading=document.createElement('strong');
   heading.textContent='Open requests for this revision';
   savedRequests.appendChild(heading);
-  const records=Array.isArray(payload.requests)?payload.requests:[];
+  const records=(Array.isArray(payload.requests)?payload.requests:[]).filter(record=>!recentlyResolved.has(record.number));
   if(!records.length){
     const empty=document.createElement('p');empty.textContent='No open change requests for this revision.';savedRequests.appendChild(empty);
     return;
@@ -381,6 +391,8 @@ async function readRequests(){
         try{data=await result.json();}catch{throw new Error('The review service returned an invalid response.');}
         if(!result.ok||!data.resolved)throw new Error(data.error||'The request could not be resolved.');
         setRequestStatus('Request #'+data.requestNumber+' was closed privately. No website changes were published.');
+        recentlyResolved.add(data.requestNumber);
+        if(recentSubmission===data.requestNumber)recentSubmission=null;
         resolve.textContent='Resolved';
         try{await readRequests();}catch{setRequestStatus('Request closed privately, but the list could not refresh.');}
         try{await readApproval();}catch{
@@ -420,6 +432,10 @@ requestButton.addEventListener('click',async()=>{
     try{payload=await response.json();}catch{throw new Error('Unexpected response from review service.');}
     if(!response.ok||!payload.saved)throw new Error(payload.error||'The request could not be saved.');
     requestInput.value='';
+    recentSubmission=payload.requestNumber;
+    approveButton.disabled=true;
+    approveButton.textContent='Resolve changes first';
+    approvalSummary.textContent='New change request #'+payload.requestNumber+' was saved privately. Any earlier approval is invalidated.';
     try{
       await readRequests();
       setRequestStatus('Saved privately as request #'+payload.requestNumber+'. No website changes were published.');
