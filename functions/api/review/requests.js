@@ -4,6 +4,7 @@
 const json = (data, status = 200) => new Response(JSON.stringify(data), {
   status, headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" }
 });
+const CURRENT_REVISION="approval-tracking-2026-11-18";
 const decode = value => {
   const s = value.replace(/-/g, "+").replace(/_/g, "/");
   return JSON.parse(atob(s.padEnd(Math.ceil(s.length / 4) * 4, "=")));
@@ -49,7 +50,8 @@ export async function onRequestPost({ request, env }) {
   try { body = await request.json(); } catch { return json({ error: "Invalid request body" }, 400); }
   const revision = String(body.revision || "").trim().slice(0, 80);
   const note = String(body.note || "").trim();
-  if (!revision || !note || note.length > 3000) return json({ error: "A revision and a note of 1–3000 characters are required" }, 400);
+  if (revision !== CURRENT_REVISION) return json({error:"Revision changed; refresh the Review Center"},409);
+  if (!note || note.length > 3000) return json({ error: "A revision and a note of 1–3000 characters are required" }, 400);
   const createdAt = new Date().toISOString();
   const issueBody = [
     "## Website revision change request",
@@ -99,7 +101,7 @@ export async function onRequestGet({ request, env }) {
   if (!email || !allowed.includes(email)) return json({ error: "Reviewer not authorized" }, 403);
 
   const revision = new URL(request.url).searchParams.get("revision") || "";
-  if (!/^[a-zA-Z0-9._-]{1,80}$/.test(revision)) return json({ error: "Invalid revision" }, 400);
+  if (revision !== CURRENT_REVISION) return json({ error: "Invalid revision" }, 400);
   const response = await fetch(
     "https://api.github.com/repos/forgedtoserve/Forged-To-Serve-Reviews/issues?state=open&per_page=100&sort=created&direction=desc",
     { headers: {
