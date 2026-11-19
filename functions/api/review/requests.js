@@ -1,6 +1,6 @@
 // Authenticated review-request intake for the Preview review center.
 // Requires a server-side GITHUB_TOKEN secret with Issues: write permission
-// on forgedtoserve/web. Never expose this token to browser JavaScript.
+// on forgedtoserve/Forged-To-Serve-Reviews. Never expose this token to browser JavaScript.
 const json = (data, status = 200) => new Response(JSON.stringify(data), {
   status, headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" }
 });
@@ -62,7 +62,7 @@ export async function onRequestPost({ request, env }) {
     "---",
     "Submitted through the authenticated Forged to Serve Website Review Center."
   ].join("\n");
-  const response = await fetch("https://api.github.com/repos/forgedtoserve/web/issues", {
+  const response = await fetch("https://api.github.com/repos/forgedtoserve/Forged-To-Serve-Reviews/issues", {
     method: "POST",
     headers: {
       "Authorization": "Bearer " + env.GITHUB_TOKEN,
