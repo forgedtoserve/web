@@ -86,6 +86,8 @@ The Forged to Serve **What Changed?** review history is at https://preview.forge
 5. After changes, confirm the preview dashboard and affected pages render, and check Cloudflare Pages preview deployment status. Share a direct link to the review log and relevant page(s).
 6. Use the [GitHub main-to-preview comparison](https://github.com/forgedtoserve/web/compare/main...preview) as the authoritative record of file-level differences; the dashboard's descriptions are a reviewer-friendly summary.
 
+**Preview-only entry — November 18, 2026 | Unreleased | Needs review | /test/:** Moved the authenticated Request Change box and open private requests list to the top of What Changed?. This is a layout-only change: private saving, authentication, and revision IDs remain unchanged; approval, publishing, and rollback stay disabled. Verify the new position and request status after Preview deploys.
+
 Changes to the `preview` branch do **not** go to the live website automatically. Do not merge changes into `main` without explicit approval. Keep the production version history below separate from the preview review history.
 
 ## Updating This Change Log
