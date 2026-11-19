@@ -91,6 +91,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
     </div>
     <p style="margin:12px 0 0;font-size:.9rem">Release log format: MMM D, YYYY · h:mm:ss AM/PM CST/CDT. Historical entries without verifiable times are marked “Exact time not recorded.” Publication status must come from verified deployments, not just GitHub commits.</p>
   </section>
+  <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview workflow completion · exact time not recorded</small></div><div><h3>Resolve requests within Review Center <span class="version-badge">Unreleased</span></h3><p>Added an authenticated Mark resolved button for private change requests with a mandatory reason and confirmation. Review requests and approvals are limited to the current revision; both endpoints paginate private records. Publishing and rollback remain disabled pending separate release-controller setup and testing.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Requests and approval APIs</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div></div>
   <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview bug fix · exact time not recorded</small></div><div><h3>Approval confirmation now updates status immediately <span class="version-badge">Unreleased</span></h3><p>Confirmed private approval request #2 saved, but a subsequent GitHub list read could briefly return stale data and incorrectly show “No approval recorded.” The Review Center now displays the GitHub-confirmed POST result immediately and disables the duplicate approval button; the backend requests fresh issue listings. Publishing remains disabled.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Private approval API</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div></div>
   <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview approval update · exact time not recorded</small></div><div><h3>Private revision approval tracking <span class="version-badge">Unreleased</span></h3><p>Added a review-only approval button and status for the current revision, storing verified reviewer identity and GitHub timestamp in a private issue. Open change requests block approval; new requests invalidate old sign-offs. No publishing or rollback is connected. Reviewers must test approval before relying on it.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Private approval API</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div></div>
   <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview layout update · exact time not recorded</small></div><div><h3>Moved Request Change to the top <span class="version-badge">Unreleased</span></h3><p>Moved the authenticated change-request form and open-request list to the beginning of What Changed? so reviewers can submit feedback without scrolling through release history. This earlier layout update kept the same private GitHub storage; approval tracking was added in a subsequent preview update, and publishing remains disabled.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div></div>
@@ -358,7 +359,39 @@ async function readRequests(){
     meta.textContent=(record.requestedBy||'Authorized reviewer')+' · '+when;
     const note=document.createElement('p');note.textContent=record.note||'(No note recorded)';
     note.style.margin='5px 0 0';
-    item.append(meta,note);savedRequests.appendChild(item);
+    item.append(meta,note);
+    const resolve=document.createElement('button');
+    resolve.type='button';resolve.textContent='Mark resolved';
+    resolve.style.cssText='margin-top:9px;padding:6px 12px;background:#eef3f4;color:#203e57;border:1px solid #91a3af;border-radius:6px;font-weight:700';
+    resolve.addEventListener('click',async()=>{
+      const reason=window.prompt('How was request #'+record.number+' resolved? Provide a short note (at least 8 characters).');
+      if(reason===null)return;
+      if(reason.trim().length<8||reason.trim().length>1000){
+        setRequestStatus('Please enter a resolution note between 8 and 1,000 characters.');return;
+      }
+      if(!window.confirm('Mark request #'+record.number+' resolved? This only closes the private review request. It will NOT publish anything.'))return;
+      resolve.disabled=true;resolve.textContent='Closing request…';
+      try{
+        const result=await fetch('/api/review/requests',{
+          method:'PATCH',credentials:'same-origin',headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({revision:reviewRevision,issueNumber:record.number,reason:reason.trim(),confirmed:true})
+        });
+        let data;
+        try{data=await result.json();}catch{throw new Error('The review service returned an invalid response.');}
+        if(!result.ok||!data.resolved)throw new Error(data.error||'The request could not be resolved.');
+        setRequestStatus('Request #'+data.requestNumber+' was closed privately. No website changes were published.');
+        resolve.textContent='Resolved';
+        try{await readRequests();}catch{setRequestStatus('Request closed privately, but the list could not refresh.');}
+        try{await readApproval();}catch{
+          approveButton.disabled=true;approvalMessage.textContent='Approval status could not refresh; reload before approving.';
+        }
+      }catch(error){
+        setRequestStatus('Could not confirm resolution: '+error.message);
+        resolve.disabled=false;resolve.textContent='Mark resolved';
+      }
+    });
+    item.appendChild(resolve);
+    savedRequests.appendChild(item);
   }
 }
 async function initReview(){
