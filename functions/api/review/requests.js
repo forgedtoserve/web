@@ -102,30 +102,24 @@ export async function onRequestGet({ request, env }) {
 
   const revision = new URL(request.url).searchParams.get("revision") || "";
   if (revision !== CURRENT_REVISION) return json({ error: "Invalid revision" }, 400);
-  const response = await fetch(
-    "https://api.github.com/repos/forgedtoserve/Forged-To-Serve-Reviews/issues?state=open&per_page=100&sort=created&direction=desc",
-    { headers: {
-      "Authorization": "Bearer " + env.GITHUB_TOKEN,
-      "Accept": "application/vnd.github+json",
-      "User-Agent": "ForgedToServe-ReviewCenter/1.0",
-      "X-GitHub-Api-Version": "2022-11-28"
-    } }
-  );
-  if (!response.ok) {
-    // Return a safe, non-credential diagnostic only to an authenticated, allowlisted reviewer.
-    // GitHub's response message can distinguish missing permissions from other 403 causes.
-    let githubReason = "GitHub denied this request without an explanation";
-    try {
-      const detail = await response.json();
-      // Only expose short GitHub API error text after verifying reviewer identity.
-      // Never return an authorization header or the token itself.
-      if (typeof detail?.message === "string") {
-        githubReason = detail.message.replace(/github_pat_[A-Za-z0-9_]+/g, "[redacted]").slice(0, 200);
-      }
-    } catch {}
-    return json({ error: "Could not read private review requests", githubStatus: response.status, githubReason }, 502);
+  const ghHeaders={
+    "Authorization":"Bearer "+env.GITHUB_TOKEN,
+    "Accept":"application/vnd.github+json",
+    "User-Agent":"ForgedToServe-ReviewCenter/1.0",
+    "X-GitHub-Api-Version":"2022-11-28",
+    "Cache-Control":"no-cache"
+  };
+  const issues=[];
+  for(let page=1;page<=10;page++){
+    const response=await fetch("https://api.github.com/repos/forgedtoserve/Forged-To-Serve-Reviews/issues?state=open&per_page=100&page="+page,
+      {headers:ghHeaders,cache:"no-store"});
+    if(!response.ok)return json({error:"Could not read private review requests",githubStatus:response.status},502);
+    const batch=await response.json();
+    if(!Array.isArray(batch))return json({error:"GitHub returned invalid request data"},502);
+    issues.push(...batch);
+    if(batch.length<100)break;
+    if(page===10)return json({error:"Review records exceed the safe listing limit"},503);
   }
-  const issues = await response.json();
   const prefix = "Website review request — " + revision;
   const requests = (Array.isArray(issues) ? issues : [])
     .filter(issue => !issue.pull_request && issue.state === "open" && issue.title === prefix)
