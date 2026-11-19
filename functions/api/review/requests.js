@@ -67,6 +67,7 @@ export async function onRequestPost({ request, env }) {
     headers: {
       "Authorization": "Bearer " + env.GITHUB_TOKEN,
       "Accept": "application/vnd.github+json",
+      "User-Agent": "ForgedToServe-ReviewCenter/1.0",
       "X-GitHub-Api-Version": "2022-11-28",
       "Content-Type": "application/json"
     },
@@ -100,6 +101,7 @@ export async function onRequestGet({ request, env }) {
     { headers: {
       "Authorization": "Bearer " + env.GITHUB_TOKEN,
       "Accept": "application/vnd.github+json",
+      "User-Agent": "ForgedToServe-ReviewCenter/1.0",
       "X-GitHub-Api-Version": "2022-11-28"
     } }
   );
