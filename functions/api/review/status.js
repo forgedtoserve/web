@@ -1,5 +1,5 @@
 // Cloudflare Pages Function: read-only foundation for the review workflow.
-// No publish, rollback, approval, or feedback mutation is exposed here.
+// Read-only status only. Mutations are handled by authenticated private review endpoints.
 const json = (data, status = 200) => new Response(JSON.stringify(data), {
   status,
   headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" }
@@ -41,9 +41,10 @@ export async function onRequestGet({ request, env }) {
     return json({
       authenticated: true,
       reviewer: claims.email,
-      reviewStorage: env.GITHUB_TOKEN ? "GitHub credential present (saving not yet tested)" : "not configured",
+      reviewStorage: env.GITHUB_TOKEN ? "private GitHub connection configured; use /api/review/requests for operational status" : "not configured",
       notifications: "not configured",
-      approvalAndPublishing: "disabled",
+      reviewApprovals: "private tracking at /api/review/approvals",
+      publication: "disabled",
       rollback: "disabled"
     });
   } catch {
