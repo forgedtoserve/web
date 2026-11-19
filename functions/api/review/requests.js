@@ -30,7 +30,11 @@ async function verifyAccessToken(token, teamDomain, audience) {
   return claims;
 }
 export async function onRequestPost({ request, env }) {
-  if (request.headers.get("Origin") && request.headers.get("Origin") !== new URL(request.url).origin) return json({ error: "Origin not allowed" }, 403);
+  // The approved Preview custom domain may be proxied to a different Pages origin.
+  // Accept only the request's own origin or the exact approved Preview host.
+  const origin = request.headers.get("Origin");
+  const allowedOrigins = new Set([new URL(request.url).origin, "https://preview.forgedtoserve.org"]);
+  if (origin && !allowedOrigins.has(origin)) return json({ error: "Origin not allowed" }, 403);
   if (!env.ACCESS_TEAM_DOMAIN || !env.ACCESS_AUD || !env.REVIEWER_EMAILS) return json({ error: "Review authentication is not configured" }, 503);
   if (!env.GITHUB_TOKEN) return json({ error: "Secure review saving is not configured yet. No request was saved." }, 503);
   const token = request.headers.get("Cf-Access-Jwt-Assertion");
