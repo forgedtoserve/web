@@ -304,8 +304,12 @@ requestButton.addEventListener('click',async()=>{
     try{payload=await response.json();}catch{throw new Error('Unexpected response from review service.');}
     if(!response.ok||!payload.saved)throw new Error(payload.error||'The request could not be saved.');
     requestInput.value='';
-    await readRequests();
-    setRequestStatus('Saved privately as request #'+payload.requestNumber+'. No website changes were published.');
+    try{
+      await readRequests();
+      setRequestStatus('Saved privately as request #'+payload.requestNumber+'. No website changes were published.');
+    }catch{
+      setRequestStatus('Saved privately as request #'+payload.requestNumber+', but the request list could not refresh. No website changes were published.');
+    }
   }catch(error){setRequestStatus('Request was not confirmed saved: '+error.message+' Check before trying again.');}
   finally{requestButton.disabled=false;requestButton.textContent='Request Change';}
 });
