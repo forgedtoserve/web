@@ -70,7 +70,7 @@ export async function onRequestPost({ request, env }) {
       "X-GitHub-Api-Version": "2022-11-28",
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ title: "Website review request — " + revision, body: issueBody, labels: ["website-review", "revisions-requested"] })
+    body: JSON.stringify({ title: "Website review request — " + revision, body: issueBody })
   });
   if (!response.ok) return json({ error: "GitHub could not save this request. No success was recorded." }, 502);
   const issue = await response.json();
