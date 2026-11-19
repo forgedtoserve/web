@@ -41,7 +41,7 @@ export async function onRequestGet({ request, env }) {
     return json({
       authenticated: true,
       reviewer: claims.email,
-      reviewStorage: "not configured",
+      reviewStorage: env.GITHUB_TOKEN ? "GitHub credential present (saving not yet tested)" : "not configured",
       notifications: "not configured",
       approvalAndPublishing: "disabled",
       rollback: "disabled"
