@@ -126,12 +126,14 @@ export async function onRequestGet({ request, env }) {
     .map(issue => {
       const body = String(issue.body || "");
       const author = body.match(/^\- \*\*Requested by:\*\* (.+)$/m);
-      const note = body.match(/^## Request\s*\n\s*\n([\s\S]*?)(?:\n\n---\n|$)/m);
+      const marker="## Request\\n\\n";
+      const start=body.indexOf(marker);
+      const note=start<0?"":body.slice(start+marker.length).split("\\n\\n---\\n")[0].trim();
       return {
         number: issue.number,
         requestedBy: author ? author[1].trim() : "Authorized reviewer",
         submittedAt: issue.created_at,
-        note: note ? note[1].trim() : ""
+        note
       };
     });
   return json({ revision, requests });
