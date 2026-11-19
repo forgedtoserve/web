@@ -29,7 +29,8 @@ async function verifyAccessToken(token, teamDomain, audience) {
 }
 
 const API="https://api.github.com/repos/forgedtoserve/Forged-To-Serve-Reviews/issues";
-const validRevision=s=>/^[a-zA-Z0-9._-]{1,80}$/.test(s);
+const CURRENT_REVISION="approval-tracking-2026-11-18";
+const validRevision=s=>s===CURRENT_REVISION;
 const ghHeaders=env=>({"Authorization":"Bearer "+env.GITHUB_TOKEN,
  "Accept":"application/vnd.github+json","User-Agent":"ForgedToServe-ReviewCenter/1.0",
  "X-GitHub-Api-Version":"2022-11-28"});
@@ -47,11 +48,17 @@ async function reviewer(request,env){
  return {email};
 }
 async function records(env){
- const res=await fetch(API+"?state=all&per_page=100&sort=created&direction=desc&fresh="+Date.now(),{headers:{...ghHeaders(env),"Cache-Control":"no-cache"},cache:"no-store"});
- if(!res.ok)throw Error("GitHub records could not be read ("+res.status+")");
- const list=await res.json();
- if(!Array.isArray(list)||list.length>=100)throw Error("Review history is too large to safely verify approvals");
- return list.filter(x=>!x.pull_request);
+ const issues=[];
+ for(let page=1;page<=10;page++){
+   const res=await fetch(API+"?state=all&per_page=100&page="+page+"&fresh="+Date.now(),
+     {headers:{...ghHeaders(env),"Cache-Control":"no-cache"},cache:"no-store"});
+   if(!res.ok)throw Error("GitHub records could not be read ("+res.status+")");
+   const batch=await res.json();
+   if(!Array.isArray(batch))throw Error("GitHub returned invalid approval data");
+   issues.push(...batch.filter(x=>!x.pull_request));
+   if(batch.length<100)return issues;
+ }
+ throw Error("Review history exceeds the safe listing limit");
 }
 function status(list,revision){
  const requests=list.filter(x=>x.title==="Website review request — "+revision);
