@@ -29,7 +29,7 @@ async function verifyAccessToken(token, teamDomain, audience) {
 }
 
 const API="https://api.github.com/repos/forgedtoserve/Forged-To-Serve-Reviews/issues";
-const CURRENT_REVISION="approval-tracking-2026-11-18";
+const CURRENT_REVISION="review-workflow-2026-11-18";
 const validRevision=s=>s===CURRENT_REVISION;
 const ghHeaders=env=>({"Authorization":"Bearer "+env.GITHUB_TOKEN,
  "Accept":"application/vnd.github+json","User-Agent":"ForgedToServe-ReviewCenter/1.0",
