@@ -63,6 +63,19 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
       <a class="change-compare" href="https://github.com/forgedtoserve/web/compare/main...preview" target="_blank" rel="noopener noreferrer">View exact GitHub changes ↗</a>
     </div>
   </div>
+  <section aria-label="Publishing controls development" style="margin:18px 0 26px;padding:20px;border:1px solid #d6dbe3;border-radius:12px;background:#f7f9fc;color:#17243b">
+    <h3 style="margin:0 0 8px">Site-wide publishing controls · In development</h3>
+    <p style="margin:0 0 12px">Planned owner-only controls will publish all approved site changes after confirmation, or restore the previous verified live release. Authentication, deployment integration, and rollback verification are not connected yet. No action on this panel can change the live website.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px">
+      <button type="button" disabled title="Available after secure owner authentication and deployment testing" style="padding:11px 16px;border:0;border-radius:8px;background:#68768a;color:white;cursor:not-allowed">Publish approved changes · Not enabled</button>
+      <button type="button" disabled title="Available after verified release history and rollback testing" style="padding:11px 16px;border:1px solid #68768a;border-radius:8px;background:white;color:#48586b;cursor:not-allowed">Rollback previous release · Not enabled</button>
+    </div>
+    <p style="margin:12px 0 0;font-size:.9rem">Release log format: MMM D, YYYY · h:mm:ss AM/PM CST/CDT. Publication status must come from verified deployments, not just GitHub commits.</p>
+  </section>
+  <div class="change-entry">
+    <div class="change-date"><time datetime="2026-11-18">Nov 18, 2026</time></div>
+    <div><h3>Site-wide publishing and rollback controls — preview design</h3><p>Added a non-operational preview panel for the proposed owner-only publish and rollback workflow. Both controls are disabled until authentication, confirmation, deployment, and verification are implemented. Exact change and publication timestamps (including seconds) will be recorded by the release system once connected; no timestamp has been fabricated.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div>
+  </div>
   <!-- PREVIEW CHANGE LOG: REQUIRED before each website update. Add a .change-entry
        immediately below this comment (newest first). Give a real local calendar date,
        title, plain-English summary, affected pages/files, remaining review notes, and
