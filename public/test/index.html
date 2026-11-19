@@ -77,7 +77,7 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
     <p style="margin:12px 0 0;font-size:.9rem">Release log format: MMM D, YYYY · h:mm:ss AM/PM CST/CDT. Historical entries without verifiable times are marked “Exact time not recorded.” Publication status must come from verified deployments, not just GitHub commits.</p>
   </section>
   <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview form update · exact time not recorded</small></div><div><h3>Request Change form added to revision details</h3><p>Added a comment box and Request Change control beneath the newest revision. Submission remains disabled until secure identity-backed shared GitHub storage is ready; no comments or approvals are being recorded yet.</p><div class="change-tags"><span>Preview only</span><span>Not published</span></div></div></div>
-  <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview layout update · exact time not recorded</small></div><div><h3>Revision-by-revision approval details <span class="version-badge">Unreleased</span></h3><p>Added a review summary directly beneath this revision. Secure GitHub-backed comments and approvals are not implemented yet.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span></div><div class="revision-review"><dl><dt>Requested by</dt><dd>Scott (review layout direction)</dd><dt>Review notes</dt><dd>Keep notes and approvals under each revision number</dd><dt>Approved by</dt><dd class="pending">Awaiting approval</dd><dt>Approval time</dt><dd>Not recorded</dd><dt>Publication</dt><dd>Preview only · not published</dd></dl></div><div class="request-panel"><label for="revision-request">Request a change to this revision</label><textarea id="revision-request" maxlength="3000" placeholder="Describe what needs to change, and where on the website…"></textarea><button type="button" id="request-change" disabled>Request Change · Connecting</button><p class="request-message" id="request-message" role="status">This form is a preview. Submission will be enabled only after secure shared saving is connected. Nothing entered here is saved yet.</p></div></div></div>
+  <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Preview layout update · exact time not recorded</small></div><div><h3>Revision-by-revision approval details <span class="version-badge">Unreleased</span></h3><p>Added a review summary directly beneath this revision. Private GitHub-backed review requests are being connected on Preview. Approvals are not enabled yet.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span></div><div class="revision-review"><dl><dt>Requested by</dt><dd>Scott (review layout direction)</dd><dt>Review notes</dt><dd>Keep notes and approvals under each revision number</dd><dt>Approved by</dt><dd class="pending">Awaiting approval</dd><dt>Approval time</dt><dd>Not recorded</dd><dt>Publication</dt><dd>Preview only · not published</dd></dl></div><div class="request-panel"><label for="revision-request">Request a change to this revision</label><textarea id="revision-request" maxlength="3000" placeholder="Describe what needs to change, and where on the website…"></textarea><button type="button" id="request-change" disabled>Request Change · Checking connection</button><p class="request-message" id="request-message" role="status">Checking your authenticated, private review connection. No request has been submitted.</p><div id="saved-requests" aria-live="polite" style="margin-top:12px"></div></div></div></div>
   <div class="change-entry"><div class="change-date">Nov 18, 2026<small style="display:block">Design update · exact time not recorded</small></div><div><h3>Shared review and one-person approval workflow</h3><p>Updated the proposed review workflow: Scott, Vanessa, or Richard can request changes, or approve the current revision to trigger publishing after confirmation. One approval is sufficient. Shared comments, screenshot attachments, notifications, revision-specific approvals, and rollback are planned but not connected. Live publication remains disabled until secure backend testing.</p><div class="change-tags"><span>Review dashboard · /test/</span><span>Preview only</span><span>Needs review</span><span>Not published</span></div></div></div>
   <div class="change-entry">
     <div class="change-date"><time datetime="2026-11-18T18:06:42-06:00">Nov 18, 2026 · 6:06:42 PM CST</time><small style="display:block;font-size:.75rem;margin-top:5px">GitHub commit time · not live publication</small></div>
@@ -246,6 +246,70 @@ document.querySelectorAll('button[data-path]').forEach(button=>button.addEventLi
 document.querySelectorAll('button[data-size]').forEach(button=>button.addEventListener('click',()=>{
  document.querySelectorAll('button[data-size]').forEach(b=>b.setAttribute('aria-pressed','false'));button.setAttribute('aria-pressed','true');device.className='device '+button.dataset.size;
 }));
+
+const reviewRevision='review-layout-2026-11-18';
+const requestButton=document.getElementById('request-change');
+const requestMessage=document.getElementById('request-message');
+const requestInput=document.getElementById('revision-request');
+const savedRequests=document.getElementById('saved-requests');
+const reviewEndpoint='/api/review/requests?revision='+encodeURIComponent(reviewRevision);
+function setRequestStatus(message){requestMessage.textContent=message;}
+async function readRequests(){
+  const response=await fetch(reviewEndpoint,{credentials:'same-origin',cache:'no-store'});
+  let payload;
+  try{payload=await response.json();}catch{throw new Error('Review service did not return a valid response.');}
+  if(!response.ok)throw new Error(payload.error||'Review service is unavailable.');
+  savedRequests.replaceChildren();
+  const heading=document.createElement('strong');
+  heading.textContent='Saved requests for this revision';
+  savedRequests.appendChild(heading);
+  const records=Array.isArray(payload.requests)?payload.requests:[];
+  if(!records.length){
+    const empty=document.createElement('p');empty.textContent='No requests have been submitted for this revision yet.';savedRequests.appendChild(empty);
+    return;
+  }
+  for(const record of records){
+    const item=document.createElement('div');
+    item.style.cssText='padding:9px 0;border-top:1px solid #dce3e8;margin-top:8px;white-space:pre-wrap;overflow-wrap:anywhere';
+    const meta=document.createElement('strong');
+    const when=record.submittedAt?new Date(record.submittedAt).toLocaleString():'Date unavailable';
+    meta.textContent=(record.requestedBy||'Authorized reviewer')+' · '+when;
+    const note=document.createElement('p');note.textContent=record.note||'(No note recorded)';
+    note.style.margin='5px 0 0';
+    item.append(meta,note);savedRequests.appendChild(item);
+  }
+}
+async function initReview(){
+  try{
+    await readRequests();
+    requestButton.disabled=false;
+    requestButton.textContent='Request Change';
+    setRequestStatus('Connected to private review records. Your request will be saved under this revision; no publishing will occur.');
+  }catch(error){
+    requestButton.disabled=true;
+    requestButton.textContent='Request Change · Unavailable';
+    setRequestStatus('Saving is unavailable: '+error.message);
+  }
+}
+requestButton.addEventListener('click',async()=>{
+  const note=requestInput.value.trim();
+  if(!note){setRequestStatus('Please type the change you want to request.');return;}
+  if(note.length>3000){setRequestStatus('Please keep your request under 3,000 characters.');return;}
+  requestButton.disabled=true;
+  requestButton.textContent='Saving request…';
+  setRequestStatus('Submitting to your private review records…');
+  try{
+    const response=await fetch('/api/review/requests',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({revision:reviewRevision,note})});
+    let payload;
+    try{payload=await response.json();}catch{throw new Error('Unexpected response from review service.');}
+    if(!response.ok||!payload.saved)throw new Error(payload.error||'The request could not be saved.');
+    requestInput.value='';
+    await readRequests();
+    setRequestStatus('Saved privately as request #'+payload.requestNumber+'. No website changes were published.');
+  }catch(error){setRequestStatus('Request was not confirmed saved: '+error.message+' Check before trying again.');}
+  finally{requestButton.disabled=false;requestButton.textContent='Request Change';}
+});
+void initReview();
 })();
 </script>
 </body></html>
